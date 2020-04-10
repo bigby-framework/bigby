@@ -19,6 +19,7 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "prepublishOnly": "yarn build",
+    "test": "jest",
     "docs": "typedoc src/"
   },
   "devDependencies": {
