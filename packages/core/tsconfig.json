@@ -1,26 +1,4 @@
 {
-  "compilerOptions": {
-    "lib": ["esnext"],
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "declaration": true,
-    "outDir": "./dist/",
-    "strict": false /* SOON */,
-    "noImplicitAny": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true,
-    "baseUrl": "./src/",
-    "paths": {
-      "~/*": ["*"]
-    }
-  },
-  "typedocOptions": {
-    "mode": "file",
-    "out": "docs"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "extends": "../../tsconfig.json",
+  "include": ["src/**/*"]
 }
