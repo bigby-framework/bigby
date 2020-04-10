@@ -1,6 +1,7 @@
-import { Behavior, Entity, math, signal } from "@bigby/core";
+import { Behavior, Entity, signal } from "@bigby/core";
 import { interaction, IPoint } from "pixi.js";
 import { Game2D, IVec2, Renderable2D } from ".";
+import { clamp } from "@bigby/math";
 
 export class ViewportController2D extends Behavior {
   static displayName = "ViewportController2D";
@@ -78,7 +79,7 @@ export class ViewportController2D extends Behavior {
     if (this.wheelDelta != 0) {
       /* Apply zoom */
       const delta = this.wheelDelta / 1000;
-      this.scale = math.clamp(this.scale - delta, this.minScale, this.maxScale);
+      this.scale = clamp(this.scale - delta, this.minScale, this.maxScale);
       this.r2d.zoomIntoPoint(mousePos, { x: this.scale, y: this.scale });
 
       /* Reset wheelDelta until next frame */
