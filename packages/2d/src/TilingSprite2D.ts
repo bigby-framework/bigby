@@ -1,6 +1,6 @@
-import { Sprite2D } from "./Sprite2D";
-import * as PIXI from "pixi.js";
 import { inspect } from "@bigby/core";
+import * as PIXI from "pixi.js";
+import { Sprite2D } from "./Sprite2D";
 
 export class TilingSprite2D extends Sprite2D<{
   bounds: { width: number; height: number };

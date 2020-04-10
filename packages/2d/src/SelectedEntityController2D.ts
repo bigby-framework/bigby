@@ -1,6 +1,6 @@
 import { Graphics } from "pixi.js";
 import { Behavior, Entity } from "@bigby/core";
-import { Renderable2D, UI2D } from "~/mkgm2d";
+import { Renderable2D, UI2D } from ".";
 import { signal } from "@bigby/core";
 
 export class SelectedEntityController2D extends Behavior {

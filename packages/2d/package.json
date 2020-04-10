@@ -29,5 +29,8 @@
     "typedoc": "^0.17.0-3",
     "typescript": "^3.8.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@bigby/core": "^0.0.3",
+    "pixi.js": "^5.2.1"
+  }
 }

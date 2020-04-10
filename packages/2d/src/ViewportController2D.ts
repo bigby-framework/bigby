@@ -1,6 +1,6 @@
 import { Behavior, Entity, math, signal } from "@bigby/core";
 import { interaction, IPoint } from "pixi.js";
-import { Game2D, IVec2, Renderable2D } from "~/mkgm2d";
+import { Game2D, IVec2, Renderable2D } from ".";
 
 export class ViewportController2D extends Behavior {
   static displayName = "ViewportController2D";

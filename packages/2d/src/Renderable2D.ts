@@ -1,6 +1,6 @@
 import { Behavior, inspect } from "@bigby/core";
 import * as PIXI from "pixi.js";
-import { SelectedEntityController2D } from "~/mkgm2d/SelectedEntityController2D";
+import { SelectedEntityController2D } from "./SelectedEntityController2D";
 import { angleToVec2 } from "./vec2";
 
 export interface IRenderable2D {

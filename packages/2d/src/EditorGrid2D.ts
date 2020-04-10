@@ -1,5 +1,5 @@
 import { Behavior, inspect } from "@bigby/core";
-import { Game2D, Renderable2D, UI2D } from "mkgm2d";
+import { Game2D, Renderable2D, UI2D } from ".";
 import { Graphics } from "pixi.js";
 import { ViewportController2D } from "./ViewportController2D";
 
