@@ -1,3 +1,3 @@
-# @bigby/math
+# @bigby/2d
 
-A collection of math utility modules for building games with the Bigby Framework.
+A collection of Bigby behaviors for building WebGL-accelerated 2D games.
