@@ -1,6 +1,6 @@
 {
   "name": "@bigby/2d",
-  "description": "2D game components for the Bigby Framework.",
+  "description": "A collection of Bigby behaviors for building WebGL-accelerated 2D games.",
   "version": "0.0.2",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
