@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "@bigby/core": "^0.0.3",
+    "@bigby/math": "^0.0.1",
     "pixi.js": "^5.2.1"
   }
 }

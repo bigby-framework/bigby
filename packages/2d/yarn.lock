@@ -265,6 +265,11 @@
     change-case "^4.1.1"
     uuid "^7.0.3"
 
+"@bigby/math@^0.0.1":
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/@bigby/math/-/math-0.0.1.tgz#0d29b6bea528e6be9cfa0110f47612376160359a"
+  integrity sha512-1Hdtk9XmjVSMTAns6TFOfKD2cyi7LbTVjTe7VqpffsWBxOiKHLPfW/FgTpFrhyZG9sINwflercB8iWZnXy2c8Q==
+
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
