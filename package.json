@@ -6,7 +6,7 @@
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "scripts": {
-    "test": "lerna run test"
+    "test": "lerna run --stream test"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
