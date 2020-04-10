@@ -1,0 +1,36 @@
+{
+  "name": "@bigby/2d",
+  "description": "A collection of Bigby behaviors for building WebGL-accelerated 2D games.",
+  "version": "0.0.2",
+  "author": "Hendrik Mans <hendrik@mans.de>",
+  "license": "MIT",
+  "repository": "github:bigby-framework/bigby",
+  "main": "dist/index.js",
+  "bundle": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "docs": "typedoc src/index.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
+    "typedoc": "^0.17.0-3",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@bigby/core": "^0.0.3",
+    "pixi.js": "^5.2.1"
+  }
+}
