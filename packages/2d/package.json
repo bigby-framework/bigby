@@ -1,7 +1,7 @@
 {
   "name": "@bigby/2d",
   "description": "2D game components for the Bigby Framework.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
