@@ -1,25 +1,10 @@
 {
+  "extends": "./tsconfig.build.json",
+
   "compilerOptions": {
-    "lib": ["esnext", "dom"],
-    "target": "es5",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "sourceMap": true,
-    "declaration": true,
-    "removeComments": true,
-    "noLib": false,
-    "emitDecoratorMetadata": true,
-    "outDir": "./dist/",
-    "strict": false /* SOON */,
-    "noImplicitAny": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "experimentalDecorators": true
-  },
-  "typedocOptions": {
-    "mode": "library",
-    "out": "docs"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+    "baseUrl": ".",
+    "paths": {
+      "@bigby/*": ["packages/*/src"]
+    }
+  }
 }
