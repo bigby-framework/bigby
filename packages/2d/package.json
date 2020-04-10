@@ -16,7 +16,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "tsc",
+    "build": "rm -rf ./dist && tsc",
     "watch": "tsc --watch",
     "prepublishOnly": "yarn build",
     "test": "jest",
