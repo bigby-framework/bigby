@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build:all": "lerna run --stream build",
-    "test:all": "lerna run --stream test"
+    "test:all": "jest"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
