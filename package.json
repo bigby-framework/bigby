@@ -17,5 +17,8 @@
     "lerna": "^3.20.2",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@bigby/core": "^0.1.0"
   }
 }
