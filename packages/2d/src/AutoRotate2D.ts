@@ -14,8 +14,13 @@ export class AutoRotate2D extends Behavior<IAutoRotate2D>
 
   @inspect() speed = 1;
 
+  rotatable: { rotation: number };
+
+  awake() {
+    if (!this.rotatable) this.rotatable = this.getBehavior(Renderable2D);
+  }
+
   update(dt: number) {
-    const r2d = this.getBehavior(Renderable2D);
-    r2d.rotation += this.speed * dt;
+    if (this.rotatable) this.rotatable.rotation += this.speed * dt;
   }
 }
