@@ -1,4 +1,9 @@
 /dist/
 /node_modules/
-/yarn-error.log
 /docs
+
+# Ignore macOS' lovaley and omnipresent .DS_Store
+.DS_Store
+
+# Ignore all log files, everywhere
+*.log
