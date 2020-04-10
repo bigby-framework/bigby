@@ -1,0 +1,38 @@
+{
+  "name": "@bigby/core",
+  "description": "Core entity/behavior system for the Bigby Framework.",
+  "version": "0.0.3",
+  "author": "Hendrik Mans <hendrik@mans.de>",
+  "license": "MIT",
+  "repository": "github:bigby-framework/bigby-core",
+  "main": "dist/index.js",
+  "bundle": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch",
+    "prepublishOnly": "yarn build",
+    "docs": "typedoc src/"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-typescript": "^7.9.0",
+    "@types/uuid": "^7.0.2",
+    "babel-jest": "^25.3.0",
+    "jest": "^25.3.0",
+    "typedoc": "^0.17.4",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "change-case": "^4.1.1",
+    "uuid": "^7.0.3"
+  }
+}
