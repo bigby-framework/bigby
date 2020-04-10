@@ -1,4 +1,4 @@
-import { clamp, clamp01 } from "../src/clamp";
+import { clamp, clamp01 } from "./clamp";
 
 describe("clamp", () => {
   test("respects minimum boundary", () => expect(clamp(3, 4, 6)).toBe(4));
