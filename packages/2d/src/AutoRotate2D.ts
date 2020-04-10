@@ -1,8 +1,13 @@
 import { Behavior, inspect } from "@bigby/core";
 import { Renderable2D } from "./Renderable2D";
 
+export interface IAutoRotateable {
+  rotation: number;
+}
+
 export interface IAutoRotate2D {
   speed: number;
+  rotateable: IAutoRotateable;
 }
 
 export class AutoRotate2D extends Behavior<IAutoRotate2D>
@@ -13,14 +18,13 @@ export class AutoRotate2D extends Behavior<IAutoRotate2D>
     "Automatically rotates the entity clockwise or counter-clockwise.";
 
   @inspect() speed = 1;
-
-  rotatable: { rotation: number };
+  rotateable: IAutoRotateable;
 
   awake() {
-    if (!this.rotatable) this.rotatable = this.getBehavior(Renderable2D);
+    if (!this.rotateable) this.rotateable = this.getBehavior(Renderable2D);
   }
 
   update(dt: number) {
-    if (this.rotatable) this.rotatable.rotation += this.speed * dt;
+    if (this.rotateable) this.rotateable.rotation += this.speed * dt;
   }
 }
