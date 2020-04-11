@@ -25,7 +25,10 @@ module.exports = {
               presets: ["@babel/preset-env", "@babel/preset-react"],
             },
           },
-          "ts-loader",
+          {
+            loader: "ts-loader",
+            options: { configFile: "tsconfig.build.json" },
+          },
         ],
       },
       {
