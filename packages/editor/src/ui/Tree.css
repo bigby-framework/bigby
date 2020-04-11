@@ -1,0 +1,43 @@
+.tree {
+  display: block;
+}
+
+.treeItem {
+  display: flex;
+  flex-direction: row;
+  line-height: 1.8;
+  padding: 2px;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.treeItem:hover {
+  background-color: var(--selection-color);
+}
+
+.highlighted {
+  background-color: var(--much-brighter) !important;
+}
+
+.treeItemCollapser {
+  width: 20px;
+  text-align: center;
+  margin-right: 0.5em;
+}
+
+.treeItemIcon {
+  width: 20px;
+  margin-right: 0.5em;
+}
+
+.treeItemTitle {
+  flex: 1;
+}
+
+.treeItem:hover {
+  background-color: var(--selection-color);
+}
+
+.treeItemChildren {
+  padding-left: 1em;
+}

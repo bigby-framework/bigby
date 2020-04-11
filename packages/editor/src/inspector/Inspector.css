@@ -1,0 +1,16 @@
+.description {
+  color: var(--much-brighter);
+  font-size: 0.85;
+}
+
+table.propertyGroup {
+  margin-top: 0.5em;
+}
+
+tr.property th.label {
+  min-width: 120px;
+}
+
+tr.property th.subLabel {
+  color: var(--much-brighter);
+}
