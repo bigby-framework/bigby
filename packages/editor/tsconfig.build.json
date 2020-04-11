@@ -2,9 +2,7 @@
   "extends": "../../tsconfig.build.json",
   "compilerOptions": {
     "outDir": "./dist/",
-    "target": "esnext",
-    "module": "CommonJS",
-    "moduleResolution": "node"
+    "module": "esnext"
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
