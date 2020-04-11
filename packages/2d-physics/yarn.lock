@@ -257,6 +257,15 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
+"@bigby/2d@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@bigby/2d/-/2d-0.1.0.tgz#1b64edeb16c9dc723e71aa2881b4aeed94377525"
+  integrity sha512-ngfoX1g4nZvHYJjSeK4fW71fj9FgrjlakCtLrueGu+4M+FtDyKuSfG0OW1RZYxUljN263kOhTkTCXsfsr7JsAw==
+  dependencies:
+    "@bigby/core" "^0.1.0"
+    "@bigby/math" "^0.1.0"
+    pixi.js "^5.2.1"
+
 "@bigby/core@^0.1.0":
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/@bigby/core/-/core-0.1.0.tgz#d9eb4e33d369a8e444bf6066563a94daedc2c8c7"
@@ -264,6 +273,11 @@
   dependencies:
     change-case "^4.1.1"
     uuid "^7.0.3"
+
+"@bigby/math@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@bigby/math/-/math-0.1.0.tgz#fec9108e8ee7444fc819ab06218752a3f21245a5"
+  integrity sha512-muak1aJwLh/WgZfJUOjXvmfjFYCjy1tNowfnSK1n30Ki7F01RZCLGV6y/MjXXHHyuU/qPB4TdlfZcKsV3gzzog==
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"

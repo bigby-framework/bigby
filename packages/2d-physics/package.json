@@ -23,7 +23,6 @@
     "docs": "typedoc src/index.ts"
   },
   "devDependencies": {
-    "@bigby/core": "^0.1.0",
     "@types/jest": "^25.2.1",
     "canvas": "^2.6.1",
     "jest": "^25.3.0",
@@ -33,6 +32,8 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "@bigby/core": "^0.1.0",
+    "@bigby/2d": "^0.1.0",
     "pixi.js": "^5.2.1",
     "planck-js": "^0.3.12"
   }
