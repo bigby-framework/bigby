@@ -31,7 +31,9 @@
     "typedoc": "^0.17.0-3",
     "typescript": "^3.8.3",
     "@types/lodash": "^4.14.149",
-    "@types/classnames": "^2.2.10"
+    "@types/classnames": "^2.2.10",
+    "@types/react": "^16.9.26",
+    "@types/react-dom": "^16.9.5"
   },
   "dependencies": {
     "@bigby/2d": "^0.2.0",
