@@ -1,7 +1,7 @@
 {
   "name": "@bigby/editor",
   "description": "Editor/Inspector UI for Bigby projects.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
