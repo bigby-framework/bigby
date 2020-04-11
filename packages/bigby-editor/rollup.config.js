@@ -22,4 +22,15 @@ export default {
       plugins: [],
     }),
   ],
+  external: [
+    "normalize.css",
+    "react",
+    "@bigby/core",
+    "@bigby/2d",
+    "lodash",
+    "hotkeys-js",
+    "@fortawesome/free-solid-svg-icons",
+    "@fortawesome/react-fontawesome",
+    "classnames",
+  ],
 };
