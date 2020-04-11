@@ -4,6 +4,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { TypedCssModulesPlugin } = require("typed-css-modules-webpack-plugin");
 
 module.exports = {
+  mode: "production",
+
   entry: path.resolve(__dirname, "../src/index.ts"),
 
   output: {
