@@ -1,4 +1,5 @@
 import typescript from "rollup-plugin-typescript2";
+import postcss from "rollup-plugin-postcss";
 import pkg from "./package.json";
 
 export default {
@@ -13,5 +14,12 @@ export default {
       format: "es", // the preferred format
     },
   ],
-  plugins: [typescript({ tsconfig: "tsconfig.build.json" })],
+  plugins: [
+    typescript({ tsconfig: "tsconfig.build.json" }),
+    postcss({
+      modules: true,
+      // extract: true,
+      plugins: [],
+    }),
+  ],
 };
