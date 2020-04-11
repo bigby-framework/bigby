@@ -2,6 +2,9 @@
 /node_modules/
 /docs
 
+# Ignore sample game
+/packages/sr2/
+
 # Ignore macOS' lovaley and omnipresent .DS_Store
 .DS_Store
 
