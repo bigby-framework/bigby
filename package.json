@@ -6,6 +6,8 @@
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "scripts": {
+    "dev": "yarn run watch:all",
+    "watch:all": "lerna run --parallel watch",
     "build:all": "lerna run --stream build",
     "test:all": "jest"
   },
