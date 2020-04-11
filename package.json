@@ -9,7 +9,8 @@
     "dev": "yarn run watch:all",
     "watch:all": "lerna run --parallel watch",
     "build:all": "lerna run --stream build",
-    "test:all": "jest"
+    "test:all": "jest",
+    "publish:all": "lerna publish"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
