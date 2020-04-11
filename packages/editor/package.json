@@ -1,0 +1,58 @@
+{
+  "name": "@bigby/editor",
+  "description": "Editor/Inspector UI for Bigby projects.",
+  "version": "0.2.2",
+  "author": "Hendrik Mans <hendrik@mans.de>",
+  "license": "MIT",
+  "repository": "github:bigby-framework/bigby",
+  "main": "dist/index.js",
+  "bundle": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf ./dist && rollup --config",
+    "watch": "",
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "docs": "typedoc src/index.ts"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/jest": "^25.2.1",
+    "@types/lodash": "^4.14.149",
+    "@types/react": "^16.9.26",
+    "@types/react-dom": "^16.9.5",
+    "babel-loader": "^8.1.0",
+    "canvas": "^2.6.1",
+    "jest": "^25.3.0",
+    "jest-environment-jsdom-fourteen": "^1.0.1",
+    "normalize.css": "^8.0.1",
+    "rollup": "^2.6.0",
+    "rollup-plugin-postcss": "^2.5.0",
+    "rollup-plugin-typescript2": "^0.27.0",
+    "ts-jest": "^25.3.1",
+    "typedoc": "^0.17.0-3",
+    "typescript": "^3.8.3"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "dependencies": {
+    "@bigby/2d": "^0.2.0",
+    "@bigby/core": "^0.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "change-case": "^4.1.1",
+    "classnames": "^2.2.6",
+    "hotkeys-js": "^3.7.6",
+    "lodash": "^4.17.15"
+  }
+}

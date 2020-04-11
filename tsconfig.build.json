@@ -15,7 +15,8 @@
     "noImplicitAny": true,
     "allowJs": true,
     "esModuleInterop": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "jsx": "react"
   },
   "typedocOptions": {
     "mode": "library",

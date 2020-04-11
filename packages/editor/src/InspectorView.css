@@ -1,0 +1,51 @@
+.behavior-inspector + .behavior-inspector {
+  margin-top: 1.5em;
+}
+
+.behavior-inspector > header {
+  font-weight: bold;
+  background-color: var(--much-darker);
+  padding: 0.5em 1em;
+  cursor: move;
+  border-radius: 5px 5px 0 0;
+}
+
+.behavior-inspector > header span {
+  margin-right: 0.75em;
+}
+
+.behavior-inspector > main {
+  padding: 0.5em;
+  background-color: var(--slightly-darker);
+  border-radius: 0 0 5px 5px;
+}
+
+.behavior-description {
+  color: var(--much-brighter);
+  font-size: 0.85;
+}
+
+:local table {
+  margin-top: 1em;
+}
+
+:local th {
+  vertical-align: top;
+  width: 100px;
+  font-weight: normal;
+  line-height: 1.8;
+  text-align: left;
+
+  /* Prevent wrapping of text */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+:local td {
+  vertical-align: top;
+}
+
+.field + .field {
+  margin: 0.25em 0;
+}
