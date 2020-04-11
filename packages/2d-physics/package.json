@@ -1,7 +1,7 @@
 {
   "name": "@bigby/2d-physics",
   "description": "A collection of Bigby behaviors for adding RigidBody physics to your 2D game.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
