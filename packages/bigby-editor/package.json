@@ -32,7 +32,6 @@
     "canvas": "^2.6.1",
     "jest": "^25.3.0",
     "jest-environment-jsdom-fourteen": "^1.0.1",
-    "normalize.css": "^8.0.1",
     "rollup": "^2.6.0",
     "rollup-plugin-postcss": "^2.5.0",
     "rollup-plugin-typescript2": "^0.27.0",
@@ -53,6 +52,7 @@
     "change-case": "^4.1.1",
     "classnames": "^2.2.6",
     "hotkeys-js": "^3.7.6",
-    "lodash": "^4.17.15"
+    "lodash": "^4.17.15",
+    "normalize.css": "^8.0.1"
   }
 }
