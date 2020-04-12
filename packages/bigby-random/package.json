@@ -1,7 +1,7 @@
 {
   "name": "@bigby/random",
   "description": "Random number helpers for the Bigby Framework.",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
@@ -28,5 +28,6 @@
     "ts-jest": "^25.3.1",
     "typedoc": "^0.17.0-3",
     "typescript": "^3.8.3"
-  }
+  },
+  "gitHead": "3641ae8c9868ee03335c008fc5f1200423ca8ca6"
 }
