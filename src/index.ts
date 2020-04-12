@@ -1,3 +1,5 @@
+export * from "./core";
+
 import * as math from "./math";
 export { math };
 
