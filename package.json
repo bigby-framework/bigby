@@ -1,24 +1,45 @@
 {
-  "name": "bigby-monorepo",
-  "private": true,
-  "version": "0.0.1",
-  "main": "index.js",
+  "name": "bigby",
+  "version": "0.3.0",
   "repository": "git@github.com:bigby-framework/bigby.git",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
+  "main": "dist/index.js",
+  "bundle": "dist/index.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "dev": "yarn run watch:all",
-    "watch:all": "lerna run --parallel watch",
-    "build:all": "lerna run --stream build",
-    "test:all": "jest",
-    "publish:all": "lerna publish"
+    "clean": "rm -rf ./dist",
+    "build": "yarn clean && rollup -c",
+    "watch": "yarn clean && rollup -c -w",
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "docs": "typedoc src/index.ts"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.4",
     "@types/jest": "^25.2.1",
+    "@types/react": "^16.9.26",
+    "@types/react-dom": "^16.9.5",
     "canvas": "^2.6.1",
+    "hotkeys-js": "^3.7.6",
     "jest": "^25.3.0",
     "jest-environment-jsdom-fourteen": "^1.0.1",
-    "lerna": "^3.20.2",
+    "rollup": "^2.6.0",
+    "rollup-plugin-postcss": "^2.5.0",
+    "rollup-plugin-typescript2": "^0.27.0",
     "ts-jest": "^25.3.1",
     "typescript": "^3.8.3"
   }

@@ -1,10 +1,27 @@
 {
-  "extends": "./tsconfig.build.json",
-
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@bigby/*": ["packages/*/src"]
-    }
-  }
+    "lib": ["es6", "dom"],
+    "target": "es6",
+    "module": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "removeComments": true,
+    "noLib": false,
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "./dist/",
+    "strict": false /* SOON */,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "jsx": "react"
+  },
+  "typedocOptions": {
+    "mode": "library",
+    "out": "docs"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
