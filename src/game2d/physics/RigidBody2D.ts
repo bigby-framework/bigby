@@ -1,5 +1,5 @@
-import { Behavior, inspect, signal } from "@bigby/core";
-import { angleToVec2, IVec2, Renderable2D } from "@bigby/2d";
+import { Behavior, inspect, signal } from "../../core";
+import { angleToVec2, IVec2, Renderable2D } from "..";
 import { Body, Contact, Vec2 } from "planck-js";
 import { Physics2D } from "./Physics2D";
 import { vec2unit } from "./vec2";

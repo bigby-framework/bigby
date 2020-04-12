@@ -9,3 +9,6 @@ export * from "./util";
 export * from "./vec2";
 export * from "./ViewportController2D";
 export * from "./SelectedEntityController2D";
+
+import * as physics from "./physics";
+export { physics };

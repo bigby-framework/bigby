@@ -1,4 +1,4 @@
-import { Entity } from "@bigby/core";
+import { Entity } from "../../../core/Entity";
 import { PolygonCollider2D } from "../PolygonCollider2D";
 import { RigidBody2D } from "../RigidBody2D";
 

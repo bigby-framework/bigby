@@ -1,4 +1,4 @@
-import { Behavior, inspect } from "@bigby/core";
+import { Behavior, inspect } from "../../core";
 import { Contact, Vec2, World } from "planck-js";
 import { IPhysicsBodyUserData } from "./RigidBody2D";
 

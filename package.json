@@ -47,6 +47,7 @@
   "dependencies": {
     "change-case": "^4.1.1",
     "pixi.js": "^5.2.1",
+    "planck-js": "^0.3.12",
     "uuid": "^7.0.3"
   }
 }

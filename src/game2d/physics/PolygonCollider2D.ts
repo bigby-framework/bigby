@@ -1,5 +1,5 @@
-import { Behavior, inspect } from "@bigby/core";
-import { IPoint, Renderable2D } from "@bigby/2d";
+import { Behavior, inspect } from "../../core";
+import { IPoint, Renderable2D } from "..";
 import * as PIXI from "pixi.js";
 import { Fixture, Polygon, Vec2 } from "planck-js";
 import { Physics2D } from "./Physics2D";

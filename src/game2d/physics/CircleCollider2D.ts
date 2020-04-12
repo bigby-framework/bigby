@@ -1,7 +1,7 @@
-import { Behavior } from "@bigby/core";
+import { Behavior } from "../../core/Behavior";
 import { RigidBody2D } from "./RigidBody2D";
 import { Circle } from "planck-js";
-import { Renderable2D } from "@bigby/2d";
+import { Renderable2D } from "../Renderable2D";
 import * as PIXI from "pixi.js";
 import { Physics2D } from "./Physics2D";
 
