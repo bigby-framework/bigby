@@ -1,0 +1,23 @@
+{
+  "name": "bigby-sample-game",
+  "private": true,
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "rollup -c",
+    "watch": "rollup -cw"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.34",
+    "@types/react-dom": "^16.9.6",
+    "rollup": "^2.6.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "rollup-watch": "^4.3.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
