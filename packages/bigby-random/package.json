@@ -1,0 +1,32 @@
+{
+  "name": "@bigby/random",
+  "description": "Random number helpers for the Bigby Framework.",
+  "version": "0.2.3",
+  "author": "Hendrik Mans <hendrik@mans.de>",
+  "license": "MIT",
+  "repository": "github:bigby-framework/bigby",
+  "main": "dist/index.js",
+  "bundle": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "rm -rf .dist/ && tsc -p tsconfig.build.json",
+    "watch": "rm -rf .dist/ && tsc -p tsconfig.build.json --watch",
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "docs": "typedoc src/index.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.2.1",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
+    "typedoc": "^0.17.0-3",
+    "typescript": "^3.8.3"
+  }
+}
