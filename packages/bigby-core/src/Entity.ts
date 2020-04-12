@@ -13,6 +13,11 @@ export class Entity implements IFinderFunctions {
   isAwake = false;
   isDestroyed = false;
 
+  /* Constructor */
+  constructor(name?: string) {
+    this.name = name;
+  }
+
   /* Child entities */
   children = new Array<Entity>();
 
