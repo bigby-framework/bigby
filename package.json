@@ -1,6 +1,6 @@
 {
   "name": "bigby",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "repository": "git@github.com:bigby-framework/bigby.git",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
@@ -21,10 +21,6 @@
     "prepublishOnly": "yarn build",
     "test": "jest",
     "docs": "typedoc src/index.ts"
-  },
-  "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
