@@ -1,6 +1,6 @@
 {
   "name": "bigby",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "repository": "git@github.com:bigby-framework/bigby.git",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
@@ -52,6 +52,7 @@
     "change-case": "^4.1.1",
     "classnames": "^2.2.6",
     "lodash": "^4.17.15",
+    "normalize.css": "^8.0.1",
     "pixi.js": "^5.2.1",
     "planck-js": "^0.3.12",
     "uuid": "^7.0.3"
