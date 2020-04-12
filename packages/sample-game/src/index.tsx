@@ -1,19 +1,13 @@
+import { Application, with2DEditor } from "@bigby/editor";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
+import game from "./game";
 
-import { Entity } from "@bigby/core";
-import { Game2D, Renderable2D } from "@bigby/2d";
-
-import { Application, with2DEditor } from "@bigby/editor";
-
-/* Get root element */
+/* Get app element */
 const el = document.getElementById("app");
 
 /* Set up game */
-const game = new Entity();
-game.name = "Bigby Sample Game";
-game.addBehavior(Game2D).element = el;
-game.addBehavior(Renderable2D);
+const root = game("Bigby Sample Game", el);
 
 /* Let's get this thing on the road */
-ReactDOM.render(<Application root={with2DEditor(game)} />, el);
+ReactDOM.render(<Application root={with2DEditor(root)} />, el);
