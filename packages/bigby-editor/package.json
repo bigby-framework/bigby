@@ -54,5 +54,6 @@
     "hotkeys-js": "^3.7.6",
     "lodash": "^4.17.15",
     "normalize.css": "^8.0.1"
-  }
+  },
+  "gitHead": "3641ae8c9868ee03335c008fc5f1200423ca8ca6"
 }

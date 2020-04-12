@@ -28,5 +28,6 @@
     "ts-jest": "^25.3.1",
     "typedoc": "^0.17.0-3",
     "typescript": "^3.8.3"
-  }
+  },
+  "gitHead": "3641ae8c9868ee03335c008fc5f1200423ca8ca6"
 }

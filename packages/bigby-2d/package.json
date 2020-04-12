@@ -35,5 +35,6 @@
     "@bigby/core": "^0.2.3",
     "@bigby/math": "^0.2.4",
     "pixi.js": "^5.2.1"
-  }
+  },
+  "gitHead": "3641ae8c9868ee03335c008fc5f1200423ca8ca6"
 }
