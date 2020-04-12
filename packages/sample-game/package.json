@@ -5,6 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "dev": "yarn watch",
     "clean": "rm -rf dist",
     "build": "parcel build src/index.html",
     "watch": "parcel src/index.html"
@@ -14,6 +15,7 @@
     "@types/react-dom": "^16.9.6",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-clean-dist": "^0.0.6",
+    "parcel-plugin-static-files-copy": "^2.3.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typescript": "^3.8.3"
