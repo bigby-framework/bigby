@@ -1725,6 +1725,11 @@
     eventemitter3 "^3.1.0"
     url "^0.11.0"
 
+"@rollup/plugin-html@^0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-html/-/plugin-html-0.1.1.tgz#0af548c7bf379a654480f0cbc17697f405a4ac1d"
+  integrity sha512-CSrMUBAsNeQunUStd+H/a4zcrKswJq93XSCcUv8EXyhhDN9Xp4NKuUnag8i0pFvh+nq5Way+OzK6XVcgXR9adg==
+
 "@rollup/pluginutils@^3.0.8":
   version "3.0.9"
   resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-3.0.9.tgz#aa6adca2c45e5a1b950103a999e3cddfe49fd775"
