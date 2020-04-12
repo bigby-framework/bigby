@@ -1,4 +1,4 @@
-import { Behavior, inspect } from "@bigby/core";
+import { Behavior, inspect } from "../core";
 import * as PIXI from "pixi.js";
 import { SelectedEntityController2D } from "./SelectedEntityController2D";
 import { angleToVec2 } from "./vec2";

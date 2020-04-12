@@ -1,4 +1,4 @@
-import { Behavior } from "@bigby/core";
+import { Behavior } from "../core";
 import { Container } from "pixi.js";
 import { Game2D } from "./Game2D";
 

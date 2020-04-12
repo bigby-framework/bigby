@@ -1,4 +1,4 @@
-import { Behavior, inspect } from "@bigby/core";
+import { Behavior, inspect } from "../core";
 import { Game2D, Renderable2D, UI2D } from ".";
 import { Graphics } from "pixi.js";
 import { ViewportController2D } from "./ViewportController2D";

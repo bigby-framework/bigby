@@ -1,7 +1,7 @@
 import { Graphics } from "pixi.js";
-import { Behavior, Entity } from "@bigby/core";
-import { Renderable2D, UI2D } from ".";
-import { signal } from "@bigby/core";
+import { Renderable2D } from "./Renderable2D";
+import { UI2D } from "./UI2D";
+import { Behavior, Entity, signal } from "../core";
 
 export class SelectedEntityController2D extends Behavior {
   static displayName = "SelectedEntityController2D";

@@ -1,4 +1,4 @@
-import { inspect } from "@bigby/core";
+import { inspect } from "../core";
 import * as PIXI from "pixi.js";
 import { Sprite2D } from "./Sprite2D";
 
