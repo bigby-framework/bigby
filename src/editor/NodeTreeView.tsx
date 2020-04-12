@@ -1,10 +1,10 @@
-import { Entity } from "@bigby/core";
+import { Entity } from "../core/Entity";
 import React, { FC } from "react";
 import { useEditorState } from "./state";
 import { Tree, TreeItem } from "./ui";
 import { Area } from "./ui/Area";
 import { useAutomaticRerender } from "./util/useAutomaticRerender";
-import { ViewportController2D, SelectedEntityController2D } from "@bigby/2d";
+import { ViewportController2D, SelectedEntityController2D } from "../game2d";
 
 const EntityTreeItem: FC<{
   entity: Entity;

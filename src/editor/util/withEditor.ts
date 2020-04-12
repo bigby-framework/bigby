@@ -1,4 +1,4 @@
-import { Entity } from "@bigby/core";
+import { Entity } from "../../core/Entity";
 import {
   Game2D,
   Renderable2D,
@@ -6,7 +6,7 @@ import {
   ViewportController2D,
   UI2D,
   SelectedEntityController2D,
-} from "@bigby/2d";
+} from "../../game2d";
 
 export const with2DEditor = (game: Entity) => {
   const editor = new Entity();

@@ -1,6 +1,10 @@
 import _ from "lodash";
-import { Behavior, InspectorProperty } from "@bigby/core";
 import React, { FC } from "react";
+import {
+  Behavior,
+  getInspectorPropertiesFor,
+  InspectorProperty,
+} from "../core";
 import {
   CheckboxInput,
   Description,
@@ -13,7 +17,6 @@ import {
 import styles from "./InspectorView.css";
 import { useEditorState } from "./state";
 import { Area } from "./ui/Area";
-import { getInspectorPropertiesFor } from "@bigby/core";
 
 const DynamicProperty: FC<
   { behavior: Behavior; subLabel?: string } & InspectorProperty

@@ -1,4 +1,4 @@
-import { Entity } from "@bigby/core";
+import { Entity } from "../core/Entity";
 import "normalize.css";
 import React, { FC, useReducer } from "react";
 import "./Application.css";

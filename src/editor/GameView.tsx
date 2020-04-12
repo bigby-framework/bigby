@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useRef } from "react";
 import { useEditorState } from "./state";
-import { Game2D, SelectedEntityController2D } from "@bigby/2d";
+import { Game2D, SelectedEntityController2D } from "../game2d";
 
 import css from "./GameView.css";
 

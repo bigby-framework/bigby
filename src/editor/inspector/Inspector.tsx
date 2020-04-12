@@ -1,5 +1,5 @@
 import _ from "lodash";
-import { Behavior } from "@bigby/core";
+import { Behavior } from "../../core/Behavior";
 import React, { createContext, FC, useContext, useState } from "react";
 import { useAutomaticRerender } from "../util/useAutomaticRerender";
 import css from "./Inspector.css";
