@@ -1,7 +1,7 @@
 {
   "name": "@bigby/math",
   "description": "Math helpers for Bigby projects.",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
