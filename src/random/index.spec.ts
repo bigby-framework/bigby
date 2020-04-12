@@ -1,4 +1,4 @@
-import * as random from "./random";
+import * as random from "./index";
 
 describe(random.number, () => {
   test("returns a random number", () => {
