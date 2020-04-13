@@ -1,7 +1,7 @@
 {
   "name": "@bigby/editor",
   "description": "Editor/Inspector UI for Bigby projects.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
@@ -45,8 +45,8 @@
     "react-dom": "^16.13.1"
   },
   "dependencies": {
-    "@bigby/2d": "^0.5.0",
-    "@bigby/core": "^0.5.0",
+    "@bigby/2d": "^0.5.1",
+    "@bigby/core": "^0.5.1",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "@fortawesome/react-fontawesome": "^0.1.9",

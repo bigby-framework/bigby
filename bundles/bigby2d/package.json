@@ -1,7 +1,7 @@
 {
   "name": "bigby2d",
   "description": "Make 2D games, save the 2D world.",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
@@ -28,10 +28,10 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/2d": "^0.5.0",
-    "@bigby/2d-physics": "^0.5.0",
-    "@bigby/core": "^0.5.0",
-    "@bigby/math": "^0.5.0",
-    "@bigby/random": "^0.5.1"
+    "@bigby/2d": "^0.5.1",
+    "@bigby/2d-physics": "^0.5.1",
+    "@bigby/core": "^0.5.1",
+    "@bigby/math": "^0.5.1",
+    "@bigby/random": "^0.5.2"
   }
 }
