@@ -1,8 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const { TypedCssModulesPlugin } = require("typed-css-modules-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -14,18 +12,7 @@ module.exports = {
   module: {
     rules: [
       { test: /\.tsx?$/, use: "ts-loader" },
-      {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              modules: true,
-            },
-          },
-        ],
-      },
+      { test: /\.css$/, use: ["style-loader", "css-loader"] },
     ],
   },
   resolve: {
@@ -36,16 +23,11 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new TypedCssModulesPlugin({
-      globPattern: "src/**/*.css",
-      camelCase: true,
-    }),
     new CopyPlugin([{ from: "assets", to: "assets" }]),
     new HtmlWebpackPlugin({
       template: "src/index.html",
       title: "Bigby Sample Game",
     }),
-    new MiniCssExtractPlugin(),
   ],
   optimization: {
     splitChunks: {
