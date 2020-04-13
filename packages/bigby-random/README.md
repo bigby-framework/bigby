@@ -1,3 +1,3 @@
-# @bigby/math
+# @bigby/random
 
-A collection of math utility modules for building games with the Bigby Framework. :)
+A collection of random number generation helpers.
