@@ -12,6 +12,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn lerna bootstrap && yarn run watch:all",
+    "release": "yarn publish:all",
     "clean:all": "lerna run --parallel clean",
     "watch:all": "lerna run --parallel watch",
     "build:all": "lerna run --stream build",
