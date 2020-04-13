@@ -1,9 +1,13 @@
-**/dist/
+# Ignore installed dependencies
 **/node_modules/
-**/docs
 
-# Ignore macOS' lovaley and omnipresent .DS_Store
-.DS_Store
+# Build artifacts
+**/docs/
+**/dist/
+**/.cache/
+
+# Ignore macOS' lovaly and omnipresent .DS_Store
+.DS_Store/
 
 # Ignore all log files, everywhere
 *.log
