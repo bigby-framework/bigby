@@ -2,6 +2,9 @@ import * as uuid from "uuid";
 import { Behavior, IBehaviorConstructor } from "./Behavior";
 import { IFinderFunctions } from "./IFinderFunctions";
 
+/**
+ * @category Core
+ */
 export class Entity implements IFinderFunctions {
   static defaultName = "Entity";
 

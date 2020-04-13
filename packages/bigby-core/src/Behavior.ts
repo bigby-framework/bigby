@@ -14,6 +14,13 @@ export interface IBehaviorConstructor<
 
 type BehaviorProperties = { [key: string]: any };
 
+/**
+ * Bigby games are built from two primary components: Entities and Behaviors. Entities define _things_ that appear in your game; Behaviors define
+ * how these things _behave_. Behaviors are implemented as classes that inherit from [[Behavior]], this class.
+ *
+ * @category Core
+ * @typeparam TProperties This (optional) type describes the behavior properties that can be set when adding an instance of this behavior to an entity using [[Entity.addBehavior]].
+ */
 export abstract class Behavior<
   TProperties extends BehaviorProperties = BehaviorProperties
 > implements IFinderFunctions {
