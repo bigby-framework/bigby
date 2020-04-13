@@ -14,6 +14,9 @@ export default {
       format: "es", // the preferred format
     },
   ],
+  watch: {
+    clearScreen: false,
+  },
   plugins: [
     typescript({ tsconfig: "tsconfig.build.json" }),
     postcss({

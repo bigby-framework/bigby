@@ -13,6 +13,9 @@ export default {
       format: "es",
     },
   ],
+  watch: {
+    clearScreen: false,
+  },
   plugins: [typescript({ tsconfig: "tsconfig.build.json" })],
   external: [
     "@bigby/core",
