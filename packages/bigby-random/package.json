@@ -1,7 +1,7 @@
 {
   "name": "@bigby/random",
   "description": "Random number helpers for the Bigby Framework.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
