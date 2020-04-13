@@ -20,7 +20,7 @@
     "watch": "rollup -cw",
     "prepublishOnly": "yarn build",
     "test": "",
-    "docs": "typedoc src/index.ts"
+    "docs": "typedoc src/"
   },
   "devDependencies": {
     "rollup": "^2.6.1",

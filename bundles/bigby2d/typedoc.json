@@ -1,0 +1,7 @@
+{
+  "mode": "file",
+  "out": "docs",
+  "excludeExternals": true,
+  "excludeNotExported": true,
+  "stripInternal": true
+}

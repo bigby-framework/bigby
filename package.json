@@ -16,7 +16,8 @@
     "watch:all": "lerna run --parallel watch",
     "build:all": "lerna run --stream build",
     "test:all": "jest",
-    "publish:all": "lerna publish"
+    "publish:all": "lerna publish",
+    "docs:all": "lerna run --parallel docs"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
