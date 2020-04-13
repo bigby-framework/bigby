@@ -14,5 +14,5 @@ export default {
     },
   ],
   plugins: [typescript({ tsconfig: "tsconfig.build.json" })],
-  external: [],
+  external: ["@bigby/core", "@bigby/2d"],
 };

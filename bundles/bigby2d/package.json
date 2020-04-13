@@ -1,6 +1,6 @@
 {
-  "name": "bigby",
-  "description": "Make games, save the world.",
+  "name": "bigby2d",
+  "description": "Make 2D games, save the 2D world.",
   "version": "0.5.1",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",

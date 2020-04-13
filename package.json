@@ -2,7 +2,8 @@
   "name": "bigby-monorepo",
   "private": true,
   "workspaces": [
-    "packages/*"
+    "packages/*",
+    "bundles/*"
   ],
   "version": "0.0.1",
   "main": "index.js",
