@@ -2,7 +2,7 @@
 
 ## Make games, save the world. :)
 
-[![CI](https://github.com/bigby-framework/bigby/workflows/CI/badge.svg)](https://github.com/bigby-framework/bigby/actions) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
+![npm](https://img.shields.io/npm/v/bigby) [![CI](https://github.com/bigby-framework/bigby/workflows/CI/badge.svg)](https://github.com/bigby-framework/bigby/actions) [![lerna](https://img.shields.io/badge/maintained%20with-lerna-cc00ff.svg)](https://lerna.js.org/)
 
 ### Running the sample game project
 
