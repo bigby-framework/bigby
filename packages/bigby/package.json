@@ -1,7 +1,7 @@
 {
   "name": "bigby",
   "description": "Make games, save the world.",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
