@@ -16,8 +16,9 @@
     "access": "public"
   },
   "scripts": {
-    "build": "rm -rf .dist/ && tsc -p tsconfig.build.json",
-    "watch": "rm -rf .dist/ && tsc -p tsconfig.build.json --watch",
+    "clean": "rm -rf ./dist",
+    "build": "tsc -p tsconfig.build.json",
+    "watch": "tsc -p tsconfig.build.json --watch",
     "prepublishOnly": "yarn build",
     "test": "jest",
     "docs": "typedoc src/index.ts"
