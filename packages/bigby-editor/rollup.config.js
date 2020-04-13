@@ -6,12 +6,12 @@ export default {
   input: "src/index.ts",
   output: [
     {
-      file: pkg.main,
-      format: "cjs",
-    },
-    {
       file: pkg.module,
       format: "es", // the preferred format
+    },
+    {
+      file: pkg.main,
+      format: "cjs",
     },
   ],
   watch: {
