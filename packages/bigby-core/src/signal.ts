@@ -1,3 +1,4 @@
+/** @internal */
 type SignalHandler<T> = (payload: T) => void;
 
 export const signal = <T = null>() => {

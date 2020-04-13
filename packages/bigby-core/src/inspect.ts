@@ -1,6 +1,7 @@
 import { capitalCase } from "change-case";
 import { Behavior } from "./Behavior";
 
+/** @internal */
 export type InspectorProperty = {
   path: string;
   label: string;
@@ -8,11 +9,15 @@ export type InspectorProperty = {
   options?: { [key: string]: any };
 };
 
+/** @internal */
 let inspectorProperties = new Array<
   { constructor: Function } & InspectorProperty
 >();
 
-/* Returns a list of inspector properties for the specified constructor. */
+/**
+ * Returns a list of inspector properties for the specified constructor.
+ * @internal
+ * */
 export const getInspectorPropertiesFor = (constructor: Function) =>
   inspectorProperties.filter((ip) => ip.constructor === constructor);
 

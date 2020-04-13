@@ -3,6 +3,10 @@ import { Entity } from "./Entity";
 import { IFinderFunctions } from "./IFinderFunctions";
 import { signal } from "./signal";
 
+/**
+ * @internal
+ * Utility interface that describes the constructor function (class) for a [[Behavior]].
+ */
 export interface IBehaviorConstructor<
   T extends Behavior<U> = Behavior<any>,
   U = any
@@ -12,6 +16,9 @@ export interface IBehaviorConstructor<
   };
 }
 
+/**
+ * @internal
+ */
 type BehaviorProperties = { [key: string]: any };
 
 /**

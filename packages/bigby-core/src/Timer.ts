@@ -2,11 +2,9 @@ import { Behavior } from "./Behavior";
 import { signal } from "./signal";
 import { inspect } from "./inspect";
 
-export interface ITimer {
+export class Timer extends Behavior<{
   duration: number;
-}
-
-export class Timer extends Behavior<ITimer> implements ITimer {
+}> {
   static displayName = "Timer";
   static icon = "⏰";
   static description =
