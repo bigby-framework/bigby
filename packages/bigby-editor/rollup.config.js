@@ -28,6 +28,7 @@ export default {
   external: [
     "normalize.css",
     "react",
+    "react-dom",
     "@bigby/core",
     "@bigby/2d",
     "lodash",

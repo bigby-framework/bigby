@@ -1,15 +1,11 @@
-import { Application, with2DEditor } from "@bigby/editor";
-import * as React from "react";
-import * as ReactDOM from "react-dom";
 import game from "./game";
 import ship from "./ship";
-
-/* Get app element */
-const el = document.getElementById("app");
+import { startEditor } from "@bigby/editor";
 
 /* Set up game */
-const root = game("Bigby Sample Game", el);
-root.addChild(ship({ position: { x: 200, y: 200 } }));
+const root = game.create("Bigby Sample Game");
+root.addChild(ship.create({ position: { x: 200, y: 200 }, rotSpeed: 100 }));
+root.addChild(ship.create({ position: { x: 400, y: 300 }, rotSpeed: -250 }));
 
-/* Let's get this thing on the road */
-ReactDOM.render(<Application root={with2DEditor(root)} />, el);
+/* Start the Bigby Editor UI with the game we've just set up */
+startEditor(document.getElementById("app"), root);
