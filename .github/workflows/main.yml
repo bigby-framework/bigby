@@ -12,14 +12,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Restore node_modules from cache
-        uses: actions/cache@master
-        with:
-          path: |
-            .yarn
-            node_modules
-            */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      # - name: Restore node_modules from cache
+      #   uses: actions/cache@master
+      #   with:
+      #     path: |
+      #       node_modules
+      #       */*/node_modules
+      #     key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
 
       - name: Install dependencies
         run: yarn install
