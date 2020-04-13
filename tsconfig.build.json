@@ -19,10 +19,6 @@
     "jsx": "react",
     "preserveWatchOutput": true
   },
-  "typedocOptions": {
-    "mode": "library",
-    "out": "docs"
-  },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
 }
