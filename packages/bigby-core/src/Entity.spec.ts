@@ -1,7 +1,8 @@
 import { Entity } from "./Entity";
 
-describe(Entity, () => {
+describe("Entity", () => {
   test("dummy test", () => {
-    expect(1 + 2).toBe(333 / 111);
+    const entity = new Entity("foobar");
+    expect(entity.name).toBe("foobar");
   });
 });
