@@ -11,6 +11,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn run watch:all",
+    "clean:all": "lerna run --parallel clean",
     "watch:all": "lerna run --parallel watch",
     "build:all": "lerna run --stream build",
     "test:all": "jest",

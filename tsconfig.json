@@ -2,9 +2,6 @@
   "extends": "./tsconfig.build.json",
 
   "compilerOptions": {
-    "baseUrl": ".",
-    "paths": {
-      "@bigby/*": ["packages/*/src"]
-    }
+    "baseUrl": "."
   }
 }
