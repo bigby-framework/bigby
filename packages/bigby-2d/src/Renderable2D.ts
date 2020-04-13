@@ -42,19 +42,19 @@ export class Renderable2D extends Behavior<IRenderable2D>
     this.container.pivot.set(x, y);
   }
 
-  get rotation() {
-    return this.container.rotation;
-  }
-  set rotation(radians) {
-    this.container.rotation = radians;
-  }
-
   @inspect("Rotation")
-  get angle() {
+  get rotation() {
     return this.container.angle;
   }
-  set angle(degrees) {
+  set rotation(degrees) {
     this.container.angle = degrees;
+  }
+
+  get rotationRadians() {
+    return this.container.rotation;
+  }
+  set rotationRadians(radians) {
+    this.container.rotation = radians;
   }
 
   @inspect("Z-Index")

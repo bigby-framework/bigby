@@ -6,6 +6,6 @@ export default ({ position }: { position: IVec2 }) => {
   ship.icon = "🕹";
   ship.addBehavior(Renderable2D, { position });
   ship.addBehavior(Sprite2D, { uri: "/assets/lemming.png" });
-  ship.addBehavior(AutoRotate2D, { speed: Math.PI });
+  ship.addBehavior(AutoRotate2D, { speed: 180 });
   return ship;
 };
