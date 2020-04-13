@@ -14,5 +14,11 @@ export default {
     },
   ],
   plugins: [typescript({ tsconfig: "tsconfig.build.json" })],
-  external: ["@bigby/core", "@bigby/2d"],
+  external: [
+    "@bigby/core",
+    "@bigby/2d",
+    "@bigby/2d-physics",
+    "@bigby/random",
+    "@bigby/math",
+  ],
 };
