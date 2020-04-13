@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "bundles/*"
+    "bundles/*",
+    "examples/*"
   ],
   "version": "0.0.1",
   "main": "index.js",
