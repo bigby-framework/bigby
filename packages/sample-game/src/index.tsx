@@ -9,7 +9,7 @@ const el = document.getElementById("app");
 
 /* Set up game */
 const root = game("Bigby Sample Game", el);
-root.addChild(ship());
+root.addChild(ship({ position: { x: 200, y: 200 } }));
 
 /* Let's get this thing on the road */
 ReactDOM.render(<Application root={with2DEditor(root)} />, el);
