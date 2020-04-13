@@ -1,1 +1,1 @@
-export * from "@babel/core";
+export * from "@bigby/core";

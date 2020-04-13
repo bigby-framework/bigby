@@ -6,8 +6,7 @@
   "license": "MIT",
   "repository": "github:bigby-framework/bigby",
   "main": "dist/index.js",
-  "bundle": "dist/index.js",
-  "module": "dist/index.js",
+  "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
@@ -17,14 +16,15 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "tsc -p tsconfig.build.json",
-    "watch": "tsc -p tsconfig.build.json --watch",
+    "build": "rollup -c",
+    "watch": "rollup -cw",
     "prepublishOnly": "yarn build",
     "test": "",
     "docs": "typedoc src/index.ts"
   },
   "devDependencies": {
     "rollup": "^2.6.1",
+    "rollup-plugin-typescript2": "^0.27.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
