@@ -1,0 +1,33 @@
+{
+  "name": "bigby",
+  "description": "Make games, save the world.",
+  "version": "0.5.0",
+  "author": "Hendrik Mans <hendrik@mans.de>",
+  "license": "MIT",
+  "repository": "github:bigby-framework/bigby",
+  "main": "dist/index.js",
+  "bundle": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "tsc -p tsconfig.build.json",
+    "watch": "tsc -p tsconfig.build.json --watch",
+    "prepublishOnly": "yarn build",
+    "test": "",
+    "docs": "typedoc src/index.ts"
+  },
+  "devDependencies": {
+    "rollup": "^2.6.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@bigby/core": "^0.5.0"
+  }
+}
