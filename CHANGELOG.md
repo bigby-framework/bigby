@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- @bigby/cli module, providing a convenient `bigby` CLI tool
 - @bigby/editor: provide `startEditor` convenience function
 
 ## 0.5.10
