@@ -1,4 +1,5 @@
 import path from "path";
+import webpack from "webpack";
 
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
@@ -7,7 +8,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 export const webpackConfiguration = () => {
   const cwd = process.cwd();
 
-  return {
+  return <webpack.Configuration>{
     entry: path.resolve(cwd, "./game/index.js"),
     mode: "development",
     output: {
