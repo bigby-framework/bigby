@@ -4,7 +4,7 @@ import { webpackConfiguration } from "../../webpack/configuration";
 import handler from "../../webpack/handler";
 
 export default () => {
-  consola.log("Building Bigby game");
+  consola.info("Building Bigby game");
 
   const config = webpackConfiguration();
   const compiler = webpack(config);
