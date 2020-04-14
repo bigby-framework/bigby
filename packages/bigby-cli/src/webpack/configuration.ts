@@ -9,9 +9,9 @@ export const create = () => {
   const cwd = process.cwd();
 
   return <webpack.Configuration>{
-    // entry: path.resolve(__dirname, "../entrypoint.js"),
-    entry: path.resolve(cwd, "./game/index.ts"),
+    entry: path.resolve(__dirname, "../entrypoint.js"),
     mode: "development",
+    devtool: "inline-source-map",
     output: {
       path: path.resolve(cwd, "./dist"),
       filename: "[name].bundle.js",
