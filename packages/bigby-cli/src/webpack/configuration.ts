@@ -26,14 +26,13 @@ export const webpackConfiguration = () => {
         "~": path.resolve(cwd, "./game"),
       },
     },
-    // plugins: [
-    //   // new CleanWebpackPlugin(),
-    //   // new CopyPlugin([{ from: "assets", to: "assets" }]),
-    //   // new HtmlWebpackPlugin({
-    //   //   template: "src/index.html",
-    //   //   title: "Bigby Sample Game",
-    //   // }),
-    // ],
+    plugins: [
+      // new CleanWebpackPlugin(),
+      // new CopyPlugin([{ from: "assets", to: "assets" }]),
+      new HtmlWebpackPlugin({
+        title: "Bigby Game",
+      }),
+    ],
     // optimization: {
     //   splitChunks: {
     //     chunks: "all",
