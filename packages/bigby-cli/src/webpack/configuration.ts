@@ -4,6 +4,7 @@ import webpack from "webpack";
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const WebpackBar = require("webpackbar");
 
 export const create = () => {
   const cwd = process.cwd();
@@ -29,6 +30,7 @@ export const create = () => {
       },
     },
     plugins: [
+      new WebpackBar(),
       new CleanWebpackPlugin(),
       new CopyPlugin([{ from: "assets", to: "assets" }]),
       new HtmlWebpackPlugin({
