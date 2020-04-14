@@ -1,6 +1,7 @@
 import { program } from "commander";
 import pkg from "./pkg";
 import commands from "./commands";
+import banner from "./banner";
 
 program.version(pkg.version);
 
@@ -19,5 +20,6 @@ program
   .action(commands.build);
 
 export const run = () => {
+  banner();
   program.parse(process.argv);
 };
