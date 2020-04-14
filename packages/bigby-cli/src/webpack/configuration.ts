@@ -27,7 +27,7 @@ export const create = () => {
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
       alias: {
-        "~": cwd,
+        "@": cwd,
       },
     },
     plugins: [
