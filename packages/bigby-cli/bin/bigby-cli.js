@@ -1,2 +1,3 @@
 #!/usr/bin/env node
-console.log("hi?!");
+var cli = require("../dist/cli.js");
+cli.run();
