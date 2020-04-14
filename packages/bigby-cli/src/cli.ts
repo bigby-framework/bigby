@@ -16,6 +16,7 @@ program
 
 program
   .command("build")
+  .option("-p, --production", "Build for production")
   .description("Builds your game for publishing")
   .action(commands.build);
 

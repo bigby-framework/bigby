@@ -45,5 +45,17 @@ export const create = () => {
         chunks: "all",
       },
     },
+    performance: {
+      maxEntrypointSize: 1000000,
+      maxAssetSize: 1000000,
+    },
   };
+};
+
+export const setProduction = (
+  config: webpack.Configuration,
+  production = false
+) => {
+  config.mode = production ? "production" : "development";
+  config.devtool = production ? false : "inline-source-map";
 };
