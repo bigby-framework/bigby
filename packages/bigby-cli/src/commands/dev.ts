@@ -16,6 +16,7 @@ export default ({ bind = "localhost", port = 4000 }) => {
     inline: true,
     contentBase: "www",
     stats: { colors: true },
+    overlay: true,
   };
 
   const server = new WebpackDevServer(compiler, options);
