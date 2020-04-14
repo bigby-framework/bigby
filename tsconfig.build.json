@@ -19,7 +19,8 @@
     "experimentalDecorators": true,
     "jsx": "react",
     "preserveWatchOutput": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
