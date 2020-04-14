@@ -1,12 +1,12 @@
 import consola from "consola";
 import webpack from "webpack";
 import WebpackDevServer from "webpack-dev-server";
-import { webpackConfiguration } from "../../webpack/configuration";
+import * as configuration from "../../webpack/configuration";
 
 export default ({ bind = "localhost", port = 4000 }) => {
   consola.info(`Starting Bigby development server at http://${bind}:${port}`);
 
-  const config = webpackConfiguration();
+  const config = configuration.create();
   const compiler = webpack(config);
 
   const options = {
