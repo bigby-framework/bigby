@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- @bigby/core: `Entity.from` factory that will create a complete entity (including behaviors) from data.
 - @bigby/cli module, providing a convenient `bigby` CLI tool
 - @bigby/editor: provide `startEditor` convenience function
 
