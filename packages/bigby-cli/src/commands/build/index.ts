@@ -14,5 +14,5 @@ export default () => {
   compiler.run(handler);
 
   /* Done */
-  spinner.stop();
+  spinner.succeed("Done building!");
 };
