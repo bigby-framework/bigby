@@ -1,3 +1,9 @@
-# @bigby/random
+# @bigby/cli
 
-A collection of random number generation helpers.
+Bigby CLI tool.
+
+### Libraries used
+
+- https://www.npmjs.com/package/commander
+- https://www.npmjs.com/package/consola
+- https://www.npmjs.com/package/ora
