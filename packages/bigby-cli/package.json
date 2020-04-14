@@ -35,8 +35,11 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "clean-webpack-plugin": "^3.0.0",
     "commander": "^5.0.0",
     "consola": "^2.11.3",
+    "copy-webpack-plugin": "^5.1.1",
+    "html-webpack-plugin": "^4.2.0",
     "webpack": "^4.42.1"
   }
 }
