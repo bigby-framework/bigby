@@ -1,27 +1,26 @@
 import { AutoRotate2D, Game2D, Renderable2D, Sprite2D } from "@bigby/2d";
-import { Entity } from "@bigby/core";
+import { Entity, EntityFactory, EntityData } from "@bigby/core";
 
 /* Ship factory */
-const ship = ({ position = { x: 0, y: 0 }, rotSpeed = 0 }) =>
-  Entity.from({
-    name: "Spaceship",
-    icon: "🚀",
-    behaviors: [
-      [Renderable2D, { position }],
-      [Sprite2D, { uri: "/assets/lemming.png" }],
-      [AutoRotate2D, { speed: rotSpeed }],
-    ],
-  });
-
-/* Create game */
-const game = Entity.from({
-  name: "Bigby Example Game",
-  behaviors: [Game2D, Renderable2D],
+const ship: EntityFactory = ({ position = { x: 0, y: 0 }, rotSpeed = 0 }) => ({
+  name: "Spaceship",
+  icon: "🚀",
+  behaviors: [
+    [Renderable2D, { position }],
+    [Sprite2D, { uri: "/assets/lemming.png" }],
+    [AutoRotate2D, { speed: rotSpeed }],
+  ],
 });
 
-/* Set up game */
-game.addChild(ship({ position: { x: 200, y: 200 }, rotSpeed: 120 }));
-game.addChild(ship({ position: { x: 400, y: 300 }, rotSpeed: -250 }));
-game.addChild(ship({ position: { x: 200, y: 400 }, rotSpeed: -250 }));
+/* Game data */
+const gameData: EntityData = {
+  name: "Bigby Example Game",
+  behaviors: [Game2D, Renderable2D],
+  children: [
+    ship({ position: { x: 200, y: 200 }, rotSpeed: 120 }),
+    ship({ position: { x: 400, y: 300 }, rotSpeed: -250 }),
+    ship({ position: { x: 200, y: 400 }, rotSpeed: -250 }),
+  ],
+};
 
-export default game;
+export default Entity.from(gameData);

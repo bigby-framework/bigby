@@ -6,15 +6,20 @@ import {
 } from "./Behavior";
 import { IFinderFunctions } from "./IFinderFunctions";
 
-type BehaviorData =
+export type BehaviorData =
   | [IBehaviorConstructor, IBehaviorProperties?]
   | IBehaviorConstructor;
 
-type EntityData = {
+export type EntityData = {
   name: string;
   icon?: string;
-  behaviors: BehaviorData[];
+  behaviors?: BehaviorData[];
+  children?: EntityData[];
 };
+
+export type EntityFactory = (...args: any[]) => EntityData;
+
+export type BehaviorFactory = (...args: any[]) => BehaviorData;
 
 /**
  * @category Core
@@ -162,13 +167,24 @@ export class Entity implements IFinderFunctions {
 
     e.icon = data.icon || e.icon;
 
-    data.behaviors.forEach((bd) => {
-      if (Array.isArray(bd)) {
-        e.addBehavior(...bd);
-      } else {
-        e.addBehavior(bd);
-      }
-    });
+    /* Create behaviors */
+    if (data.behaviors) {
+      data.behaviors.forEach((bd) => {
+        if (Array.isArray(bd)) {
+          e.addBehavior(...bd);
+        } else {
+          e.addBehavior(bd);
+        }
+      });
+    }
+
+    /* Create children */
+    if (data.children) {
+      data.children.forEach((ed) => {
+        e.addChild(Entity.from(ed));
+      });
+    }
+
     return e;
   }
 }
