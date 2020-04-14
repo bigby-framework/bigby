@@ -18,7 +18,8 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "jsx": "react",
-    "preserveWatchOutput": true
+    "preserveWatchOutput": true,
+    "resolveJsonModule": true
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
