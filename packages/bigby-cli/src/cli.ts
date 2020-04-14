@@ -5,6 +5,8 @@ import commands from "./commands";
 program.version(pkg.version);
 program
   .command("start")
+  .option("-p, --port <port>", "Port to bind to (default: 4000)")
+  .option("-b, --bind <host>", "Host to bind to (default: localhost)")
   .description("Starts the Bigby development server and runs your game")
   .action(commands.start);
 

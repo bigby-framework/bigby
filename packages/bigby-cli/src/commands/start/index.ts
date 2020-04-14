@@ -3,8 +3,8 @@ import webpack from "webpack";
 import WebpackDevServer from "webpack-dev-server";
 import { webpackConfiguration } from "../../webpack/configuration";
 
-export default () => {
-  consola.info("Starting Bigby development server");
+export default ({ bind = "localhost", port = 4000 }) => {
+  consola.info(`Starting Bigby development server at http://${bind}:${port}`);
 
   const config = webpackConfiguration();
   const compiler = webpack(config);
@@ -18,5 +18,5 @@ export default () => {
   };
 
   const server = new WebpackDevServer(compiler, options);
-  server.listen(4000, "localhost");
+  server.listen(port, bind);
 };
