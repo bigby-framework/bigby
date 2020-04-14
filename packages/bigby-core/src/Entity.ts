@@ -6,7 +6,9 @@ import {
 } from "./Behavior";
 import { IFinderFunctions } from "./IFinderFunctions";
 
-type BehaviorData = [IBehaviorConstructor, IBehaviorProperties?];
+type BehaviorData =
+  | [IBehaviorConstructor, IBehaviorProperties?]
+  | IBehaviorConstructor;
 
 type EntityData = {
   name: string;
@@ -160,8 +162,12 @@ export class Entity implements IFinderFunctions {
 
     e.icon = data.icon || e.icon;
 
-    data.behaviors.forEach(([constructor, props]) => {
-      e.addBehavior(constructor, props);
+    data.behaviors.forEach((bd) => {
+      if (Array.isArray(bd)) {
+        e.addBehavior(...bd);
+      } else {
+        e.addBehavior(bd);
+      }
     });
     return e;
   }

@@ -16,7 +16,7 @@ const ship = ({ position = { x: 0, y: 0 }, rotSpeed = 0 }) =>
 /* Create game */
 const game = Entity.from({
   name: "Bigby Example Game",
-  behaviors: [[Game2D], [Renderable2D]],
+  behaviors: [Game2D, Renderable2D],
 });
 
 /* Set up game */
