@@ -3,6 +3,7 @@ import pkg from "./pkg";
 import commands from "./commands";
 
 program.version(pkg.version);
+
 program
   .command("dev")
   .option("-p, --port <port>", "Port to bind to (default: 4000)")
