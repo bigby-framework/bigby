@@ -1,3 +1,5 @@
+import consola from "consola";
+
 export const run = () => {
-  console.log("hi from run!");
+  consola.info("hi from consola");
 };
