@@ -1,4 +1,4 @@
-import start from "./start";
+import serve from "./serve";
 import build from "./build";
 
-export default { start, build };
+export default { serve, build };

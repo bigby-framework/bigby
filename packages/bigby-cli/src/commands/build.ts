@@ -1,7 +1,7 @@
 import consola from "consola";
 import webpack from "webpack";
-import * as configuration from "../../webpack/configuration";
-import handler from "../../webpack/handler";
+import * as configuration from "../webpack/configuration";
+import handler from "../webpack/handler";
 import ora from "ora";
 
 export default () => {
