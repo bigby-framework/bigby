@@ -7,6 +7,7 @@ program
   .command("dev")
   .option("-p, --port <port>", "Port to bind to (default: 4000)")
   .option("-b, --bind <host>", "Host to bind to (default: localhost)")
+  .option("-o, --open", "Open the game in your browser")
   .description("Starts the Bigby development server and runs your game")
   .action(commands.dev);
 
