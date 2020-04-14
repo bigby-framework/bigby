@@ -1,7 +1,7 @@
 import consola from "consola";
 import webpack from "webpack";
+import WebpackDevServer from "webpack-dev-server";
 import { webpackConfiguration } from "../../webpack/configuration";
-import handler from "../../webpack/handler";
 
 export default () => {
   consola.info("Starting Bigby development server");
@@ -9,5 +9,14 @@ export default () => {
   const config = webpackConfiguration();
   const compiler = webpack(config);
 
-  compiler.watch({}, handler);
+  const options = {
+    publicPath: config.output.publicPath,
+    hot: true,
+    inline: true,
+    contentBase: "www",
+    stats: { colors: true },
+  };
+
+  const server = new WebpackDevServer(compiler, options);
+  server.listen(4000, "localhost");
 };
