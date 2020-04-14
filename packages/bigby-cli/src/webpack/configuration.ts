@@ -28,16 +28,16 @@ export const webpackConfiguration = () => {
       },
     },
     plugins: [
-      // new CleanWebpackPlugin(),
-      // new CopyPlugin([{ from: "assets", to: "assets" }]),
+      new CleanWebpackPlugin(),
+      new CopyPlugin([{ from: "assets", to: "assets" }]),
       new HtmlWebpackPlugin({
         title: "Bigby Game",
       }),
     ],
-    // optimization: {
-    //   splitChunks: {
-    //     chunks: "all",
-    //   },
-    // },
+    optimization: {
+      splitChunks: {
+        chunks: "all",
+      },
+    },
   };
 };
