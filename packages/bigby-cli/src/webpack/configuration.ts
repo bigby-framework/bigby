@@ -10,6 +10,7 @@ export const create = () => {
   const cwd = process.cwd();
 
   return <webpack.Configuration>{
+    context: path.resolve(cwd),
     entry: path.resolve(__dirname, "../entrypoint.js"),
     mode: "development",
     devtool: "inline-source-map",
@@ -26,7 +27,7 @@ export const create = () => {
     resolve: {
       extensions: [".tsx", ".ts", ".js"],
       alias: {
-        "~": path.resolve(cwd, "./game"),
+        "~": cwd,
       },
     },
     plugins: [
