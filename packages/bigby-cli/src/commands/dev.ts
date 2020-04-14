@@ -10,6 +10,7 @@ export default ({ bind = "localhost", port = 4000 }) => {
   const compiler = webpack(config);
 
   const options = {
+    open: true,
     publicPath: config.output.publicPath,
     hot: true,
     inline: true,

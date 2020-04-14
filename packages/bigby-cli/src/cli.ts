@@ -4,11 +4,11 @@ import commands from "./commands";
 
 program.version(pkg.version);
 program
-  .command("serve")
+  .command("dev")
   .option("-p, --port <port>", "Port to bind to (default: 4000)")
   .option("-b, --bind <host>", "Host to bind to (default: localhost)")
   .description("Starts the Bigby development server and runs your game")
-  .action(commands.serve);
+  .action(commands.dev);
 
 program
   .command("build")
