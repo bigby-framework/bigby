@@ -1,6 +1,18 @@
 import * as uuid from "uuid";
-import { Behavior, IBehaviorConstructor } from "./Behavior";
+import {
+  Behavior,
+  IBehaviorConstructor,
+  IBehaviorProperties,
+} from "./Behavior";
 import { IFinderFunctions } from "./IFinderFunctions";
+
+type BehaviorData = [IBehaviorConstructor, IBehaviorProperties?];
+
+type EntityData = {
+  name: string;
+  icon?: string;
+  behaviors: BehaviorData[];
+};
 
 /**
  * @category Core
@@ -141,5 +153,16 @@ export class Entity implements IFinderFunctions {
 
     /* kbye */
     this.parent.removeChild(this);
+  }
+
+  public static from(data: EntityData) {
+    const e = new Entity(data.name);
+
+    e.icon = data.icon || e.icon;
+
+    data.behaviors.forEach(([constructor, props]) => {
+      e.addBehavior(constructor, props);
+    });
+    return e;
   }
 }

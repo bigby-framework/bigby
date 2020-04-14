@@ -19,7 +19,11 @@ export interface IBehaviorConstructor<
 /**
  * @internal
  */
-type BehaviorProperties = { [key: string]: any };
+type BehaviorProperties = IBehaviorProperties;
+
+export interface IBehaviorProperties {
+  [key: string]: any;
+}
 
 /**
  * Bigby games are built from two primary components: Entities and Behaviors. Entities define _things_ that appear in your game; Behaviors define
