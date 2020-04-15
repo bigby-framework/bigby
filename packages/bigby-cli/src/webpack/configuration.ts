@@ -7,10 +7,20 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WebpackBar = require("webpackbar");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
   .BundleAnalyzerPlugin;
+import fs from "fs";
 
 export const create = () => {
   const cwd = process.cwd();
 
+  /* Which files and directories should we copy over? */
+  const directoryExists = (name: string) =>
+    fs.existsSync(path.resolve(cwd, name));
+
+  let copyObjects = new Array<any>();
+  if (directoryExists("assets"))
+    copyObjects.push({ from: "assets", to: "assets" });
+
+  /* Return a webpack configuration object */
   return <webpack.Configuration>{
     context: path.resolve(cwd),
     entry: path.resolve(__dirname, "../entrypoint.js"),
@@ -35,7 +45,7 @@ export const create = () => {
     plugins: [
       new WebpackBar(),
       new CleanWebpackPlugin(),
-      new CopyPlugin([{ from: "assets", to: "assets" }]),
+      new CopyPlugin(copyObjects),
       new HtmlWebpackPlugin({
         title: "Bigby Game",
         template: require("html-webpack-template"),
