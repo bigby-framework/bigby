@@ -1,6 +1,4 @@
 import { Entity, Behavior } from "@bigby/core";
 
-export default {
-  Entity,
-  Behavior,
-};
+export { Entity };
+export { Behavior };
