@@ -1,7 +1,7 @@
 {
   "name": "@bigby/website",
   "private": true,
-  "version": "0.5.12",
+  "version": "0.5.13",
   "main": "index.js",
   "license": "MIT",
   "scripts": {

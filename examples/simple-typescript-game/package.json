@@ -1,7 +1,7 @@
 {
   "name": "simple-bigby-typescript-game",
   "private": true,
-  "version": "1.0.0",
+  "version": "0.5.13",
   "license": "MIT",
   "scripts": {
     "start": "bigby dev --open",
@@ -9,7 +9,7 @@
     "build:production": "bigby build --production --analyze"
   },
   "dependencies": {
-    "bigby": "^0.5.12",
+    "bigby": "^0.5.13",
     "typescript": "^3.8.3"
   }
 }
