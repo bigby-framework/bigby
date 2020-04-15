@@ -4,7 +4,7 @@ import fs from "fs";
 import { GetStaticProps } from "next";
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const readme = fs.readFileSync("../../README.md", "utf8").toString();
+  const readme = fs.readFileSync("../bigby/README.md", "utf8").toString();
 
   return {
     props: { readme },
