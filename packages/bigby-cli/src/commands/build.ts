@@ -4,7 +4,7 @@ import * as configuration from "../webpack/configuration";
 import handler from "../webpack/handler";
 import ora from "ora";
 
-export default ({ production = false }) => {
+export default ({ production = false, analyze = false }) => {
   consola.info("Building Bigby game");
   const spinner = ora("Building...").start();
 
@@ -13,6 +13,9 @@ export default ({ production = false }) => {
 
   /* Set mode */
   configuration.setProduction(config, production);
+
+  /* Enable analyzer */
+  if (analyze) configuration.enableAnalyzer(config);
 
   /* Compile! */
   const compiler = webpack(config);

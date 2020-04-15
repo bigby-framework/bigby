@@ -17,6 +17,7 @@ program
 program
   .command("build")
   .option("-p, --production", "Build for production")
+  .option("-a, --analyze", "Analyze the bundle after building")
   .description("Builds your game for publishing")
   .action(commands.build);
 

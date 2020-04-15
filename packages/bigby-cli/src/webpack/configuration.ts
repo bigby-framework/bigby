@@ -5,6 +5,8 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const WebpackBar = require("webpackbar");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 export const create = () => {
   const cwd = process.cwd();
@@ -58,4 +60,8 @@ export const setProduction = (
 ) => {
   config.mode = production ? "production" : "development";
   config.devtool = production ? false : "inline-source-map";
+};
+
+export const enableAnalyzer = (config: webpack.Configuration) => {
+  config.plugins.push(new BundleAnalyzerPlugin());
 };
