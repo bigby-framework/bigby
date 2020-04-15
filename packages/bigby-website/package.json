@@ -1,0 +1,23 @@
+{
+  "name": "@bigby/website",
+  "private": true,
+  "version": "0.5.12",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build && next export",
+    "deploy": "netlify deploy -p -d out"
+  },
+  "dependencies": {
+    "@mdx-js/loader": "^1.5.8",
+    "@next/mdx": "^9.3.5",
+    "next": "^9.3.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^3.8.3"
+  },
+  "devDependencies": {
+    "netlify-cli": "^2.46.0"
+  }
+}
