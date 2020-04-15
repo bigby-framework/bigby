@@ -1,3 +1,1 @@
-# Bigby
-
-Bigby Main Package.
+../../README.md
