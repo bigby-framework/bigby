@@ -7,10 +7,15 @@
 ### Running the sample game project
 
 ```
+# Initialize the Bigby monorepo
 yarn install
-yarn lerna bootstrap
-cd examples/sample-game
-yarn watch
+yarn bootstrap
+yarn build:all
+
+# Run the example game
+cd examples/simple-typescript-game
+yarn install
+yarn start
 ```
 
 ### Hacking on Bigby
