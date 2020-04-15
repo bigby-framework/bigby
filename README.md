@@ -1,4 +1,4 @@
-![bigby](assets/logo.png)
+![bigby](https://bigby.dev/logo.png)
 
 ## The Adequately Astonishing HTML5 Game Development Framework!
 
