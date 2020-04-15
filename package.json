@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "yarn lerna bootstrap && yarn run watch:all",
-    "ci": "yarn clean:all && yarn build:all && yarn test:all",
+    "ci": "yarn lerna bootstrap && yarn clean:all && yarn build:all && yarn test:all",
     "release": "yarn publish:all",
     "clean:all": "lerna run --parallel clean",
     "watch:all": "lerna run --parallel watch",
