@@ -1,3 +1,60 @@
+:root {
+  --accent-color: plum;
+  --link-color: #c9e;
+}
+
+/* Border Box Sizing */
+* {
+  box-sizing: inherit;
+}
+html,
 body {
-  font: 20px "Helvetica Neue";
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font: 16px/1.5 "Helvetica Neue";
+
+  background-color: #fff;
+  color: #444;
+  padding-bottom: 10em;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+/* Headings */
+h2 {
+  margin-top: 2em;
+  border-bottom: 5px solid var(--accent-color);
+}
+
+h3 {
+  margin-top: 2em;
+  border-bottom: 5px solid #eee;
+}
+
+h2 + h3 {
+  margin-top: 0;
+}
+
+/* Code blocks */
+pre > code {
+  display: block;
+  background-color: #eee;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+/* Layout classes */
+div.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
 }
