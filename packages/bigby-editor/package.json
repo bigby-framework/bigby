@@ -40,10 +40,6 @@
     "typedoc": "^0.17.0-3",
     "typescript": "^3.8.3"
   },
-  "peerDependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
   "dependencies": {
     "@bigby/2d": "^0.5.11",
     "@bigby/core": "^0.5.11",
@@ -54,7 +50,9 @@
     "classnames": "^2.2.6",
     "hotkeys-js": "^3.7.6",
     "lodash": "^4.17.15",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "gitHead": "3641ae8c9868ee03335c008fc5f1200423ca8ca6"
 }
