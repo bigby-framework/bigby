@@ -4,6 +4,7 @@
   "version": "0.5.14",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
+  "homepage": "https://bigby.dev",
   "repository": "bigby-framework/bigby",
   "main": "dist/index.js",
   "bundle": "dist/index.js",

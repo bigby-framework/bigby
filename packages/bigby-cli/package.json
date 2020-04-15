@@ -4,6 +4,7 @@
   "version": "0.5.13",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
+  "homepage": "https://bigby.dev",
   "repository": "bigby-framework/bigby",
   "bin": {
     "bigby": "bin/bigby-cli.js"

@@ -6,7 +6,8 @@
     "examples/*"
   ],
   "version": "0.0.1",
-  "repository": "git@github.com:bigby-framework/bigby.git",
+  "repository": "bigby-framework/bigby.git",
+  "homepage": "https://bigby.dev",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "scripts": {
