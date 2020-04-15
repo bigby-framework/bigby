@@ -19,8 +19,6 @@ export const showStats = (stats: webpack.Stats, quitOnError = true) => {
 
     if (quitOnError) process.exit(1);
   }
-
-  consola.success(`Build completed in ${json.time}ms`);
 };
 
 const handler: webpack.ICompiler.Handler = (err, stats) => {
