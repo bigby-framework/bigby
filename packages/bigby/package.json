@@ -1,7 +1,7 @@
 {
   "name": "bigby",
   "description": "Bigby: the Adequately Astonishing HTML5 Game Framework",
-  "version": "0.5.13",
+  "version": "0.5.14",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "repository": "bigby-framework/bigby",
