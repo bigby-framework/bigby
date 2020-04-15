@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "dev": "bigby dev --open",
+    "start": "bigby dev --open",
     "build": "bigby build",
     "build:production": "bigby build --production --analyze"
   },
