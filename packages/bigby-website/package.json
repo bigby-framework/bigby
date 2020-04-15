@@ -10,14 +10,14 @@
     "deploy": "netlify deploy -p -d out"
   },
   "dependencies": {
-    "@mdx-js/loader": "^1.5.8",
-    "@next/mdx": "^9.3.5",
     "next": "^9.3.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1",
     "typescript": "^3.8.3"
   },
   "devDependencies": {
+    "@types/markdown-it": "^10.0.0",
     "netlify-cli": "^2.46.0"
   }
 }
