@@ -1,7 +1,7 @@
 {
   "name": "@bigby/2d",
   "description": "A collection of Bigby behaviors for building WebGL-accelerated 2D games.",
-  "version": "0.5.13",
+  "version": "0.5.15",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
@@ -34,8 +34,8 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/core": "^0.5.13",
-    "@bigby/math": "^0.5.13",
+    "@bigby/core": "^0.5.15",
+    "@bigby/math": "^0.5.15",
     "pixi.js": "^5.2.1"
   },
   "gitHead": "3641ae8c9868ee03335c008fc5f1200423ca8ca6"
