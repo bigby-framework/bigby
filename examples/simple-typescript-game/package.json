@@ -9,6 +9,7 @@
     "build:production": "bigby build --production --analyze"
   },
   "dependencies": {
-    "bigby": "^0.5.12"
+    "bigby": "^0.5.12",
+    "typescript": "^3.8.3"
   }
 }
