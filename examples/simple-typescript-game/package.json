@@ -1,0 +1,14 @@
+{
+  "name": "simply-bigby-game",
+  "private": true,
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "bigby dev --open",
+    "build": "bigby build",
+    "build:production": "bigby build --production --analyze"
+  },
+  "dependencies": {
+    "bigby": "^0.5.12"
+  }
+}

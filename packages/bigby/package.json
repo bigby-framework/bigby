@@ -1,10 +1,10 @@
 {
-  "name": "@bigby/2d-physics",
-  "description": "A collection of Bigby behaviors for adding RigidBody physics to your 2D game.",
-  "version": "0.5.11",
+  "name": "bigby",
+  "description": "Bigby: the Adequately Astonishing HTML5 Game Framework",
+  "version": "0.5.12",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
-  "repository": "github:bigby-framework/bigby",
+  "repository": "bigby-framework/bigby",
   "main": "dist/index.js",
   "bundle": "dist/index.js",
   "module": "dist/index.js",
@@ -25,18 +25,18 @@
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
-    "canvas": "^2.6.1",
     "jest": "^25.3.0",
-    "jest-environment-jsdom-fourteen": "^1.0.1",
     "ts-jest": "^25.3.1",
     "typedoc": "^0.17.0-3",
     "typescript": "^3.8.3"
   },
   "dependencies": {
     "@bigby/2d": "^0.5.11",
+    "@bigby/2d-physics": "^0.5.11",
+    "@bigby/cli": "^0.5.12",
     "@bigby/core": "^0.5.11",
-    "pixi.js": "^5.2.1",
-    "planck-js": "^0.3.12"
-  },
-  "gitHead": "3641ae8c9868ee03335c008fc5f1200423ca8ca6"
+    "@bigby/editor": "^0.5.12",
+    "@bigby/math": "^0.5.10",
+    "@bigby/random": "^0.5.10"
+  }
 }

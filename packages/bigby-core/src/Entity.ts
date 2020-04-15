@@ -1,6 +1,25 @@
 import * as uuid from "uuid";
-import { Behavior, IBehaviorConstructor } from "./Behavior";
+import {
+  Behavior,
+  IBehaviorConstructor,
+  IBehaviorProperties,
+} from "./Behavior";
 import { IFinderFunctions } from "./IFinderFunctions";
+
+export type BehaviorData =
+  | [IBehaviorConstructor, IBehaviorProperties?]
+  | IBehaviorConstructor;
+
+export type EntityData = {
+  name: string;
+  icon?: string;
+  behaviors?: BehaviorData[];
+  children?: EntityData[];
+};
+
+export type EntityFactory = (...args: any[]) => EntityData;
+
+export type BehaviorFactory = (...args: any[]) => BehaviorData;
 
 /**
  * @category Core
@@ -141,5 +160,31 @@ export class Entity implements IFinderFunctions {
 
     /* kbye */
     this.parent.removeChild(this);
+  }
+
+  public static from(data: EntityData) {
+    const e = new Entity(data.name);
+
+    e.icon = data.icon || e.icon;
+
+    /* Create behaviors */
+    if (data.behaviors) {
+      data.behaviors.forEach((bd) => {
+        if (Array.isArray(bd)) {
+          e.addBehavior(...bd);
+        } else {
+          e.addBehavior(bd);
+        }
+      });
+    }
+
+    /* Create children */
+    if (data.children) {
+      data.children.forEach((ed) => {
+        e.addChild(Entity.from(ed));
+      });
+    }
+
+    return e;
   }
 }
