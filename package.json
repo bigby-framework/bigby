@@ -20,7 +20,7 @@
     "build:all": "lerna run --stream build",
     "test:all": "jest",
     "publish:all": "lerna publish",
-    "docs:all": "lerna run --parallel docs"
+    "docs:all": "lerna run docs"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",

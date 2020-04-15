@@ -29,6 +29,10 @@ a {
   font-weight: bold;
 }
 
+a:hover {
+  background-color: #eee;
+}
+
 /* Headings */
 h2 {
   margin-top: 2em;
