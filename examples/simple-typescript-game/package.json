@@ -1,7 +1,7 @@
 {
   "name": "simple-bigby-typescript-game",
   "private": true,
-  "version": "0.5.15",
+  "version": "0.5.16",
   "license": "MIT",
   "scripts": {
     "start": "yarn watch",
@@ -10,7 +10,7 @@
     "build:production": "bigby build --production --analyze"
   },
   "dependencies": {
-    "bigby": "^0.5.15",
+    "bigby": "^0.5.16",
     "typescript": "^3.8.3"
   }
 }
