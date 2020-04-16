@@ -4,7 +4,14 @@
 
 ## Summary
 
-**Bigby is a JavaScript/TypeScript framework for the rapid development of HTML5 games.** It is currently under heavy development, which is why I'm humbly asking you to not take anything you're seeing in this document too seriously, as the whole project is going to remain very much in flux for a little while longer. If you want to follow development, please follow [@hmans](https://twitter.com/hmans) and/or [@BigbyFramework](https://twitter.com/bigbyframework) on Twitter. Thanks!
+🚧 **WARNING: UNDER CONSTRUCTION!** 🚧
+
+**Bigby is a JavaScript/TypeScript framework for the rapid development of HTML5
+games.** It is currently under heavy development, which is why I'm humbly asking
+you to not take anything you're seeing here too seriously, as the whole project
+is going to remain very much in flux for a little while longer. If you want to
+follow development, please follow [@hmans](https://twitter.com/hmans) and/or
+[@BigbyFramework](https://twitter.com/bigbyframework) on Twitter. Thanks!
 
 ## Resources
 
