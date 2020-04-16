@@ -2,7 +2,7 @@
 
 ![bigby](https://bigby.dev/logo.png)
 
-**The Adequately Astonishing HTML5 Game Development Framework**
+🕹 **The Adequately Astonishing HTML5 Game Development Framework** 🚀
 
 [![npm](https://raster.shields.io/npm/v/bigby.png)](https://www.npmjs.com/package/bigby) [![CI](https://github.com/bigby-framework/bigby/workflows/CI/badge.svg)](https://github.com/bigby-framework/bigby/actions)
 
