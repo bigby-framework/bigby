@@ -1,2 +1,3 @@
-const foo = 123;
-export default foo;
+import Timer from "./Timer";
+
+export { Timer };

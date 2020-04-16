@@ -31,5 +31,7 @@
     "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },
-  "dependencies": {}
+  "dependencies": {
+    "@bigby/core": "^0.5.15"
+  }
 }

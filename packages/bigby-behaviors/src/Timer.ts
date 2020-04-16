@@ -1,8 +1,6 @@
-import { Behavior } from "./Behavior";
-import { signal } from "./signal";
-import { inspect } from "./inspect";
+import { Behavior, inspect, signal } from "@bigby/core";
 
-export class Timer extends Behavior<{
+class Timer extends Behavior<{
   duration: number;
 }> {
   static displayName = "Timer";
@@ -32,3 +30,5 @@ export class Timer extends Behavior<{
     }
   }
 }
+
+export default Timer;

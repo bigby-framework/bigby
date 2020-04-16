@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- @bigby/behaviors: new package that's going to house a collection of behaviors that are useful in any kind of game. The `Timer` behavior has been moved from @bigby/core to this package.
 - @bigby/editor: now automatically installs React as a dependency.
 
 ## 0.5.10
