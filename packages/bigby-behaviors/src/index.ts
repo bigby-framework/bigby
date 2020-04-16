@@ -1,3 +1,4 @@
+import KeyboardInput from "./KeyboardInput";
 import Timer from "./Timer";
 
-export { Timer };
+export { Timer, KeyboardInput };

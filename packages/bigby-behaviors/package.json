@@ -32,6 +32,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/core": "^0.5.15"
+    "@bigby/core": "^0.5.15",
+    "hotkeys-js": "^3.7.6"
   }
 }
