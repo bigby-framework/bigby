@@ -1,5 +1,5 @@
+import { Renderable2D, Sprite2D } from "@bigby/2d";
 import { Entity } from "@bigby/core";
-import { Renderable2D, Sprite2D, AutoRotate2D } from "@bigby/2d";
 import PlayerShipController from "./behaviors/PlayerShipController";
 
 class PlayerShip extends Entity {
@@ -7,7 +7,7 @@ class PlayerShip extends Entity {
   name = "Ship";
   icon = "🚀";
 
-  constructor({ position = { x: 0, y: 0 }, rotSpeed = 0 }) {
+  constructor({ position = { x: 0, y: 0 } }) {
     super();
 
     /* First, let's add the Renderable2D behavior. This allows a Ship instance
@@ -18,6 +18,8 @@ class PlayerShip extends Entity {
     a Sprite2D behavior and pass some options to it. */
     this.addBehavior(Sprite2D, { uri: "/assets/lemming.png" });
 
+    /* Finally, let's add an instance of PlayerShipController, which is a custom
+    behavior implemented within our game (take a look, it's great!) */
     this.addBehavior(PlayerShipController);
   }
 }

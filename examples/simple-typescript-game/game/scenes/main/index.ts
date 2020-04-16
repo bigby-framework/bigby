@@ -7,9 +7,7 @@ class MainScene extends Entity {
   constructor() {
     super("Main Scene");
 
-    this.addChild(
-      new PlayerShip({ position: { x: 200, y: 200 }, rotSpeed: 120 })
-    );
+    this.addChild(new PlayerShip({ position: { x: 200, y: 200 } }));
   }
 }
 
