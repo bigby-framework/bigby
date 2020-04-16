@@ -1,7 +1,8 @@
 import { Entity } from "@bigby/core";
 import { Renderable2D, Sprite2D, AutoRotate2D } from "@bigby/2d";
+import PlayerShipController from "./behaviors/PlayerShipController";
 
-class Ship extends Entity {
+class PlayerShip extends Entity {
   /* Classes derived from Entity can override their name and icon. */
   name = "Ship";
   icon = "🚀";
@@ -17,8 +18,8 @@ class Ship extends Entity {
     a Sprite2D behavior and pass some options to it. */
     this.addBehavior(Sprite2D, { uri: "/assets/lemming.png" });
 
-    this.addBehavior(AutoRotate2D, { speed: rotSpeed });
+    this.addBehavior(PlayerShipController);
   }
 }
 
-export default Ship;
+export default PlayerShip;

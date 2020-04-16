@@ -18,10 +18,16 @@ class ExampleGame extends Entity {
   constructor() {
     super("Example Game");
 
-    /* We can use `addBehavior` to add behaviors to an entity. The first
-    behavior we want to add is `Game2D`, which implements the actual 2D game
-    engine. (Bigby's core framework is engine agnostic; at some point in the
-    future, there will also be a Game3D.) */
+    /*
+    Entities are not expected to implement any logic of their own; they merely
+    act as containers for a collection of behaviors. Any kind of functionality
+    should be implemented as such a behavior, and an entity's constructor
+    typically does little more than add behaviors through the `addBehavior`
+    function.
+
+    The first behavior we want to add is `Game2D`, which implements the actual
+    2D game engine. (Bigby's core framework is engine agnostic; at some point in
+    the future, there will also be a Game3D.) */
     this.addBehavior(Game2D);
 
     /* All entities that intend to render something to the screen are expected
