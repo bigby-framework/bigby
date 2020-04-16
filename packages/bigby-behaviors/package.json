@@ -1,11 +1,11 @@
 {
-  "name": "bigby",
-  "description": "Bigby: the Adequately Astonishing HTML5 Game Framework",
+  "name": "@bigby/behaviors",
+  "description": "A collection of useful Bigby behaviors for your game.",
   "version": "0.5.15",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
-  "repository": "bigby-framework/bigby",
+  "repository": "bigby-framework/bigby-core",
   "main": "dist/index.js",
   "bundle": "dist/index.js",
   "module": "dist/index.js",
@@ -25,20 +25,14 @@
     "docs": "typedoc src/"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.1",
+    "@types/uuid": "^7.0.2",
     "jest": "^25.3.0",
     "ts-jest": "^25.3.1",
-    "typedoc": "^0.17.0-3",
+    "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/2d": "^0.5.15",
-    "@bigby/2d-physics": "^0.5.15",
-    "@bigby/cli": "^0.5.15",
     "@bigby/core": "^0.5.15",
-    "@bigby/behaviors": "^0.5.15",
-    "@bigby/editor": "^0.5.15",
-    "@bigby/math": "^0.5.15",
-    "@bigby/random": "^0.5.15"
+    "hotkeys-js": "^3.7.6"
   }
 }
