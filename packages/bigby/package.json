@@ -36,6 +36,7 @@
     "@bigby/2d-physics": "^0.5.15",
     "@bigby/cli": "^0.5.15",
     "@bigby/core": "^0.5.15",
+    "@bigby/behaviors": "^0.5.15",
     "@bigby/editor": "^0.5.15",
     "@bigby/math": "^0.5.15",
     "@bigby/random": "^0.5.15"
