@@ -9,6 +9,15 @@
 - 🐙 Code: [bigby-framework/bigby](https://github.com/bigby-framework/bigby)
 - 🐦 Twitter: [@BigbyFramework](https://twitter.com/bigbyframework)
 
+## Features
+
+- **Very easy to get started**: just bring a code editor and **JavaScript** (or **TypeScript**.)
+- Fully **Entity** and **Behavior** based.
+- **Built-in Editor UI** for editing, experimenting and debugging.
+- Comes with a library of useful game behaviors.
+- Supports **2D games** today; **3D games** in the future.
+- Super-easy to extend.
+
 ## Getting Started
 
 ### Running the sample game project
