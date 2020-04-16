@@ -1,10 +1,11 @@
 {
   "name": "@bigby/random",
   "description": "Random number helpers for the Bigby Framework.",
-  "version": "0.5.10",
+  "version": "0.5.15",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
-  "repository": "github:bigby-framework/bigby",
+  "homepage": "https://bigby.dev",
+  "repository": "bigby-framework/bigby",
   "main": "dist/index.js",
   "bundle": "dist/index.js",
   "module": "dist/index.js",

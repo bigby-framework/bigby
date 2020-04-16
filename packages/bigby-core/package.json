@@ -1,10 +1,11 @@
 {
   "name": "@bigby/core",
   "description": "Core entity/behavior system for the Bigby Framework.",
-  "version": "0.5.11",
+  "version": "0.5.15",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
-  "repository": "github:bigby-framework/bigby-core",
+  "homepage": "https://bigby.dev",
+  "repository": "bigby-framework/bigby-core",
   "main": "dist/index.js",
   "bundle": "dist/index.js",
   "module": "dist/index.js",

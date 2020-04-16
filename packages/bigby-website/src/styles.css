@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap");
+
+:root {
+  --accent-color: plum;
+  --link-color: #c9e;
+}
+
+/* Border Box Sizing */
+* {
+  box-sizing: inherit;
+}
+html,
+body {
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font: 16px/1.5 "Helvetica Neue";
+
+  background-color: #fff;
+  color: #333;
+  padding-bottom: 10em;
+}
+
+/* Links */
+a {
+  color: var(--link-color);
+  font-weight: bold;
+}
+
+a:hover {
+  background-color: #eee;
+}
+
+/* Headings */
+h2 {
+  margin-top: 2em;
+  border-bottom: 5px solid var(--accent-color);
+}
+
+h3 {
+  margin-top: 2em;
+  border-bottom: 5px solid #eee;
+}
+
+h2 + h3 {
+  margin-top: 0;
+}
+
+/* Code blocks */
+code {
+  font: 16px/1.4 "Source Code Pro";
+  background-color: #eee;
+  box-shadow: inset rgba(0, 0, 0, 0.2) 1px 1px;
+}
+
+pre > code {
+  display: block;
+  color: #444;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+/* Layout classes */
+div.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1em;
+  padding-right: 1em;
+}

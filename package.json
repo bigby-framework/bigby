@@ -6,7 +6,8 @@
     "examples/*"
   ],
   "version": "0.0.1",
-  "repository": "git@github.com:bigby-framework/bigby.git",
+  "repository": "bigby-framework/bigby.git",
+  "homepage": "https://bigby.dev",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "scripts": {
@@ -19,7 +20,7 @@
     "build:all": "lerna run --stream build",
     "test:all": "jest",
     "publish:all": "lerna publish",
-    "docs:all": "lerna run --parallel docs"
+    "docs:all": "lerna run docs"
   },
   "devDependencies": {
     "@types/jest": "^25.2.1",
