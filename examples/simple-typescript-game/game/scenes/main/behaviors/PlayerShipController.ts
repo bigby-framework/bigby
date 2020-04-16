@@ -1,6 +1,6 @@
-import { Behavior, inspect } from "@bigby/core";
-import { KeyboardInput } from "@bigby/behaviors";
 import { Renderable2D } from "@bigby/2d";
+import { KeyboardInput } from "@bigby/behaviors";
+import { Behavior, inspect } from "@bigby/core";
 
 /* Typically, behaviors implement small pieces of functionality that can be
 added to any kind of entity. Sometimes, you will implement behaviors that
