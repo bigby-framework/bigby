@@ -10,6 +10,9 @@ hotkeys(" ", () => {});
  * for keyboard input.
  */
 class KeyboardInput extends Behavior {
+  static displayName = "KeyboardInput";
+  static description = "Handles input from the player's keyboard.";
+
   /**
    * Returns true if the specified key is currently being pressed.
    *
