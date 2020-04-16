@@ -16,7 +16,8 @@ follow development, please follow [@hmans](https://twitter.com/hmans) and/or
 ## Resources
 
 - 📖 Website: [bigby.dev](https://bigby.dev/)
-- 💬 Chat: [Discord](https://discordapp.com/channels/699977689347522561/699977689347522564)
+- ⁉️ Forum: [Spectrum](https://spectrum.chat/bigby)
+- 💬 Community Chat: [Discord](https://discordapp.com/channels/699977689347522561/699977689347522564)
 - 🐙 Code: [bigby-framework/bigby](https://github.com/bigby-framework/bigby)
 - 🐦 Twitter: [@BigbyFramework](https://twitter.com/bigbyframework)
 
