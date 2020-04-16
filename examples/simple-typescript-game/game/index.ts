@@ -7,7 +7,9 @@ of the Entity class). Each entity can have child entities, forming a scene tree,
 and any number of behaviors (represented by instances of the Behavior class.)
 
 How you work with these core classes is mostly up to you -- in this example
-game, we'll create a set of classes that inherit from them.
+game, we'll create a set of classes that inherit from them. You don't absolutely
+_have_ to follow this classic OOP approach, but we'll stick to it for now to keep
+things simple.
 
 We'll start with the following class, an instance of which represents the game
 itself. */
