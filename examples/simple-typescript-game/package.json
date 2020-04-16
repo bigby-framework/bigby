@@ -4,7 +4,8 @@
   "version": "0.5.15",
   "license": "MIT",
   "scripts": {
-    "start": "bigby dev --open",
+    "start": "yarn watch",
+    "watch": "bigby dev --open",
     "build": "bigby build",
     "build:production": "bigby build --production --analyze"
   },
