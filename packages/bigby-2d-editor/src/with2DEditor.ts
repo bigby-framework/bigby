@@ -4,12 +4,14 @@ import EditorGrid2D from "./EditorGrid2D";
 import { SelectedEntity } from "@bigby/editor";
 import SelectedEntityController2D from "./SelectedEntityController2D";
 import ViewportController2D from "./ViewportController2D";
+import Editor2D from "./Editor2D";
 
 const with2DEditor = (game: Entity) => {
   const editor = new Entity();
   editor.name = "Editor";
   editor.icon = "🛠";
 
+  editor.addBehavior(Editor2D, { element: document.getElementById("bigby") });
   editor.addBehavior(Renderable2D);
   editor.addBehavior(Game2D).set({ isEditing: true });
   editor.addBehavior(UI2D).set({ editorOnly: true });

@@ -49,7 +49,7 @@ export const create = () => {
       new HtmlWebpackPlugin({
         title: "Bigby Game",
         template: require("html-webpack-template"),
-        appMountId: "app",
+        appMountId: "bigby",
       }),
     ],
     optimization: {
