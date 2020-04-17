@@ -11,18 +11,18 @@ const with2DEditor = (game: Entity) => {
   editor.name = "Editor";
   editor.icon = "🛠";
 
+  /* Remove Game2D from game itself */
+  const game2D = game.getBehavior(Game2D);
+  if (game2D) game.removeBehavior(game2D);
+
   editor.addBehavior(Editor2D, { element: document.getElementById("bigby") });
   editor.addBehavior(Renderable2D);
-  editor.addBehavior(Game2D).set({ isEditing: true });
+  editor.addBehavior(game2D).set({ isEditing: true });
   editor.addBehavior(UI2D).set({ editorOnly: true });
   editor.addBehavior(SelectedEntity);
   editor.addBehavior(SelectedEntityController2D);
   editor.addBehavior(ViewportController2D);
   editor.addBehavior(EditorGrid2D);
-
-  /* Remove Game2D from game itself */
-  const game2D = game.getBehavior(Game2D);
-  if (game2D) game.removeBehavior(game2D);
 
   editor.addChild(game);
 
