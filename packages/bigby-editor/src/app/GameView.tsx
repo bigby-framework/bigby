@@ -1,8 +1,9 @@
+import { Game2D } from "@bigby/2d";
+import { Game3D } from "@bigby/3d";
 import React, { FC, useEffect, useRef } from "react";
-import { useEditorState } from "./state";
-import { Game2D, SelectedEntityController2D } from "@bigby/2d";
-
+import SelectedEntity from "../SelectedEntity";
 import css from "./GameView.css";
+import { useEditorState } from "./state";
 
 const GameView: FC = (props) => {
   const [state, dispatch] = useEditorState();
@@ -16,16 +17,20 @@ const GameView: FC = (props) => {
 
       /* React to selection of entities from within game view */
       {
-        const soc2d = root.getBehavior(SelectedEntityController2D);
-        soc2d.onSelectEntity((entity) => {
+        const se = root.getBehavior(SelectedEntity);
+        se.onSelectEntity((entity) => {
           dispatch({ type: "selectEntity", entity });
         });
       }
 
-      /* Start the game */
+      /* Move the game to our own little DOM element */
+
+      /* TODO: we don't really want to have these hard dependencies into the 2d
+      and 3d packages here. We should find a smarter way to do this. */
       const game2D = root.getBehavior(Game2D);
-      game2D.element = ref.current;
-      root.awake();
+      if (game2D) game2D.element = ref.current;
+      const game3D = root.getBehavior(Game3D);
+      if (game3D) game3D.element = ref.current;
     }
   }, [ref]);
 

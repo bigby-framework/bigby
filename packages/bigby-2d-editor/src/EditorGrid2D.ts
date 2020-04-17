@@ -1,9 +1,9 @@
 import { Behavior, inspect } from "@bigby/core";
-import { Game2D, Renderable2D, UI2D } from ".";
+import { Game2D, Renderable2D, UI2D } from "@bigby/2d";
 import { Graphics } from "pixi.js";
-import { ViewportController2D } from "./ViewportController2D";
+import ViewportController2D from "./ViewportController2D";
 
-export class EditorGrid2D extends Behavior {
+class EditorGrid2D extends Behavior {
   static displayName = "EditorGrid2D";
   static icon = "🚧";
   static description = "Renders a grid during edit mode.";
@@ -85,3 +85,5 @@ export class EditorGrid2D extends Behavior {
     }
   }
 }
+
+export default EditorGrid2D;

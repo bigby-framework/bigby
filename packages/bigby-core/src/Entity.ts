@@ -25,11 +25,9 @@ export type BehaviorFactory = (...args: any[]) => BehaviorData;
  * @category Core
  */
 export class Entity implements IFinderFunctions {
-  static defaultName = "Entity";
-
+  name = "Entity";
   icon = "꩜";
   id = uuid.v4();
-  name: string;
   parent: Entity;
 
   isAwake = false;
@@ -37,7 +35,7 @@ export class Entity implements IFinderFunctions {
 
   /* Constructor */
   constructor(name?: string) {
-    this.name = name;
+    if (name) this.name = name;
   }
 
   /* Child entities */

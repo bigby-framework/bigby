@@ -1,5 +1,5 @@
-import { AutoRotate2D } from "./AutoRotate2D";
-import { Renderable2D } from "./Renderable2D";
+import AutoRotate2D from "./AutoRotate2D";
+import Renderable2D from "./Renderable2D";
 
 test("it rotates the R2D at the configured speed", () => {
   const ar2d = new AutoRotate2D();

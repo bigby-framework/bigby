@@ -1,5 +1,5 @@
 import { Behavior, inspect } from "@bigby/core";
-import { Renderable2D } from "./Renderable2D";
+import Renderable2D from "./Renderable2D";
 
 export interface IAutoRotateable {
   rotation: number;
@@ -10,7 +10,7 @@ export interface IAutoRotate2D {
   rotateable: IAutoRotateable;
 }
 
-export class AutoRotate2D extends Behavior<IAutoRotate2D>
+export default class AutoRotate2D extends Behavior<IAutoRotate2D>
   implements IAutoRotate2D {
   static displayName = "AutoRotate2D";
   static icon = "♻️";

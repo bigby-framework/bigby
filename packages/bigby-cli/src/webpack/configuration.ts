@@ -49,7 +49,9 @@ export const create = () => {
       new HtmlWebpackPlugin({
         title: "Bigby Game",
         template: require("html-webpack-template"),
-        appMountId: "app",
+        headHtmlSnippet:
+          "<style>html, body {width: 100%; height: 100%; overflow: hidden; margin: 0; padding: 0} div#bigby { position: fixed; width: 100%; height: 100%; overflow: hidden } canvas { width: 100%; height: 100% }</style>",
+        appMountId: "bigby",
       }),
     ],
     optimization: {

@@ -1,12 +1,8 @@
 import { Behavior } from "@bigby/core";
 import { Container } from "pixi.js";
-import { Game2D } from "./Game2D";
+import Game2D from "./Game2D";
 
-export interface IUI2D {
-  editorOnly: boolean;
-}
-
-export class UI2D extends Behavior<IUI2D> {
+export default class UI2D extends Behavior<{ editorOnly: boolean }> {
   static displayName = "UI2D";
   static icon = "🖱";
   static description =

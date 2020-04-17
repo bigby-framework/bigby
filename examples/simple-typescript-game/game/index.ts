@@ -1,6 +1,7 @@
 import { Game2D, Renderable2D } from "@bigby/2d";
 import { Entity } from "@bigby/core";
 import MainScene from "./scenes/main";
+import { with2DEditor } from "@bigby/2d-editor";
 
 /* Anything built using Bigby is comprised of entities (represented by instances
 of the Entity class). Each entity can have child entities, forming a scene tree,
@@ -42,5 +43,7 @@ class ExampleGame extends Entity {
 }
 
 /* This example game uses the Bigby CLI, which expects the root entity to be the
-default export of this module. */
-export default new ExampleGame();
+default export of this module. If we just export the game object itself, bigby
+will run the game; but let's wrap it in `with2DEditor` to get the Bigby Editor
+UI for free. */
+export default with2DEditor(new ExampleGame());

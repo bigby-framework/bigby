@@ -1,3 +1,5 @@
-export * from "./Application";
-export * from "./util/withEditor";
-export * from "./startEditor";
+import * as app from "./app";
+import SelectedEntity from "./SelectedEntity";
+import Editor from "./Editor";
+
+export { app, SelectedEntity, Editor };
