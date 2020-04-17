@@ -14,7 +14,12 @@ class Ticker extends Behavior {
 
       /* Update our entity */
       this.entity.update(deltaTime);
+
+      /* Trigger next frame */
+      requestAnimationFrame(animate);
     };
+
+    animate();
   }
 }
 

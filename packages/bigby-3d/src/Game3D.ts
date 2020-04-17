@@ -52,7 +52,7 @@ class Game3D extends Behavior<{ canvas: HTMLCanvasElement }> {
   }
 
   lateUpdate() {
-    this.scene.render();
+    this.scene?.render();
   }
 }
 
