@@ -1,7 +1,7 @@
 {
   "name": "@bigby/cli",
   "description": "Bigby CLI",
-  "version": "0.5.16",
+  "version": "0.5.17-0.6.0-alpha.0.0",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
@@ -37,7 +37,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/editor": "^0.5.16",
+    "@bigby/editor": "^0.5.17-0.6.0-alpha.0.0",
     "clean-webpack-plugin": "^3.0.0",
     "commander": "^5.0.0",
     "consola": "^2.11.3",
