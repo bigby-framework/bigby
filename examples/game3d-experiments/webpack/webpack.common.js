@@ -9,7 +9,7 @@ module.exports = {
   entry: path.resolve(__dirname, "../src/index.ts"),
   output: {
     path: path.resolve(__dirname, "../dist"),
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
   },
   module: {
     rules: [
@@ -21,35 +21,35 @@ module.exports = {
           {
             loader: "css-loader",
             options: {
-              modules: true
-            }
-          }
-        ]
-      }
-    ]
+              modules: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
     alias: {
-      "~": path.resolve(__dirname, "../src")
-    }
+      "~": path.resolve(__dirname, "../src"),
+    },
   },
   plugins: [
     new CleanWebpackPlugin(),
     new TypedCssModulesPlugin({
       globPattern: "src/**/*.css",
-      camelCase: true
+      camelCase: true,
     }),
     new CopyPlugin([{ from: "assets", to: "assets" }]),
     new HtmlWebpackPlugin({
       template: "src/index.html",
-      title: "A TypeScript App"
+      title: "@bigby/3d",
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin(),
   ],
   optimization: {
     splitChunks: {
-      chunks: "all"
-    }
-  }
+      chunks: "all",
+    },
+  },
 };
