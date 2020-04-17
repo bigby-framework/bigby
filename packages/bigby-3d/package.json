@@ -1,0 +1,37 @@
+{
+  "name": "@bigby/3d",
+  "description": "Build 3D games with Bigby.",
+  "version": "0.5.16",
+  "author": "Hendrik Mans <hendrik@mans.de>",
+  "license": "MIT",
+  "homepage": "https://bigby.dev",
+  "repository": "bigby-framework/bigby-core",
+  "main": "dist/index.js",
+  "bundle": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "tsc -p tsconfig.build.json",
+    "watch": "tsc -p tsconfig.build.json --watch",
+    "prepublishOnly": "yarn build",
+    "test": "jest",
+    "docs": "typedoc src/"
+  },
+  "devDependencies": {
+    "@types/uuid": "^7.0.2",
+    "jest": "^25.3.0",
+    "ts-jest": "^25.3.1",
+    "typedoc": "^0.17.4",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@bigby/core": "^0.5.16"
+  }
+}
