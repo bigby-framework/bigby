@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Application } from "./Application";
-import { with2DEditor } from "./util/withEditor";
+import { with2DEditor } from "./util/with2DEditor";
 import { Entity } from "@bigby/core";
 
 export const startEditor = (root: Entity, el?: HTMLElement) => {
@@ -12,6 +12,8 @@ export const startEditor = (root: Entity, el?: HTMLElement) => {
     document.body.appendChild(el);
   }
 
+  const editorRoot = with2DEditor(root);
+
   /* Start the editor */
-  ReactDOM.render(<Application root={with2DEditor(root)} />, el);
+  ReactDOM.render(<Application root={editorRoot} />, el);
 };
