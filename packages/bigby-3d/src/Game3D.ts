@@ -62,13 +62,7 @@ class Game3D extends Behavior<{
 
     camera.setTarget(BABYLON.Vector3.Zero());
 
-    // camera.attachControl(canvas, false);
-
-    new BABYLON.HemisphericLight(
-      "light1",
-      new BABYLON.Vector3(0, 1, 0),
-      this.scene
-    );
+    camera.attachControl(this.canvas, false);
 
     /* Automatically resize renderer when window is resized */
     window.addEventListener("resize", this.engine.resize);

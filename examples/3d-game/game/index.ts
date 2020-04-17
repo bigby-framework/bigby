@@ -1,7 +1,21 @@
-import { Game3D, Transform3D } from "@bigby/3d";
+import { Game3D, Transform3D, ITransform3D } from "@bigby/3d";
 import { Entity, Behavior } from "@bigby/core";
 import { Ticker } from "@bigby/behaviors";
 import { with3DEditor } from "@bigby/3d-editor";
+
+class Light extends Behavior {
+  awake() {
+    const light = new BABYLON.PointLight(
+      "",
+      new BABYLON.Vector3(0, 0, 0),
+      null
+    );
+
+    /* Parent to the nearest T3D */
+    const t3d = this.getNearestBehavior(Transform3D);
+    light.parent = t3d.node;
+  }
+}
 
 class RenderGround extends Behavior {
   awake() {
@@ -35,14 +49,30 @@ game.addBehavior(Transform3D);
 game.addBehavior(Ticker);
 game.addBehavior(Game3D);
 
-const sphere = new Entity("Sphere");
-sphere.addBehavior(Transform3D);
-sphere.addBehavior(RenderSphere);
-game.addChild(sphere);
+const light = new Entity("Light");
+light.addBehavior(Transform3D, { position: { x: -70, y: 15, z: -18 } });
+light.addBehavior(Light);
+game.addChild(light);
 
-const ground = new Entity("Ground");
-ground.addBehavior(Transform3D);
-ground.addBehavior(RenderGround);
-game.addChild(ground);
+const sphere = (t3d?: Partial<ITransform3D>) => {
+  const sphere = new Entity("Sphere");
+  sphere.addBehavior(Transform3D, t3d);
+  sphere.addBehavior(RenderSphere);
+  return sphere;
+};
+
+game.addChild(sphere({ position: { x: 0, y: 0, z: 0 } }));
+game.addChild(
+  sphere({
+    position: { x: -2, y: 1, z: 1 },
+    scale: { x: 0.5, y: 0.5, z: 0.5 },
+  })
+);
+game.addChild(
+  sphere({
+    position: { x: 2, y: -2, z: -1 },
+    scale: { x: 0.7, y: 0.7, z: 0.7 },
+  })
+);
 
 export default with3DEditor(game);
