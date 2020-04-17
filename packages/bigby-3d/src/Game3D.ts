@@ -22,13 +22,20 @@ class Game3D extends Behavior<{
     // v ? this.entity.enterEditMode() : this.entity.enterPlayMode();
   }
 
-  /* Canvas element we'll use for rendering */
-  canvas: HTMLCanvasElement;
+  /* HTML element that will be home to us */
+  element: HTMLElement;
 
   scene: BABYLON.Scene;
 
   awake() {
-    const engine = new BABYLON.Engine(this.canvas, true);
+    /* Default to #bigby element if none is given */
+    if (!this.element) this.element = document.getElementById("bigby");
+
+    /* Create a canvas element */
+    const canvas = document.createElement("canvas");
+    this.element.appendChild(canvas);
+
+    const engine = new BABYLON.Engine(canvas, true);
 
     this.scene = new BABYLON.Scene(engine);
 
@@ -63,6 +70,11 @@ class Game3D extends Behavior<{
 
     /* Automatically resize renderer when window is resized */
     window.addEventListener("resize", engine.resize);
+
+    /* Connect to Ticker and set it up to tick the game */
+    this.getBehavior(Ticker).onTick(() => {
+      this.scene.render();
+    });
   }
 
   lateUpdate() {
