@@ -1,6 +1,10 @@
 import { Behavior, Entity, inspect, signal } from "@bigby/core";
 
 class SelectedEntity extends Behavior {
+  static displayName = "SelectedEntity";
+  static icon = "🧺";
+  static description = "Keeps track of the currently selected entity.";
+
   /* selectedObject property */
   private _selectedEntity: Entity;
 
