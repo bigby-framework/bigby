@@ -26,6 +26,9 @@ export default class Game2D extends Behavior {
   }
 
   awake() {
+    /* If no HTML element has been specified at this point, let's look for #bigby */
+    if (!this.element) this.element = document.getElementById("bigby");
+
     /* Create a PIXI application */
     this.app = new PIXI.Application({
       backgroundColor: this.backgroundColor,
