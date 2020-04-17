@@ -70,19 +70,6 @@ class Game3D extends Behavior<{
       this.scene
     );
 
-    const sphere = BABYLON.Mesh.CreateSphere(
-      "sphere1",
-      16,
-      4,
-      this.scene,
-      false,
-      BABYLON.Mesh.FRONTSIDE
-    );
-
-    sphere.position.y = 1;
-
-    BABYLON.Mesh.CreateGround("ground1", 6, 6, 2, this.scene, false);
-
     /* Automatically resize renderer when window is resized */
     window.addEventListener("resize", this.engine.resize);
 
