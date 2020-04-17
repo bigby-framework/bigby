@@ -32,6 +32,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/core": "^0.5.16"
+    "@bigby/core": "^0.5.16",
+    "babylonjs": "^4.1.0"
   }
 }

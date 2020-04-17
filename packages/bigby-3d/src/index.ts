@@ -1,3 +1,3 @@
-const foo = 123;
+import Game3D from "./Game3D";
 
-export default foo;
+export { Game3D };
