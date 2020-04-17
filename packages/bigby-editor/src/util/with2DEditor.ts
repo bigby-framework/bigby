@@ -28,7 +28,3 @@ export const with2DEditor = (game: Entity) => {
 
   return editor;
 };
-
-export const with3DEditor = (game: Entity) => {
-  return game;
-};

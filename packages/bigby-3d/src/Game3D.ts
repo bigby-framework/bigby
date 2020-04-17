@@ -1,12 +1,26 @@
 import { Ticker } from "@bigby/behaviors";
-import { Behavior, Entity } from "@bigby/core";
+import { Behavior, Entity, inspect } from "@bigby/core";
 import * as BABYLON from "babylonjs";
 
-class Game3D extends Behavior<{ canvas: HTMLCanvasElement }> {
+class Game3D extends Behavior<{
+  canvas: HTMLCanvasElement;
+  isEditing: boolean;
+}> {
   static icon = "🕹";
   static displayName = "Game3D";
   static description =
     "Powers a 3D game and should be added to your top-most entity.";
+
+  /* Editing Flag */
+  private _isEditing = false;
+  @inspect()
+  get isEditing() {
+    return this._isEditing;
+  }
+  set isEditing(v) {
+    this._isEditing = v;
+    // v ? this.entity.enterEditMode() : this.entity.enterPlayMode();
+  }
 
   /* Canvas element we'll use for rendering */
   canvas: HTMLCanvasElement;
