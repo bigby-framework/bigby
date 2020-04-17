@@ -25,7 +25,6 @@ const GameView: FC = (props) => {
       /* Start the game */
       const game2D = root.getBehavior(Game2D);
       game2D.element = ref.current;
-      root.awake();
     }
   }, [ref]);
 
