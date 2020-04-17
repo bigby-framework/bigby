@@ -61,14 +61,18 @@ const sphere = (t3d?: Partial<ITransform3D>) => {
   return sphere;
 };
 
-game.addChild(sphere({ position: { x: 0, y: 0, z: 0 } }));
-game.addChild(
+const sculpture = new Entity("Sculpture");
+sculpture.addBehavior(Transform3D);
+game.addChild(sculpture);
+
+sculpture.addChild(sphere({ position: { x: 0, y: 0, z: 0 } }));
+sculpture.addChild(
   sphere({
     position: { x: -2, y: 1, z: 1 },
     scale: { x: 0.5, y: 0.5, z: 0.5 },
   })
 );
-game.addChild(
+sculpture.addChild(
   sphere({
     position: { x: 2, y: -2, z: -1 },
     scale: { x: 0.7, y: 0.7, z: 0.7 },

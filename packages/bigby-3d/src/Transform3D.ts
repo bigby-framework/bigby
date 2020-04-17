@@ -73,10 +73,8 @@ export default class Transform3D extends Behavior<ITransform3D> {
     this.applyTransform();
 
     /* Parent our node under the nearest node, if there is one */
-    // if (this.parent) {
-    //   const nearestT3D = this.parent.getNearestBehavior(Transform3D);
-    //   if (nearestT3D) this.node.parent = nearestT3D.node;
-    // }
+    const t3d = this.parent?.getNearestBehavior(Transform3D);
+    if (t3d) this.node.parent = t3d.node;
   }
 
   private applyTransform() {
