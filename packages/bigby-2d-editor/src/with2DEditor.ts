@@ -1,10 +1,9 @@
 import { Game2D, Renderable2D, UI2D } from "@bigby/2d";
 import { Entity } from "@bigby/core";
 import EditorGrid2D from "./EditorGrid2D";
-import { SelectedEntity } from "@bigby/editor";
+import { SelectedEntity, Editor } from "@bigby/editor";
 import SelectedEntityController2D from "./SelectedEntityController2D";
 import ViewportController2D from "./ViewportController2D";
-import Editor2D from "./Editor2D";
 
 const with2DEditor = (game: Entity) => {
   const editor = new Entity();
@@ -15,7 +14,7 @@ const with2DEditor = (game: Entity) => {
   const game2D = game.getBehavior(Game2D);
   if (game2D) game.removeBehavior(game2D);
 
-  editor.addBehavior(Editor2D, { element: document.getElementById("bigby") });
+  editor.addBehavior(Editor, { element: document.getElementById("bigby") });
   editor.addBehavior(Renderable2D);
   editor.addBehavior(game2D).set({ isEditing: true });
   editor.addBehavior(UI2D).set({ editorOnly: true });

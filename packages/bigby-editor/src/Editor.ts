@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import * as editor from "@bigby/editor";
+import { Application } from "./app";
 import { Behavior } from "@bigby/core";
 
-export default class Editor2D extends Behavior<{ element: HTMLElement }> {
-  static displayName = "Editor2D";
+export default class Editor extends Behavior<{ element: HTMLElement }> {
+  static displayName = "Editor";
   static icon = "🛠";
-  static description =
-    "Controls the editor UI and configures it for editing a 2D game.";
+  static description = "Controls the editor UI.";
 
   element: HTMLElement;
 
@@ -20,7 +19,7 @@ export default class Editor2D extends Behavior<{ element: HTMLElement }> {
 
     /* Start the editor */
     ReactDOM.render(
-      React.createElement(editor.app.Application, { root: this.entity }, null),
+      React.createElement(Application, { root: this.entity }, null),
       this.element
     );
   }
