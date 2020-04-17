@@ -1,12 +1,13 @@
-import { Game2D, Renderable2D, UI2D } from "@bigby/2d";
+import { Renderable2D, UI2D } from "@bigby/2d";
 import { Behavior } from "@bigby/core";
 import { SelectedEntity } from "@bigby/editor";
 import { Graphics } from "pixi.js";
 
-class SelectedEntityController2D extends Behavior {
-  static displayName = "SelectedEntityController2D";
+class SelectedEntityGizmo2D extends Behavior {
+  static displayName = "SelectedEntityGizmo2D";
   static icon = "🧺";
-  static description = "Tracks the currently selected entity.";
+  static description =
+    "Renders the selection gizmo around the currently selected entity, if there is one.";
 
   private gizmo: Graphics;
   private ui2d: UI2D;
@@ -35,4 +36,4 @@ class SelectedEntityController2D extends Behavior {
   }
 }
 
-export default SelectedEntityController2D;
+export default SelectedEntityGizmo2D;

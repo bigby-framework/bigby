@@ -2,7 +2,7 @@ import { Game2D, Renderable2D, UI2D } from "@bigby/2d";
 import { Entity } from "@bigby/core";
 import EditorGrid2D from "./EditorGrid2D";
 import { SelectedEntity, Editor } from "@bigby/editor";
-import SelectedEntityController2D from "./SelectedEntityController2D";
+import SelectedEntityGizmo2D from "./SelectedEntityGizmo2D";
 import ViewportController2D from "./ViewportController2D";
 
 const with2DEditor = (game: Entity) => {
@@ -19,7 +19,7 @@ const with2DEditor = (game: Entity) => {
   editor.addBehavior(game2D).set({ isEditing: true });
   editor.addBehavior(UI2D).set({ editorOnly: true });
   editor.addBehavior(SelectedEntity);
-  editor.addBehavior(SelectedEntityController2D);
+  editor.addBehavior(SelectedEntityGizmo2D);
   editor.addBehavior(ViewportController2D);
   editor.addBehavior(EditorGrid2D);
 
