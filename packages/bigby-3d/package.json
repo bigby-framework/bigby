@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "@bigby/core": "^0.5.16",
+    "@bigby/behaviors": "^0.5.16",
     "babylonjs": "^4.1.0"
   }
 }

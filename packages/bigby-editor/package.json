@@ -7,8 +7,6 @@
   "homepage": "https://bigby.dev",
   "repository": "bigby-framework/bigby",
   "main": "dist/index.js",
-  "bundle": "dist/index.js",
-  "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
   "files": [
     "dist"
