@@ -1,8 +1,8 @@
 import { Behavior, inspect } from "@bigby/core";
 import * as PIXI from "pixi.js";
-import { Renderable2D } from "./Renderable2D";
+import Renderable2D from "./Renderable2D";
 
-export class Game2D extends Behavior {
+export default class Game2D extends Behavior {
   static icon = "🕹";
   static displayName = "Game2D";
   static description =

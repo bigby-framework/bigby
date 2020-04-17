@@ -10,7 +10,7 @@ export interface IRenderable2D {
   alpha: number;
 }
 
-export class Renderable2D extends Behavior<IRenderable2D>
+export default class Renderable2D extends Behavior<IRenderable2D>
   implements IRenderable2D {
   static icon = "🖥";
   static displayName = "Renderable2D";

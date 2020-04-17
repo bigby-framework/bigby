@@ -1,12 +1,12 @@
 import { Behavior, inspect } from "@bigby/core";
 import * as PIXI from "pixi.js";
-import { Renderable2D } from "./Renderable2D";
+import Renderable2D from "./Renderable2D";
 
 export interface ISprite2D {
   uri: string;
 }
 
-export class Sprite2D<TExtraProps = {}>
+export default class Sprite2D<TExtraProps = {}>
   extends Behavior<ISprite2D & TExtraProps>
   implements ISprite2D {
   static icon = "🚀";

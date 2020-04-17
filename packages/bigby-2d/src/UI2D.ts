@@ -1,8 +1,8 @@
 import { Behavior } from "@bigby/core";
 import { Container } from "pixi.js";
-import { Game2D } from "./Game2D";
+import Game2D from "./Game2D";
 
-class UI2D extends Behavior<{ editorOnly: boolean }> {
+export default class UI2D extends Behavior<{ editorOnly: boolean }> {
   static displayName = "UI2D";
   static icon = "🖱";
   static description =
@@ -35,5 +35,3 @@ class UI2D extends Behavior<{ editorOnly: boolean }> {
     this.game2D.app.stage.removeChild(this.container);
   }
 }
-
-export default UI2D;
