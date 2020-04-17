@@ -43,5 +43,7 @@ class ExampleGame extends Entity {
 }
 
 /* This example game uses the Bigby CLI, which expects the root entity to be the
-default export of this module. */
+default export of this module. If we just export the game object itself, bigby
+will run the game; but let's wrap it in `with2DEditor` to get the Bigby Editor
+UI for free. */
 export default with2DEditor(new ExampleGame());
