@@ -1,11 +1,11 @@
 {
-  "name": "bigby",
-  "description": "Bigby: the Adequately Astonishing HTML5 Game Framework",
+  "name": "@bigby/3d-editor",
+  "description": "Additional behaviors for editing 3D games.",
   "version": "0.5.16",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
-  "repository": "bigby-framework/bigby",
+  "repository": "bigby-framework/bigby-core",
   "main": "dist/index.js",
   "bundle": "dist/index.js",
   "module": "dist/index.js",
@@ -25,23 +25,16 @@
     "docs": "typedoc src/"
   },
   "devDependencies": {
-    "@types/jest": "^25.2.1",
+    "@types/uuid": "^7.0.2",
     "jest": "^25.3.0",
     "ts-jest": "^25.3.1",
-    "typedoc": "^0.17.0-3",
+    "typedoc": "^0.17.4",
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/2d": "^0.5.16",
-    "@bigby/2d-physics": "^0.5.16",
-    "@bigby/2d-editor": "^0.5.16",
-    "@bigby/3d": "^0.5.16",
-    "@bigby/3d-editor": "^0.5.16",
-    "@bigby/behaviors": "^0.5.16",
-    "@bigby/cli": "^0.5.16",
     "@bigby/core": "^0.5.16",
-    "@bigby/editor": "^0.5.16",
-    "@bigby/math": "^0.5.16",
-    "@bigby/random": "^0.5.16"
+    "@bigby/behaviors": "^0.5.16",
+    "@bigby/3d": "^0.5.16",
+    "@bigby/editor": "^0.5.16"
   }
 }
