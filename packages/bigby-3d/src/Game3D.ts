@@ -68,14 +68,6 @@ class Game3D extends Behavior<{
   lateUpdate() {
     this.scene?.render();
   }
-
-  /** Convenience method to create a working top-level entity readily configured to run your 3D game. */
-  static make({ canvas = <HTMLCanvasElement>null }) {
-    const e = new Entity();
-    e.addBehavior(Ticker);
-    e.addBehavior(Game3D, { canvas });
-    return e;
-  }
 }
 
 export default Game3D;
