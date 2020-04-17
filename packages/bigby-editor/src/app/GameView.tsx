@@ -1,8 +1,8 @@
+import { Game2D } from "@bigby/2d";
 import React, { FC, useEffect, useRef } from "react";
-import { useEditorState } from "./state";
-import { Game2D, SelectedEntityController2D } from "@bigby/2d";
-
+import SelectedEntity from "../SelectedEntity";
 import css from "./GameView.css";
+import { useEditorState } from "./state";
 
 const GameView: FC = (props) => {
   const [state, dispatch] = useEditorState();
@@ -16,8 +16,8 @@ const GameView: FC = (props) => {
 
       /* React to selection of entities from within game view */
       {
-        const soc2d = root.getBehavior(SelectedEntityController2D);
-        soc2d.onSelectEntity((entity) => {
+        const se = root.getBehavior(SelectedEntity);
+        se.onSelectEntity((entity) => {
           dispatch({ type: "selectEntity", entity });
         });
       }

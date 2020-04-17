@@ -1,10 +1,10 @@
 import { Entity } from "@bigby/core";
 import React, { FC } from "react";
+import SelectedEntity from "../SelectedEntity";
 import { useEditorState } from "./state";
 import { Tree, TreeItem } from "./ui";
 import { Area } from "./ui/Area";
 import { useAutomaticRerender } from "./util/useAutomaticRerender";
-import { ViewportController2D, SelectedEntityController2D } from "@bigby/2d";
 
 const EntityTreeItem: FC<{
   entity: Entity;
@@ -47,11 +47,11 @@ const NodeTreeView: FC = (props) => {
 
   const handleSelectEntity = (entity: Entity) => {
     dispatch({ type: "selectEntity", entity });
-    root.getBehavior(SelectedEntityController2D).selectedEntity = entity;
+    root.getBehavior(SelectedEntity).selectedEntity = entity;
   };
 
   const handleDoubleClickEntity = (ent: Entity) => {
-    root.getBehavior(ViewportController2D).focusOnEntity(ent);
+    /* TODO: implement zoom to entity */
   };
 
   return (

@@ -1,14 +1,11 @@
+import { Game2D, Renderable2D, UI2D } from "@bigby/2d";
 import { Entity } from "@bigby/core";
-import {
-  Game2D,
-  Renderable2D,
-  EditorGrid2D,
-  ViewportController2D,
-  UI2D,
-  SelectedEntityController2D,
-} from "@bigby/2d";
+import EditorGrid2D from "./EditorGrid2D";
+import { SelectedEntity } from "@bigby/editor";
+import SelectedEntityController2D from "./SelectedEntityController2D";
+import ViewportController2D from "./ViewportController2D";
 
-export const with2DEditor = (game: Entity) => {
+const with2DEditor = (game: Entity) => {
   const editor = new Entity();
   editor.name = "Editor";
   editor.icon = "🛠";
@@ -16,6 +13,7 @@ export const with2DEditor = (game: Entity) => {
   editor.addBehavior(Renderable2D);
   editor.addBehavior(Game2D).set({ isEditing: true });
   editor.addBehavior(UI2D).set({ editorOnly: true });
+  editor.addBehavior(SelectedEntity);
   editor.addBehavior(SelectedEntityController2D);
   editor.addBehavior(ViewportController2D);
   editor.addBehavior(EditorGrid2D);
@@ -28,3 +26,5 @@ export const with2DEditor = (game: Entity) => {
 
   return editor;
 };
+
+export default with2DEditor;

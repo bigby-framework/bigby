@@ -17,7 +17,7 @@
     "release": "yarn publish:all",
     "clean:all": "lerna run --parallel clean",
     "watch:all": "lerna run --parallel watch",
-    "build:all": "lerna run --stream build",
+    "build:all": "lerna run build",
     "test:all": "jest",
     "publish:all": "lerna publish",
     "docs:all": "lerna run docs"

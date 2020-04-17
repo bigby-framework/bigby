@@ -1,9 +1,9 @@
 import { Behavior, Entity, signal } from "@bigby/core";
 import { interaction, IPoint } from "pixi.js";
-import { Game2D, IVec2, Renderable2D } from ".";
 import { clamp } from "@bigby/math";
+import { Game2D, Renderable2D, IVec2 } from "@bigby/2d";
 
-export class ViewportController2D extends Behavior {
+class ViewportController2D extends Behavior {
   static displayName = "ViewportController2D";
   static icon = "🎥";
   static description = "Provides viewport panning and zooming in the editor.";
@@ -109,3 +109,5 @@ export class ViewportController2D extends Behavior {
     }
   }
 }
+
+export default ViewportController2D;
