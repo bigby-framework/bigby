@@ -11,17 +11,6 @@ class Game3D extends Behavior<{
   static description =
     "Powers a 3D game and should be added to your top-most entity.";
 
-  /* Editing Flag */
-  private _isEditing = false;
-  @inspect()
-  get isEditing() {
-    return this._isEditing;
-  }
-  set isEditing(v) {
-    this._isEditing = v;
-    // v ? this.entity.enterEditMode() : this.entity.enterPlayMode();
-  }
-
   /* HTML element that will be home to us */
   private _element: HTMLElement;
 
