@@ -32,7 +32,7 @@ export default class Game2D extends Behavior {
     /* Create a PIXI application */
     this.app = new PIXI.Application({
       backgroundColor: this.backgroundColor,
-      autoStart: false,
+      autoStart: true,
       antialias: true,
     });
 
@@ -41,20 +41,6 @@ export default class Game2D extends Behavior {
     /* Find our Renderable2D and add its container to our stage */
     const r2d = this.getBehavior(Renderable2D);
     this.app.stage.addChild(r2d.container);
-
-    /* Set up ticker */
-    this.app.ticker.add(() => {
-      const dt = this.app.ticker.deltaMS / 1000;
-
-      if (this.isEditing) {
-        this.entity.editorUpdate(dt);
-      } else {
-        this.entity.update(dt);
-      }
-    });
-
-    /* Start the game */
-    this.app.start();
   }
 
   private initializeElement() {
