@@ -1,7 +1,7 @@
-import { Game3D, Transform3D, ITransform3D } from "@bigby/3d";
-import { Entity, Behavior } from "@bigby/core";
-import { Ticker } from "@bigby/behaviors";
+import { AutoRotate3D, Game3D, ITransform3D, Transform3D } from "@bigby/3d";
 import { with3DEditor } from "@bigby/3d-editor";
+import { Ticker } from "@bigby/behaviors";
+import { Behavior, Entity } from "@bigby/core";
 
 class Light extends Behavior {
   awake() {
@@ -63,6 +63,7 @@ const sphere = (t3d?: Partial<ITransform3D>) => {
 
 const sculpture = new Entity("Sculpture");
 sculpture.addBehavior(Transform3D);
+sculpture.addBehavior(AutoRotate3D);
 game.addChild(sculpture);
 
 sculpture.addChild(sphere({ position: { x: 0, y: 0, z: 0 } }));
@@ -80,3 +81,4 @@ sculpture.addChild(
 );
 
 export default with3DEditor(game);
+// export default game;

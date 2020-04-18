@@ -1,7 +1,6 @@
 import { Ticker } from "@bigby/behaviors";
 import { Behavior, Entity, inspect } from "@bigby/core";
 import * as BABYLON from "babylonjs";
-import { BabylonFileLoaderConfiguration } from "babylonjs";
 
 class Game3D extends Behavior<{
   canvas: HTMLCanvasElement;
@@ -48,32 +47,34 @@ class Game3D extends Behavior<{
 
     /* Create a canvas element */
     this.canvas = document.createElement("canvas");
-    this.engine = new BABYLON.Engine(this.canvas, true);
 
+    /* Create our renderer */
+    this.engine = new BABYLON.Engine(this.canvas, true);
     this.initializeElement();
 
+    /* Create our scene */
     this.scene = new BABYLON.Scene(this.engine);
 
+    /* Create an editor camera */
     const camera = new BABYLON.FreeCamera(
       "camera1",
       new BABYLON.Vector3(0, 5, -10),
       this.scene
     );
-
     camera.setTarget(BABYLON.Vector3.Zero());
-
     camera.attachControl(this.canvas, false);
 
     /* Automatically resize renderer when window is resized */
     window.addEventListener("resize", this.engine.resize);
 
     /* Connect to Ticker and set it up to tick the game */
-    this.getBehavior(Ticker).onTick((dt) => {
-      this.entity.update(dt);
-    });
+    /* TODO: should this happen in the ticker itself? It feels wrong to have the Game3D
+    (soon Renderer3D) take care of updating its object tree. */
+    this.getBehavior(Ticker).onTick((dt) => this.entity.update(dt));
   }
 
   lateUpdate() {
+    /* If we have a scene, render it. */
     this.scene?.render();
   }
 
