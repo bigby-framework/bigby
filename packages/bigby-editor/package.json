@@ -39,10 +39,6 @@
     "typedoc": "^0.17.0-3",
     "typescript": "^3.8.3"
   },
-  "peerDependencies": {
-    "@bigby/2d": "^0.6.0-alpha.0",
-    "@bigby/3d": "^0.6.0-alpha.0"
-  },
   "dependencies": {
     "@bigby/behaviors": "^0.6.0-alpha.0",
     "@bigby/core": "^0.5.17-0.6.0-alpha.0.0",
