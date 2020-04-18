@@ -27,6 +27,13 @@ follow development, please follow [@hmans](https://twitter.com/hmans) and/or
 - 🐙 Code: [bigby-framework/bigby](https://github.com/bigby-framework/bigby)
 - 🐦 Twitter: [@BigbyFramework](https://twitter.com/bigbyframework)
 
+## Features
+
+- Written in TypeScript, use it with any flavor of JavaScript
+- Use it to build 2D (via [PIXI.js](https://www.pixijs.com/)) or 3D (via [Babylon.js](https://www.babylonjs.com/)) games
+- Out of the box support for audio, game controllers, VR/AR and more
+- Clean Entity and Behavior based design
+
 ## Contributing
 
 Bigby is split into various small-ish packages, all of which are developed in sync within a Lerna-powered monorepo. To get started, clone the repository, and run the following commands:
