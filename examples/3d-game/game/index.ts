@@ -1,14 +1,7 @@
-import {
-  AutoRotate3D,
-  ITransform3D,
-  Renderer3D,
-  Transform3D,
-  CubeMesh3D,
-} from "@bigby/3d";
+import { AutoRotate3D, CubeMesh3D, Renderer3D, Transform3D } from "@bigby/3d";
 import { with3DEditor } from "@bigby/3d-editor";
 import { Ticker } from "@bigby/behaviors";
 import { Behavior, Entity } from "@bigby/core";
-import { BoxGeometry, Mesh, MeshNormalMaterial, Vector3 } from "three";
 import * as random from "@bigby/random";
 
 class Light extends Behavior {
@@ -28,7 +21,7 @@ light.addBehavior(Light);
 game.addChild(light);
 
 const cube = () => {
-  const cube = new Entity("Sphere");
+  const cube = new Entity("Cube");
   const scale = random.between(0.3, 2);
   cube.addBehavior(Transform3D, {
     position: {
