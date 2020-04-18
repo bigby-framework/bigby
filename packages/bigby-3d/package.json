@@ -1,7 +1,7 @@
 {
   "name": "@bigby/3d",
   "description": "Build 3D games with Bigby.",
-  "version": "0.5.17-0.6.0-alpha.0.0",
+  "version": "0.6.0-alpha.0",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
@@ -33,7 +33,7 @@
   },
   "dependencies": {
     "@babylonjs/core": "^4.1.0",
-    "@bigby/behaviors": "^0.5.17-0.6.0-alpha.0.0",
+    "@bigby/behaviors": "^0.6.0-alpha.0",
     "@bigby/core": "^0.5.17-0.6.0-alpha.0.0"
   }
 }

@@ -1,7 +1,7 @@
 {
   "name": "simple-bigby-3d-game",
   "private": true,
-  "version": "0.5.17-0.6.0-alpha.0.0",
+  "version": "0.6.0-alpha.0",
   "license": "MIT",
   "scripts": {
     "dev": "bigby dev",
@@ -10,7 +10,7 @@
     "deploy": "netlify deploy -p -d dist/"
   },
   "dependencies": {
-    "bigby": "^0.5.17-0.6.0-alpha.0.0",
+    "bigby": "^0.6.0-alpha.0",
     "typescript": "^3.8.3"
   },
   "devDependencies": {

@@ -1,7 +1,7 @@
 {
   "name": "@bigby/behaviors",
   "description": "A collection of useful Bigby behaviors for your game.",
-  "version": "0.5.17-0.6.0-alpha.0.0",
+  "version": "0.6.0-alpha.0",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
