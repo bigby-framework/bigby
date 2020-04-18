@@ -1,42 +1,24 @@
-import { AutoRotate3D, Game3D, ITransform3D, Transform3D } from "@bigby/3d";
+import { AutoRotate3D, Renderer3D, ITransform3D, Transform3D } from "@bigby/3d";
 import { with3DEditor } from "@bigby/3d-editor";
 import { Ticker } from "@bigby/behaviors";
 import { Behavior, Entity } from "@bigby/core";
 
-import "@babylonjs/core/Meshes/meshBuilder";
-import "@babylonjs/core/Materials/standardMaterial";
-import { Mesh } from "@babylonjs/core/Meshes/mesh";
-import { PointLight } from "@babylonjs/core/Lights/pointLight";
-import { Vector3 } from "@babylonjs/core/Maths/math.vector";
-
 class Light extends Behavior {
   static displayName = "Dummy Light";
 
-  awake() {
-    const light = new PointLight("", new Vector3(0, 0, 0), null);
-
-    /* Parent to the nearest T3D */
-    const t3d = this.getNearestBehavior(Transform3D);
-    light.parent = t3d.node;
-  }
+  awake() {}
 }
 
 class RenderSphere extends Behavior {
   static displayName = "Sphere";
 
-  awake() {
-    const sphere = Mesh.CreateSphere(null, 16, 4, null, false, Mesh.FRONTSIDE);
-
-    /* Parent to the nearest T3D */
-    const t3d = this.getNearestBehavior(Transform3D);
-    sphere.parent = t3d.node;
-  }
+  awake() {}
 }
 
 const game = new Entity("Test 3D Game");
 game.addBehavior(Transform3D);
 game.addBehavior(Ticker);
-game.addBehavior(Game3D);
+game.addBehavior(Renderer3D);
 
 const light = new Entity("Light");
 light.addBehavior(Transform3D, { position: { x: -70, y: 15, z: -18 } });

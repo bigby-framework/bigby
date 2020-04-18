@@ -16,10 +16,6 @@ export default class AutoRotate3D extends Behavior<{ speed: IVec3 }> {
   }
 
   update(dt: number) {
-    this.t3d?.node.addRotation(
-      this.speed.x * dt,
-      this.speed.y * dt,
-      this.speed.z * dt
-    );
+    // implement me
   }
 }
