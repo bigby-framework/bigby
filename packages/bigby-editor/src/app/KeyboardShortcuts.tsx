@@ -1,6 +1,5 @@
 import React, { FC, useEffect } from "react";
 import { useEditorState } from "./state";
-import { Game2D } from "@bigby/2d";
 
 import hotkeys from "hotkeys-js";
 

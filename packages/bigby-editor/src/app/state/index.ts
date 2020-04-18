@@ -1,6 +1,5 @@
 import { createContext, useContext, Dispatch } from "react";
 import { Entity } from "@bigby/core";
-import { Game2D } from "@bigby/2d";
 import Editor from "../../Editor";
 
 /* This is what our editor state looks like. */
