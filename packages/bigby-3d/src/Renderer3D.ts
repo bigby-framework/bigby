@@ -1,15 +1,6 @@
 import { Behavior } from "@bigby/core";
-import {
-  Scene,
-  PerspectiveCamera,
-  WebGLRenderer,
-  Camera,
-  BoxGeometry,
-  MeshBasicMaterial,
-  Mesh,
-  MeshNormalMaterial,
-  Vector3,
-} from "three";
+import Transform3D from "./Transform3D";
+import { Scene, PerspectiveCamera, WebGLRenderer, Camera } from "three";
 
 class Renderer3D extends Behavior<{
   canvas: HTMLCanvasElement;
@@ -56,16 +47,11 @@ class Renderer3D extends Behavior<{
       0.1,
       1000
     );
+    this.camera.position.z = 5;
 
-    {
-      /* Add some dummy stuff */
-      var geometry = new BoxGeometry();
-      var mat = new MeshNormalMaterial({});
-      var cube = new Mesh(geometry, mat);
-      this.scene.add(cube);
-      cube.position.add(new Vector3(3, 1, 0.2));
-      this.camera.position.z = 5;
-    }
+    /* Find our Transform3D and add it to the scene */
+    const t3d = this.getBehavior(Transform3D);
+    this.scene.add(t3d.group);
 
     /* Create a renderer */
     this.renderer = new WebGLRenderer();

@@ -1,5 +1,6 @@
 import { Behavior, inspect } from "@bigby/core";
 import { Group } from "three";
+import Renderer3D from "./Renderer3D";
 
 export interface IVec3 {
   x: number;

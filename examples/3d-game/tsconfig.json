@@ -12,7 +12,8 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "types": ["threes"]
   },
   "include": ["game/**/*"],
   "exclude": ["node_modules", "**/*.spec.ts"]
