@@ -1,27 +1,29 @@
 {
   "compilerOptions": {
-    "lib": ["es2015", "dom"],
     "target": "es5",
     "module": "commonjs",
     "moduleResolution": "node",
+
+    "lib": ["es2015", "dom"],
+    "noLib": false,
+    "jsx": "react",
+
     "sourceMap": true,
     "declaration": true,
     "removeComments": true,
-    "noLib": false,
     "skipLibCheck": true,
+
     "emitDecoratorMetadata": true,
-    "outDir": "./dist/",
+
     "strict": false /* SOON */,
     "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "resolveJsonModule": true,
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true,
-    "jsx": "react",
-    "preserveWatchOutput": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true
+    "preserveWatchOutput": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "**/*.spec.ts"]
+  "exclude": ["**/node_modules", "**/*.spec.ts", "**/*.test.ts"]
 }

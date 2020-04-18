@@ -4,5 +4,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": { "@bigby/*": ["packages/bigby-*/src/"] }
-  }
+  },
+
+  "include": ["packages/**/src"]
 }
