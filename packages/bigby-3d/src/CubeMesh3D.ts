@@ -6,6 +6,7 @@ import {
   Mesh,
   MeshLambertMaterial,
   MeshPhongMaterial,
+  MeshBasicMaterial,
 } from "three";
 
 export default class CubeMesh3D extends Behavior {
@@ -24,8 +25,22 @@ export default class CubeMesh3D extends Behavior {
       opacity: 0.9,
       transparent: true,
     });
-    // const mat = new MeshLambertMaterial({ color: 0xdddddd });
-    const cube = new Mesh(geometry, phongMat);
+
+    const phongMat2 = new MeshPhongMaterial({
+      color: 0xdddddd,
+      specular: 0xffffff,
+      shininess: 30,
+      flatShading: true,
+    });
+
+    const basicMat = new MeshBasicMaterial({
+      color: 0xffaa00,
+      wireframe: true,
+    });
+
+    const lambertMat = new MeshLambertMaterial({ color: 0xdddddd });
+
+    const cube = new Mesh(geometry, basicMat);
 
     /* Add the cube to our local Transform3D */
     this.getBehavior(Transform3D).add(cube);
