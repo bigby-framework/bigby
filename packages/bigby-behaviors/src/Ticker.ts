@@ -2,6 +2,8 @@ import { Behavior, signal } from "@bigby/core";
 import { clamp } from "@bigby/math";
 
 class Ticker extends Behavior {
+  static displayName = "Ticker";
+  static icon = "⌚️";
   static description =
     "Implements a game ticker. Will emit its onTick signal once per frame.";
 
