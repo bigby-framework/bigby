@@ -63,7 +63,7 @@ const sphere = (t3d?: Partial<ITransform3D>) => {
 
 const sculpture = new Entity("Sculpture");
 sculpture.addBehavior(Transform3D);
-sculpture.addBehavior(AutoRotate3D);
+sculpture.addBehavior(AutoRotate3D, { speed: { x: 2.7, y: 3.9, z: 1 } });
 game.addChild(sculpture);
 
 sculpture.addChild(sphere({ position: { x: 0, y: 0, z: 0 } }));
