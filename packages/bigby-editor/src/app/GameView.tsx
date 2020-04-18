@@ -5,7 +5,7 @@ import SelectedEntity from "../SelectedEntity";
 import css from "./GameView.css";
 import { useEditorState } from "./state";
 
-const GameView: FC = (props) => {
+const GameView: FC = () => {
   const [state, dispatch] = useEditorState();
   const { root } = state;
   const ref = useRef();

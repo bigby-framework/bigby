@@ -2,10 +2,13 @@ import { Behavior, signal } from "@bigby/core";
 import { clamp } from "@bigby/math";
 
 class Ticker extends Behavior {
-  static description =
-    "Implements a game ticker. Will emit its onTick signal once per frame.";
+  static displayName = "Ticker";
+  static icon = "⌚️";
+  static description = "Implements a game ticker.";
 
   onTick = signal<number>();
+
+  callbackFn: (dt: number) => void;
 
   awake() {
     let lastTime = Date.now();
@@ -18,13 +21,14 @@ class Ticker extends Behavior {
       lastTime = newTime;
 
       /* Update our entity */
-      this.onTick.emit(deltaTime);
+      if (this.callbackFn) this.callbackFn(deltaTime);
+      else this.entity.update(deltaTime);
 
       /* Trigger next frame */
       requestAnimationFrame(animate);
     };
 
-    animate();
+    requestAnimationFrame(animate);
   }
 }
 

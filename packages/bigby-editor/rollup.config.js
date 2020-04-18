@@ -30,7 +30,6 @@ export default {
     "react",
     "react-dom",
     "@bigby/core",
-    "@bigby/2d",
     "lodash",
     "hotkeys-js",
     "@fortawesome/free-solid-svg-icons",

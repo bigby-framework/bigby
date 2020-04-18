@@ -21,7 +21,6 @@ export interface IFixture {
 }
 
 // export const loadFixture = (fixture: IFixture, body: Body, scale = 1) => {
-//   /* TODO: convert from meters to pixels here */
 //   const points = fixture.points.map((point) =>
 //     Vec2(point.x * scale, point.y * scale)
 //   );

@@ -25,19 +25,6 @@ export default class Game2D extends Behavior {
   /* Properties */
   backgroundColor = 0x000000;
 
-  /* Edit Mode Toggle */
-  private _isEditing = false;
-
-  @inspect()
-  get isEditing() {
-    return this._isEditing;
-  }
-
-  set isEditing(v) {
-    this._isEditing = v;
-    v ? this.entity.enterEditMode() : this.entity.enterPlayMode();
-  }
-
   awake() {
     /* If no HTML element has been specified at this point, let's look for #bigby */
     if (!this.element) this.element = document.getElementById("bigby");
@@ -45,7 +32,7 @@ export default class Game2D extends Behavior {
     /* Create a PIXI application */
     this.app = new PIXI.Application({
       backgroundColor: this.backgroundColor,
-      autoStart: false,
+      autoStart: true,
       antialias: true,
     });
 
@@ -54,23 +41,6 @@ export default class Game2D extends Behavior {
     /* Find our Renderable2D and add its container to our stage */
     const r2d = this.getBehavior(Renderable2D);
     this.app.stage.addChild(r2d.container);
-
-    /* Set up ticker */
-    this.app.ticker.add(() => {
-      const dt = this.app.ticker.deltaMS / 1000;
-
-      if (this.isEditing) {
-        this.entity.editorUpdate(dt);
-      } else {
-        this.entity.update(dt);
-      }
-    });
-
-    /* Start the game */
-    this.app.start();
-
-    /* Give everyone a chance to run enterEditMode and enterPlayMode functions */
-    this.isEditing ? this.entity.enterEditMode() : this.entity.enterPlayMode();
   }
 
   private initializeElement() {

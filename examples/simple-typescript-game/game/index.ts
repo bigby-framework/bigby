@@ -2,6 +2,7 @@ import { Game2D, Renderable2D } from "@bigby/2d";
 import { Entity } from "@bigby/core";
 import MainScene from "./scenes/main";
 import { with2DEditor } from "@bigby/2d-editor";
+import { Ticker } from "@bigby/behaviors";
 
 /* Anything built using Bigby is comprised of entities (represented by instances
 of the Entity class). Each entity can have child entities, forming a scene tree,
@@ -30,6 +31,9 @@ class ExampleGame extends Entity {
     2D game engine. (Bigby's core framework is engine agnostic; at some point in
     the future, there will also be a Game3D.) */
     this.addBehavior(Game2D);
+
+    /* TODO: explain Ticker */
+    this.addBehavior(Ticker);
 
     /* All entities that intend to render something to the screen are expected
     to have the Renderable2D behavior. */
