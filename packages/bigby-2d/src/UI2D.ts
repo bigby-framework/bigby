@@ -14,6 +14,7 @@ export default class UI2D extends Behavior<{ editorOnly: boolean }> {
   private game2D: Game2D;
 
   awake() {
+    console.log("waking up UI2D");
     this.game2D = this.getNearestBehavior(Game2D);
 
     this.container = new Container();

@@ -28,7 +28,7 @@ class Ticker extends Behavior {
       requestAnimationFrame(animate);
     };
 
-    animate();
+    requestAnimationFrame(animate);
   }
 }
 

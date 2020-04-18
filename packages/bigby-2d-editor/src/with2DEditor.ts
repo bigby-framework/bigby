@@ -1,3 +1,4 @@
+import { Ticker } from "@bigby/behaviors";
 import { Game2D, Renderable2D, UI2D } from "@bigby/2d";
 import { Entity } from "@bigby/core";
 import EditorGrid2D from "./EditorGrid2D";
@@ -12,12 +13,17 @@ const with2DEditor = (game: Entity) => {
 
   /* Remove Game2D from game itself */
   const game2D = game.getBehavior(Game2D);
-  if (game2D) game.removeBehavior(game2D);
+  game.removeBehavior(game2D);
+  editor.addBehavior(game2D);
+
+  /* Remove Also, Ticker from game itself */
+  const ticker = game.getBehavior(Ticker);
+  game.removeBehavior(ticker);
+  editor.addBehavior(ticker);
 
   editor.addBehavior(Editor, { element: document.getElementById("bigby") });
   editor.addBehavior(Renderable2D);
-  editor.addBehavior(game2D).set({ isEditing: true });
-  editor.addBehavior(UI2D).set({ editorOnly: true });
+  editor.addBehavior(UI2D, { editorOnly: true });
   editor.addBehavior(SelectedEntity);
   editor.addBehavior(SelectedEntityGizmo2D);
   editor.addBehavior(ViewportController2D);
