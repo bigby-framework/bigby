@@ -22,7 +22,7 @@ class Ticker extends Behavior {
 
       /* Update our entity */
       if (this.callbackFn) this.callbackFn(deltaTime);
-      else this.entity.editorUpdate(deltaTime);
+      else this.entity.update(deltaTime);
 
       /* Trigger next frame */
       requestAnimationFrame(animate);
