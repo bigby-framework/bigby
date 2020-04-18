@@ -1,5 +1,27 @@
 {
-  "files": [],
-  "include": [],
-  "exclude": ["**/node_modules"]
+  "compilerOptions": {
+    "lib": ["es2015", "dom"],
+    "target": "es5",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "declaration": true,
+    "removeComments": true,
+    "noLib": false,
+    "skipLibCheck": true,
+    "emitDecoratorMetadata": true,
+    "outDir": "./dist/",
+    "strict": false /* SOON */,
+    "noImplicitAny": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "jsx": "react",
+    "preserveWatchOutput": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
