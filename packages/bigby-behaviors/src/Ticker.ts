@@ -18,7 +18,8 @@ class Ticker extends Behavior {
       lastTime = newTime;
 
       /* Update our entity */
-      this.onTick.emit(deltaTime);
+      this.entity.update(deltaTime);
+      /* TODO: if we're editing, invoke editorUpdate instead */
 
       /* Trigger next frame */
       requestAnimationFrame(animate);

@@ -55,11 +55,6 @@ class Game3D extends Behavior<{
 
     /* Automatically resize renderer when window is resized */
     window.addEventListener("resize", this.engine.resize);
-
-    /* Connect to Ticker and set it up to tick the game */
-    /* TODO: should this happen in the ticker itself? It feels wrong to have the Game3D
-    (soon Renderer3D) take care of updating its object tree. */
-    this.getBehavior(Ticker).onTick((dt) => this.entity.update(dt));
   }
 
   lateUpdate() {
