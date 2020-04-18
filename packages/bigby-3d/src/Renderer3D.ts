@@ -47,7 +47,7 @@ class Renderer3D extends Behavior<{
       0.1,
       1000
     );
-    this.camera.position.z = 5;
+    this.camera.position.z = 10;
 
     /* Find our Transform3D and add it to the scene */
     const t3d = this.getBehavior(Transform3D);

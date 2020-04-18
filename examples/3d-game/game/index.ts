@@ -3,6 +3,7 @@ import { with3DEditor } from "@bigby/3d-editor";
 import { Ticker } from "@bigby/behaviors";
 import { Behavior, Entity } from "@bigby/core";
 import { BoxGeometry, Mesh, MeshNormalMaterial, Vector3 } from "three";
+import * as random from "@bigby/random";
 
 class Light extends Behavior {
   static displayName = "Dummy Light";
@@ -35,10 +36,34 @@ light.addBehavior(Transform3D, { position: { x: -70, y: 15, z: -18 } });
 light.addBehavior(Light);
 game.addChild(light);
 
-const cube = (t3d?: Partial<ITransform3D>) => {
+const cube = () => {
   const cube = new Entity("Sphere");
-  cube.addBehavior(Transform3D, t3d);
+  const scale = random.between(0.3, 2);
+  cube.addBehavior(Transform3D, {
+    position: {
+      x: random.minusPlus(5),
+      y: random.minusPlus(5),
+      z: random.minusPlus(5),
+    },
+    rotation: {
+      x: random.minusPlus(360),
+      y: random.minusPlus(360),
+      z: random.minusPlus(360),
+    },
+    scale: {
+      x: scale,
+      y: scale,
+      z: scale,
+    },
+  });
   cube.addBehavior(CubeMesh);
+  cube.addBehavior(AutoRotate3D, {
+    speed: {
+      x: random.minusPlus(5),
+      y: random.minusPlus(5),
+      z: random.minusPlus(5),
+    },
+  });
   return cube;
 };
 
@@ -47,19 +72,7 @@ sculpture.addBehavior(Transform3D);
 sculpture.addBehavior(AutoRotate3D, { speed: { x: 2.7, y: 3.9, z: 1 } });
 game.addChild(sculpture);
 
-sculpture.addChild(cube({ position: { x: 0, y: 0, z: 0 } }));
-sculpture.addChild(
-  cube({
-    position: { x: -2, y: 1, z: 1 },
-    scale: { x: 0.5, y: 0.5, z: 0.5 },
-  })
-);
-sculpture.addChild(
-  cube({
-    position: { x: 2, y: -2, z: -1 },
-    scale: { x: 0.7, y: 0.7, z: 0.7 },
-  })
-);
+for (let i = 0; i < 50; i++) sculpture.addChild(cube());
 
 export default with3DEditor(game);
 // export default game;
