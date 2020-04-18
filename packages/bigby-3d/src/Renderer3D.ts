@@ -19,21 +19,13 @@ class Renderer3D extends Behavior<{
   }
 
   set element(element) {
-    /* Assign */
     this._element = element;
-
-    /* Reset renderer size */
-    this.renderer.setSize(element.clientWidth, element.clientHeight);
-
-    /* Move renderer DOM element */
-    this.element.appendChild(this.renderer.domElement);
-
-    /* TODO: reset camera aspect ratio */
+    this.resetRenderer();
   }
 
   /* Scene */
   scene: Scene;
-  camera: Camera;
+  camera: PerspectiveCamera;
   renderer: WebGLRenderer;
 
   awake() {
@@ -58,6 +50,9 @@ class Renderer3D extends Behavior<{
 
     /* Set the element (so we can launch the renderer) */
     this.element = this.element || document.getElementById("bigby");
+
+    /* Automatically reset the renderer when window size changes */
+    window.onresize = () => this.resetRenderer();
   }
 
   lateUpdate() {
@@ -70,6 +65,25 @@ class Renderer3D extends Behavior<{
 
   private render() {
     this.renderer.render(this.scene, this.camera);
+  }
+
+  private resetRenderer() {
+    if (!this.renderer || !this.element) {
+      console.debug(
+        "Renderer3D tried to reset, but didn't have renderer or element"
+      );
+      return;
+    }
+
+    /* Reset renderer size */
+    this.renderer.setSize(this.element.clientWidth, this.element.clientHeight);
+
+    /* Move renderer DOM element */
+    this.element.appendChild(this.renderer.domElement);
+
+    /* Reset camera aspect ratio */
+    this.camera.aspect = this.element.clientWidth / this.element.clientHeight;
+    this.camera.updateProjectionMatrix();
   }
 }
 
