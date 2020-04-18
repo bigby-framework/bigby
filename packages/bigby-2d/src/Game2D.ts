@@ -25,19 +25,6 @@ export default class Game2D extends Behavior {
   /* Properties */
   backgroundColor = 0x000000;
 
-  /* Edit Mode Toggle */
-  private _isEditing = false;
-
-  @inspect()
-  get isEditing() {
-    return this._isEditing;
-  }
-
-  set isEditing(v) {
-    this._isEditing = v;
-    v ? this.entity.enterEditMode() : this.entity.enterPlayMode();
-  }
-
   awake() {
     /* If no HTML element has been specified at this point, let's look for #bigby */
     if (!this.element) this.element = document.getElementById("bigby");
@@ -68,9 +55,6 @@ export default class Game2D extends Behavior {
 
     /* Start the game */
     this.app.start();
-
-    /* Give everyone a chance to run enterEditMode and enterPlayMode functions */
-    this.isEditing ? this.entity.enterEditMode() : this.entity.enterPlayMode();
   }
 
   private initializeElement() {

@@ -1,6 +1,7 @@
 import { createContext, useContext, Dispatch } from "react";
 import { Entity } from "@bigby/core";
 import { Game2D } from "@bigby/2d";
+import Editor from "../../Editor";
 
 /* This is what our editor state looks like. */
 export type EditorState = {
@@ -26,21 +27,21 @@ export const reducer = (state: EditorState, action: Action): EditorState => {
       return { ...state, selectedEntity: action.entity };
 
     case "startPlaying": {
-      const game2D = state.root.getBehavior(Game2D);
-      game2D.isEditing = false;
+      const editor = state.root.getBehavior(Editor);
+      editor.isEditing = false;
       return { ...state, isPlaying: true };
     }
 
     case "stopPlaying": {
-      const game2D = state.root.getBehavior(Game2D);
-      game2D.isEditing = true;
+      const editor = state.root.getBehavior(Editor);
+      editor.isEditing = true;
       return { ...state, isPlaying: false };
     }
 
     case "togglePlaying": {
-      const game2D = state.root.getBehavior(Game2D);
+      const editor = state.root.getBehavior(Editor);
       const newPlaying = !state.isPlaying;
-      game2D.isEditing = !newPlaying;
+      editor.isEditing = !newPlaying;
       return { ...state, isPlaying: newPlaying };
     }
   }
