@@ -1,23 +1,23 @@
-import { AutoRotate3D, CubeMesh3D, Renderer3D, Transform3D } from "@bigby/3d";
+import {
+  AutoRotate3D,
+  CubeMesh3D,
+  Renderer3D,
+  Transform3D,
+  AmbientLight3D,
+} from "@bigby/3d";
 import { with3DEditor } from "@bigby/3d-editor";
 import { Ticker } from "@bigby/behaviors";
 import { Behavior, Entity } from "@bigby/core";
 import * as random from "@bigby/random";
 
-class Light extends Behavior {
-  static displayName = "Dummy Light";
-
-  awake() {}
-}
-
 const game = new Entity("Test 3D Game");
 game.addBehavior(Transform3D);
 game.addBehavior(Ticker);
 game.addBehavior(Renderer3D);
+game.addBehavior(AmbientLight3D);
 
 const light = new Entity("Light");
 light.addBehavior(Transform3D, { position: { x: -70, y: 15, z: -18 } });
-light.addBehavior(Light);
 game.addChild(light);
 
 const cube = () => {

@@ -1,6 +1,13 @@
 import { Behavior } from "@bigby/core";
 import Transform3D from "./Transform3D";
-import { Scene, PerspectiveCamera, WebGLRenderer, Camera } from "three";
+import {
+  Scene,
+  PerspectiveCamera,
+  WebGLRenderer,
+  Camera,
+  AmbientLight,
+  DirectionalLight,
+} from "three";
 
 class Renderer3D extends Behavior<{
   canvas: HTMLCanvasElement;
@@ -40,6 +47,17 @@ class Renderer3D extends Behavior<{
       1000
     );
     this.camera.position.z = 10;
+
+    // {
+    //   const directionalLight = new DirectionalLight(0xffffff, 1);
+
+    //   directionalLight.position.x = Math.random() - 0.5;
+    //   directionalLight.position.y = Math.random() - 0.5;
+    //   directionalLight.position.z = Math.random() - 0.5;
+    //   directionalLight.position.normalize();
+
+    //   this.scene.add(directionalLight);
+    // }
 
     /* Find our Transform3D and add it to the scene */
     const t3d = this.getBehavior(Transform3D);
