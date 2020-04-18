@@ -36,10 +36,10 @@ light.addBehavior(Light);
 game.addChild(light);
 
 const cube = (t3d?: Partial<ITransform3D>) => {
-  const sphere = new Entity("Sphere");
-  sphere.addBehavior(Transform3D, t3d);
-  sphere.addBehavior(CubeMesh);
-  return sphere;
+  const cube = new Entity("Sphere");
+  cube.addBehavior(Transform3D, t3d);
+  cube.addBehavior(CubeMesh);
+  return cube;
 };
 
 const sculpture = new Entity("Sculpture");

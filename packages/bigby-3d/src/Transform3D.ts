@@ -60,9 +60,12 @@ export default class Transform3D extends Behavior<ITransform3D> {
     this.group.rotation.set(rotation.x, rotation.y, rotation.z);
   }
 
+  add(t3d: Transform3D) {
+    this.group.add(t3d.group);
+  }
+
   awake() {
     /* Parent our node under the nearest node, if there is one */
-    const t3d = this.parent?.getNearestBehavior(Transform3D);
-    if (t3d) t3d.group.add(this.group);
+    this.parent?.getNearestBehavior(Transform3D)?.add(this);
   }
 }
