@@ -3,13 +3,15 @@ import { with3DEditor } from "@bigby/3d-editor";
 import { Ticker } from "@bigby/behaviors";
 import { Behavior, Entity } from "@bigby/core";
 
+import "@babylonjs/core/Meshes/meshBuilder";
+import "@babylonjs/core/Materials/standardMaterial";
+import { Mesh } from "@babylonjs/core/Meshes/mesh";
+import { PointLight } from "@babylonjs/core/Lights/pointLight";
+import { Vector3 } from "@babylonjs/core/Maths/math.vector";
+
 class Light extends Behavior {
   awake() {
-    const light = new BABYLON.PointLight(
-      "",
-      new BABYLON.Vector3(0, 0, 0),
-      null
-    );
+    const light = new PointLight("", new Vector3(0, 0, 0), null);
 
     /* Parent to the nearest T3D */
     const t3d = this.getNearestBehavior(Transform3D);
@@ -19,7 +21,7 @@ class Light extends Behavior {
 
 class RenderGround extends Behavior {
   awake() {
-    const ground = BABYLON.Mesh.CreateGround(null, 6, 6, 2, null, false);
+    const ground = Mesh.CreateGround(null, 6, 6, 2, null, false);
 
     /* Parent to the nearest T3D */
     const t3d = this.getNearestBehavior(Transform3D);
@@ -29,14 +31,7 @@ class RenderGround extends Behavior {
 
 class RenderSphere extends Behavior {
   awake() {
-    const sphere = BABYLON.Mesh.CreateSphere(
-      null,
-      16,
-      4,
-      null,
-      false,
-      BABYLON.Mesh.FRONTSIDE
-    );
+    const sphere = Mesh.CreateSphere(null, 16, 4, null, false, Mesh.FRONTSIDE);
 
     /* Parent to the nearest T3D */
     const t3d = this.getNearestBehavior(Transform3D);

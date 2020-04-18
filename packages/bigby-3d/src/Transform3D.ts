@@ -1,4 +1,5 @@
 import { Behavior, inspect } from "@bigby/core";
+import { TransformNode } from "@babylonjs/core/Meshes/transformNode";
 
 export interface IVec3 {
   x: number;
@@ -65,11 +66,11 @@ export default class Transform3D extends Behavior<ITransform3D> {
   private _rotation: IVec3 = { x: 0, y: 0, z: 0 };
 
   /* Node */
-  node: BABYLON.TransformNode;
+  node: TransformNode;
 
   awake() {
     /* Create a Babylon TransformNode */
-    this.node = new BABYLON.TransformNode(this.entity.name);
+    this.node = new TransformNode(this.entity.name);
     this.applyTransform();
 
     /* Parent our node under the nearest node, if there is one */

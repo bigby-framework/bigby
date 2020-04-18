@@ -1,6 +1,8 @@
-import { Ticker } from "@bigby/behaviors";
-import { Behavior, Entity, inspect } from "@bigby/core";
-import * as BABYLON from "babylonjs";
+import { FreeCamera } from "@babylonjs/core/Cameras/freeCamera";
+import { Engine } from "@babylonjs/core/Engines/engine";
+import { Vector3 } from "@babylonjs/core/Maths/math";
+import { Scene } from "@babylonjs/core/scene";
+import { Behavior } from "@bigby/core";
 
 class Game3D extends Behavior<{
   canvas: HTMLCanvasElement;
@@ -24,11 +26,11 @@ class Game3D extends Behavior<{
   }
 
   /* Scene */
-  scene: BABYLON.Scene;
+  scene: Scene;
 
   /* Other private stuff we'll need */
   private canvas: HTMLCanvasElement;
-  private engine: BABYLON.Engine;
+  private engine: Engine;
 
   awake() {
     /* Default to #bigby element if none is given */
@@ -38,19 +40,19 @@ class Game3D extends Behavior<{
     this.canvas = document.createElement("canvas");
 
     /* Create our renderer */
-    this.engine = new BABYLON.Engine(this.canvas, true);
+    this.engine = new Engine(this.canvas, true);
     this.initializeElement();
 
     /* Create our scene */
-    this.scene = new BABYLON.Scene(this.engine);
+    this.scene = new Scene(this.engine);
 
     /* Create an editor camera */
-    const camera = new BABYLON.FreeCamera(
+    const camera = new FreeCamera(
       "camera1",
-      new BABYLON.Vector3(0, 5, -10),
+      new Vector3(0, 5, -10),
       this.scene
     );
-    camera.setTarget(BABYLON.Vector3.Zero());
+    camera.setTarget(Vector3.Zero());
     camera.attachControl(this.canvas, false);
 
     /* Automatically resize renderer when window is resized */
