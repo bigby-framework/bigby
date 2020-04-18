@@ -3,6 +3,10 @@ import { IVec3, IRotation3D } from "./Transform3D";
 import { Transform3D } from ".";
 
 export default class AutoRotate3D extends Behavior<{ speed: IVec3 }> {
+  static displayName = "AutoRotate3D";
+  static icon = "♻️";
+  static description = "Automatically rotates the entity.";
+
   @inspect("Speed", ["x", "y", "z"]) speed: IVec3 = { x: 0, y: 0, z: 0 };
 
   private t3d: Transform3D;

@@ -11,3 +11,6 @@
 
 # Ignore all log files, everywhere
 *.log
+
+# Local Netlify folder
+.netlify

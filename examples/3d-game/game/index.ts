@@ -10,6 +10,8 @@ import { PointLight } from "@babylonjs/core/Lights/pointLight";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 
 class Light extends Behavior {
+  static displayName = "Dummy Light";
+
   awake() {
     const light = new PointLight("", new Vector3(0, 0, 0), null);
 
@@ -19,17 +21,9 @@ class Light extends Behavior {
   }
 }
 
-class RenderGround extends Behavior {
-  awake() {
-    const ground = Mesh.CreateGround(null, 6, 6, 2, null, false);
-
-    /* Parent to the nearest T3D */
-    const t3d = this.getNearestBehavior(Transform3D);
-    ground.parent = t3d.node;
-  }
-}
-
 class RenderSphere extends Behavior {
+  static displayName = "Sphere";
+
   awake() {
     const sphere = Mesh.CreateSphere(null, 16, 4, null, false, Mesh.FRONTSIDE);
 
