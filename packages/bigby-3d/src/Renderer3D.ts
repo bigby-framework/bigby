@@ -28,9 +28,16 @@ class Renderer3D extends Behavior<{
   }
 
   set element(element) {
+    /* Assign */
     this._element = element;
-    this.renderer.setSize(window.innerWidth, window.innerHeight);
+
+    /* Reset renderer size */
+    this.renderer.setSize(element.clientWidth, element.clientHeight);
+
+    /* Move renderer DOM element */
     this.element.appendChild(this.renderer.domElement);
+
+    /* TODO: reset camera aspect ratio */
   }
 
   /* Scene */
