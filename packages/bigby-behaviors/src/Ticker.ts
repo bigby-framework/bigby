@@ -4,10 +4,11 @@ import { clamp } from "@bigby/math";
 class Ticker extends Behavior {
   static displayName = "Ticker";
   static icon = "⌚️";
-  static description =
-    "Implements a game ticker. Will emit its onTick signal once per frame.";
+  static description = "Implements a game ticker.";
 
   onTick = signal<number>();
+
+  callbackFn: (dt: number) => void;
 
   awake() {
     let lastTime = Date.now();
@@ -20,8 +21,8 @@ class Ticker extends Behavior {
       lastTime = newTime;
 
       /* Update our entity */
-      this.entity.update(deltaTime);
-      /* TODO: if we're editing, invoke editorUpdate instead */
+      if (this.callbackFn) this.callbackFn(deltaTime);
+      else this.entity.editorUpdate(deltaTime);
 
       /* Trigger next frame */
       requestAnimationFrame(animate);

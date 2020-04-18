@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Application } from "./app";
 import { Behavior, inspect } from "@bigby/core";
+import { Ticker } from "@bigby/behaviors";
 
 export default class Editor extends Behavior<{ element: HTMLElement }> {
   static displayName = "Editor";
@@ -39,5 +40,17 @@ export default class Editor extends Behavior<{ element: HTMLElement }> {
 
     /* Give everyone a chance to run enterEditMode and enterPlayMode functions */
     this.isEditing ? this.entity.enterEditMode() : this.entity.enterPlayMode();
+  }
+
+  enterEditMode() {
+    /* Find our ticker and override its callback function */
+    const ticker = this.getBehavior(Ticker);
+    ticker.callbackFn = (dt: number) => this.entity.editorUpdate(dt);
+  }
+
+  enterPlayMode() {
+    /* Find our ticker and clear its callback function */
+    const ticker = this.getBehavior(Ticker);
+    ticker.callbackFn = null;
   }
 }
