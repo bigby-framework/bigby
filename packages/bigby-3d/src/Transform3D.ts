@@ -43,26 +43,22 @@ export default class Transform3D extends Behavior<ITransform3D> {
   /* Scale */
   @inspect("Scale", ["x", "y", "z"], { step: 0.05 })
   get scale() {
-    return this._scale;
+    return this.group.scale;
   }
 
   set scale(scale: IVec3) {
-    this._scale = scale;
+    this.group.scale.set(scale.x, scale.y, scale.z);
   }
-
-  private _scale: IVec3 = { x: 1, y: 1, z: 1 };
 
   /* Rotation */
   @inspect("Rotation", ["x", "y", "z"], { step: 0.05 })
   get rotation() {
-    return this._rotation;
+    return this.group.rotation;
   }
 
   set rotation(rotation: IVec3) {
-    this._rotation = rotation;
+    this.group.rotation.set(rotation.x, rotation.y, rotation.z);
   }
-
-  private _rotation: IVec3 = { x: 0, y: 0, z: 0 };
 
   awake() {
     /* Parent our node under the nearest node, if there is one */
