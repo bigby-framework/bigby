@@ -48,17 +48,6 @@ class Renderer3D extends Behavior<{
     );
     this.camera.position.z = 10;
 
-    // {
-    //   const directionalLight = new DirectionalLight(0xffffff, 1);
-
-    //   directionalLight.position.x = Math.random() - 0.5;
-    //   directionalLight.position.y = Math.random() - 0.5;
-    //   directionalLight.position.z = Math.random() - 0.5;
-    //   directionalLight.position.normalize();
-
-    //   this.scene.add(directionalLight);
-    // }
-
     /* Find our Transform3D and add it to the scene */
     const t3d = this.getBehavior(Transform3D);
     this.scene.add(t3d.group);

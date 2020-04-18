@@ -4,6 +4,7 @@ import {
   Renderer3D,
   Transform3D,
   AmbientLight3D,
+  DirectionalLight3D,
 } from "@bigby/3d";
 import { with3DEditor } from "@bigby/3d-editor";
 import { Ticker } from "@bigby/behaviors";
@@ -18,6 +19,7 @@ game.addBehavior(AmbientLight3D);
 
 const light = new Entity("Light");
 light.addBehavior(Transform3D, { position: { x: -70, y: 15, z: -18 } });
+light.addBehavior(DirectionalLight3D);
 game.addChild(light);
 
 const cube = () => {
