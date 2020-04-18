@@ -18,7 +18,7 @@ export default {
     clearScreen: false,
   },
   plugins: [
-    typescript({ tsconfig: "tsconfig.build.json" }),
+    typescript(),
     postcss({
       modules: true,
       // extract: true,

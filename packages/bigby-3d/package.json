@@ -18,8 +18,8 @@
   },
   "scripts": {
     "clean": "rm -rf ./dist",
-    "build": "tsc -p tsconfig.build.json",
-    "watch": "tsc -p tsconfig.build.json --watch",
+    "build": "tsc",
+    "watch": "tsc --watch",
     "prepublishOnly": "yarn build",
     "test": "jest",
     "docs": "typedoc src/"
