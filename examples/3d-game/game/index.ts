@@ -1,4 +1,10 @@
-import { AutoRotate3D, ITransform3D, Renderer3D, Transform3D } from "@bigby/3d";
+import {
+  AutoRotate3D,
+  ITransform3D,
+  Renderer3D,
+  Transform3D,
+  CubeMesh3D,
+} from "@bigby/3d";
 import { with3DEditor } from "@bigby/3d-editor";
 import { Ticker } from "@bigby/behaviors";
 import { Behavior, Entity } from "@bigby/core";
@@ -9,21 +15,6 @@ class Light extends Behavior {
   static displayName = "Dummy Light";
 
   awake() {}
-}
-
-class CubeMesh extends Behavior {
-  static displayName = "CubeMesh";
-
-  awake() {
-    const t3d = this.getBehavior(Transform3D);
-
-    /* Add some dummy stuff */
-    var geometry = new BoxGeometry();
-    var mat = new MeshNormalMaterial({});
-    var cube = new Mesh(geometry, mat);
-
-    t3d.group.add(cube);
-  }
 }
 
 const game = new Entity("Test 3D Game");
@@ -56,7 +47,7 @@ const cube = () => {
       z: scale,
     },
   });
-  cube.addBehavior(CubeMesh);
+  cube.addBehavior(CubeMesh3D);
   cube.addBehavior(AutoRotate3D, {
     speed: {
       x: random.minusPlus(5),

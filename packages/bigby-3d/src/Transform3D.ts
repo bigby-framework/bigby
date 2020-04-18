@@ -1,5 +1,5 @@
 import { Behavior, inspect } from "@bigby/core";
-import { Group } from "three";
+import { Group, Object3D } from "three";
 import Renderer3D from "./Renderer3D";
 
 export interface IVec3 {
@@ -60,12 +60,12 @@ export default class Transform3D extends Behavior<ITransform3D> {
     this.group.rotation.set(rotation.x, rotation.y, rotation.z);
   }
 
-  add(t3d: Transform3D) {
-    this.group.add(t3d.group);
+  add(o3d: Object3D) {
+    this.group.add(o3d);
   }
 
   awake() {
     /* Parent our node under the nearest node, if there is one */
-    this.parent?.getNearestBehavior(Transform3D)?.add(this);
+    this.parent?.getNearestBehavior(Transform3D)?.add(this.group);
   }
 }
