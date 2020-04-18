@@ -51,5 +51,5 @@ sculpture.addChild(
   })
 );
 
-// export default with3DEditor(game);
-export default game;
+export default with3DEditor(game);
+// export default game;

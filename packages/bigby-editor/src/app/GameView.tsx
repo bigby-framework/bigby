@@ -1,5 +1,5 @@
 import { Game2D } from "@bigby/2d";
-import { Game3D } from "@bigby/3d";
+import { Renderer3D } from "@bigby/3d";
 import React, { FC, useEffect, useRef } from "react";
 import SelectedEntity from "../SelectedEntity";
 import css from "./GameView.css";
@@ -29,8 +29,8 @@ const GameView: FC = () => {
       and 3d packages here. We should find a smarter way to do this. */
       const game2D = root.getBehavior(Game2D);
       if (game2D) game2D.element = ref.current;
-      const game3D = root.getBehavior(Game3D);
-      if (game3D) game3D.element = ref.current;
+      const renderer3D = root.getBehavior(Renderer3D);
+      if (renderer3D) renderer3D.element = ref.current;
     }
   }, [ref]);
 

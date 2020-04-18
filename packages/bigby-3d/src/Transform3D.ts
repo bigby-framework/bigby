@@ -1,4 +1,5 @@
 import { Behavior, inspect } from "@bigby/core";
+import { Group } from "three";
 
 export interface IVec3 {
   x: number;
@@ -25,17 +26,18 @@ export default class Transform3D extends Behavior<ITransform3D> {
   static icon = "🖥";
   static description = "Yeah.";
 
+  /* Group */
+  group = new Group();
+
   /* Position */
   @inspect("Position", ["x", "y", "z"], { step: 0.1 })
   get position() {
-    return this._position;
+    return this.group.position;
   }
 
   set position(pos: IVec3) {
-    this._position = pos;
+    this.group.position.set(pos.x, pos.y, pos.z);
   }
-
-  private _position: IVec3 = { x: 0, y: 0, z: 0 };
 
   /* Scale */
   @inspect("Scale", ["x", "y", "z"], { step: 0.05 })
@@ -64,6 +66,6 @@ export default class Transform3D extends Behavior<ITransform3D> {
   awake() {
     /* Parent our node under the nearest node, if there is one */
     const t3d = this.parent?.getNearestBehavior(Transform3D);
-    // if (t3d) this.node.parent = t3d.node;
+    if (t3d) t3d.group.add(this.group);
   }
 }

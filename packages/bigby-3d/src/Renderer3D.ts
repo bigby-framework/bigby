@@ -50,13 +50,15 @@ class Renderer3D extends Behavior<{
       1000
     );
 
-    /* Add some dummy stuff */
-    var geometry = new BoxGeometry();
-    var mat = new MeshNormalMaterial({});
-    var cube = new Mesh(geometry, mat);
-    this.scene.add(cube);
-    cube.position.add(new Vector3(3, 1, 0.2));
-    this.camera.position.z = 5;
+    {
+      /* Add some dummy stuff */
+      var geometry = new BoxGeometry();
+      var mat = new MeshNormalMaterial({});
+      var cube = new Mesh(geometry, mat);
+      this.scene.add(cube);
+      cube.position.add(new Vector3(3, 1, 0.2));
+      this.camera.position.z = 5;
+    }
 
     /* Create a renderer */
     this.renderer = new WebGLRenderer();
