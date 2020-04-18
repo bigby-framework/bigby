@@ -2,12 +2,14 @@ import { Behavior, Entity, signal } from "@bigby/core";
 import { interaction, IPoint } from "pixi.js";
 import { clamp } from "@bigby/math";
 import { Game2D, Renderable2D, IVec2 } from "@bigby/2d";
+import { Editor } from "@bigby/editor";
 
 class ViewportController2D extends Behavior {
   static displayName = "ViewportController2D";
   static icon = "🎥";
   static description = "Provides viewport panning and zooming in the editor.";
 
+  private editor: Editor;
   private game2d: Game2D;
   private r2d: Renderable2D;
   private isDragging = false;
@@ -25,6 +27,7 @@ class ViewportController2D extends Behavior {
 
   awake() {
     /* Fetch some other behaviors */
+    this.editor = this.getBehavior(Editor);
     this.game2d = this.getBehavior(Game2D);
     this.r2d = this.getBehavior(Renderable2D);
 
@@ -50,7 +53,7 @@ class ViewportController2D extends Behavior {
     };
 
     this.game2d.element.addEventListener("wheel", (event) => {
-      if (this.game2d.isEditing) this.wheelDelta += event.deltaY;
+      if (this.editor.isEditing) this.wheelDelta += event.deltaY;
     });
 
     this.r2d.container.on("mousedown", startDragging);
@@ -59,7 +62,6 @@ class ViewportController2D extends Behavior {
   }
 
   editorUpdate() {
-    const scale = this.r2d.scale;
     const mousePos = this.getMousePosition();
 
     if (this.isDragging) {
