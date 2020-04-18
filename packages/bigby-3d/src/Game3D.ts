@@ -60,7 +60,10 @@ class Game3D extends Behavior<{
   }
 
   lateUpdate() {
-    /* If we have a scene, render it. */
+    this.scene?.render();
+  }
+
+  editorLateUpdate() {
     this.scene?.render();
   }
 
