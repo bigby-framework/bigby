@@ -1,15 +1,12 @@
 import {
-  AutoRotate3D,
-  CubeMesh3D,
-  Renderer3D,
-  Transform3D,
   AmbientLight3D,
   DirectionalLight3D,
+  Renderer3D,
+  Transform3D,
 } from "@bigby/3d";
 import { with3DEditor } from "@bigby/3d-editor";
 import { Ticker } from "@bigby/behaviors";
-import { Behavior, Entity } from "@bigby/core";
-import * as random from "@bigby/random";
+import { Entity } from "@bigby/core";
 import cubes from "./cubes";
 
 const game = new Entity("Test 3D Game");
