@@ -14,9 +14,10 @@ export default class CubeMesh3D extends Behavior {
   static icon = "❇️";
   static description = "Renders a cube mesh.";
 
+  static geometry = new BoxGeometry();
+
   awake() {
     /* Add some dummy stuff */
-    const geometry = new BoxGeometry();
     const phongMat = new MeshPhongMaterial({
       color: 0x000000,
       specular: 0x666666,
@@ -40,7 +41,7 @@ export default class CubeMesh3D extends Behavior {
 
     const lambertMat = new MeshLambertMaterial({ color: 0xdddddd });
 
-    const cube = new Mesh(geometry, basicMat);
+    const cube = new Mesh(CubeMesh3D.geometry, phongMat2);
 
     /* Add the cube to our local Transform3D */
     this.getBehavior(Transform3D).add(cube);
