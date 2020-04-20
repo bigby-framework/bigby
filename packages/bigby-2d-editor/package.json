@@ -1,7 +1,7 @@
 {
   "name": "@bigby/2d-editor",
   "description": "Additional behaviors for editing 2D games.",
-  "version": "0.6.0-alpha.0",
+  "version": "0.6.0-alpha.1",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
@@ -32,9 +32,9 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/2d": "^0.6.0-alpha.0",
-    "@bigby/behaviors": "^0.6.0-alpha.0",
-    "@bigby/core": "^0.5.17-0.6.0-alpha.0.0",
-    "@bigby/editor": "^0.6.0-alpha.0"
+    "@bigby/2d": "^0.6.0-alpha.1",
+    "@bigby/behaviors": "^0.6.0-alpha.1",
+    "@bigby/core": "^0.6.0-alpha.1",
+    "@bigby/editor": "^0.6.0-alpha.1"
   }
 }
