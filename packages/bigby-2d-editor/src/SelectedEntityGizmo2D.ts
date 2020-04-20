@@ -27,11 +27,17 @@ class SelectedEntityGizmo2D extends Behavior {
       /* Update gizmo */
       const se_r2d = this.se.selectedEntity.getBehavior(Renderable2D);
 
-      const bounds = se_r2d.container.getBounds();
-      this.gizmo.clear();
-      this.gizmo.lineStyle(3, 0xffbd01, 0.5);
-      this.gizmo.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);
-      this.gizmo.endFill();
+      /* If the selected entity has a Renderable2D, render our gizmo around it. */
+      if (se_r2d) {
+        const bounds = se_r2d.container.getBounds();
+        this.gizmo.clear();
+        this.gizmo.lineStyle(3, 0xffbd01, 0.5);
+        this.gizmo.drawRect(bounds.x, bounds.y, bounds.width, bounds.height);
+        this.gizmo.endFill();
+      } else {
+        /* Otherwise, just clear the gizmo. */
+        this.gizmo.clear();
+      }
     }
   }
 }
