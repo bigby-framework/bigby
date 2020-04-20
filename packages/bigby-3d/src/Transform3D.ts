@@ -1,5 +1,6 @@
 import { Behavior, inspect } from "@bigby/core";
-import { TransformNode } from "@babylonjs/core/Meshes/transformNode";
+import { Group, Object3D } from "three";
+import Renderer3D from "./Renderer3D";
 
 export interface IVec3 {
   x: number;
@@ -26,74 +27,45 @@ export default class Transform3D extends Behavior<ITransform3D> {
   static icon = "🖥";
   static description = "Yeah.";
 
+  /* Group */
+  group = new Group();
+
   /* Position */
   @inspect("Position", ["x", "y", "z"], { step: 0.1 })
   get position() {
-    return this.node ? this.node.position : this._position;
+    return this.group.position;
   }
 
   set position(pos: IVec3) {
-    this.node
-      ? this.node.position.set(pos.x, pos.y, pos.z)
-      : (this._position = pos);
+    this.group.position.set(pos.x, pos.y, pos.z);
   }
-
-  private _position: IVec3 = { x: 0, y: 0, z: 0 };
 
   /* Scale */
   @inspect("Scale", ["x", "y", "z"], { step: 0.05 })
   get scale() {
-    return this.node ? this.node.scaling : this._scale;
+    return this.group.scale;
   }
 
   set scale(scale: IVec3) {
-    this.node
-      ? this.node.scaling.set(scale.x, scale.y, scale.z)
-      : (this._scale = scale);
+    this.group.scale.set(scale.x, scale.y, scale.z);
   }
-
-  private _scale: IVec3 = { x: 1, y: 1, z: 1 };
 
   /* Rotation */
   @inspect("Rotation", ["x", "y", "z"], { step: 0.05 })
   get rotation() {
-    return this.node ? this.node.rotation : this._rotation;
+    return this.group.rotation;
   }
 
   set rotation(rotation: IVec3) {
-    this.node
-      ? this.node.rotation.set(rotation.x, rotation.y, rotation.z)
-      : (this._rotation = rotation);
+    this.group.rotation.set(rotation.x, rotation.y, rotation.z);
   }
 
-  private _rotation: IVec3 = { x: 0, y: 0, z: 0 };
-
-  /* Node */
-  node: TransformNode;
+  add(o3d: Object3D) {
+    this.group.add(o3d);
+  }
 
   awake() {
-    /* Create a Babylon TransformNode */
-    this.node = new TransformNode(this.entity.name);
-    this.applyFallbackTransform();
-
     /* Parent our node under the nearest node, if there is one */
-    const t3d = this.parent?.getNearestBehavior(Transform3D);
-    if (t3d) this.node.parent = t3d.node;
-  }
-
-  private applyFallbackTransform() {
-    if (!this.node) return;
-
-    this.node.position.set(
-      this._position.x,
-      this._position.y,
-      this._position.z
-    );
-    this.node.scaling.set(this._scale.x, this._scale.y, this._scale.z);
-    this.node.rotation.set(
-      this._rotation.x,
-      this._rotation.y,
-      this._rotation.z
-    );
+    this.parent?.getNearestBehavior(Transform3D)?.add(this.group);
   }
 }

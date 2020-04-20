@@ -1,6 +1,6 @@
 import { Behavior, inspect } from "@bigby/core";
-import { IVec3, IRotation3D } from "./Transform3D";
 import { Transform3D } from ".";
+import { IVec3 } from "./Transform3D";
 
 export default class AutoRotate3D extends Behavior<{ speed: IVec3 }> {
   static displayName = "AutoRotate3D";
@@ -16,10 +16,10 @@ export default class AutoRotate3D extends Behavior<{ speed: IVec3 }> {
   }
 
   update(dt: number) {
-    this.t3d?.node.addRotation(
-      this.speed.x * dt,
-      this.speed.y * dt,
-      this.speed.z * dt
-    );
+    this.t3d.rotation = {
+      x: this.t3d.rotation.x + this.speed.x * dt,
+      y: this.t3d.rotation.y + this.speed.y * dt,
+      z: this.t3d.rotation.z + this.speed.z * dt,
+    };
   }
 }

@@ -1,4 +1,4 @@
-import { Game3D, Transform3D } from "@bigby/3d";
+import { Transform3D, Renderer3D } from "@bigby/3d";
 import { Entity } from "@bigby/core";
 import { Ticker } from "@bigby/behaviors";
 import { SelectedEntity, Editor } from "@bigby/editor";
@@ -12,9 +12,9 @@ const with3DEditor = (game: Entity) => {
   editor.addBehavior(SelectedEntity);
 
   /* Move Game3D */
-  const game3D = game.getBehavior(Game3D);
-  game.removeBehavior(game3D);
-  editor.addBehavior(game3D);
+  const renderer3D = game.getBehavior(Renderer3D);
+  game.removeBehavior(renderer3D);
+  editor.addBehavior(renderer3D);
 
   /* Move Ticker */
   const ticker = game.getBehavior(Ticker);
