@@ -1,4 +1,4 @@
-import { Renderable2D, UI2D } from "@bigby/2d";
+import { Renderable2D, UI2D, Game2D, EntityContainer } from "@bigby/2d";
 import { Behavior } from "@bigby/core";
 import { SelectedEntity } from "@bigby/editor";
 import { Graphics } from "pixi.js";
@@ -20,6 +20,22 @@ class SelectedEntityGizmo2D extends Behavior {
     /* Create gizmo and add it to editor UI */
     this.gizmo = new Graphics();
     this.ui2d.container.addChild(this.gizmo);
+
+    /* Set up mouse selection of entities */
+    if (this.se) {
+      const game2d = this.getNearestBehavior(Game2D);
+      game2d.app.stage.interactive = true;
+
+      /* Click handler */
+      game2d.app.stage.on("click", (e: PIXI.interaction.InteractionEvent) => {
+        if (e.data.button == 0 && e.target instanceof EntityContainer) {
+          this.se.selectEntityFromGameView(
+            (e.target as EntityContainer).bigbyEntity
+          );
+          e.stopPropagation();
+        }
+      });
+    }
   }
 
   editorLateUpdate() {

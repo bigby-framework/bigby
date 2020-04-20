@@ -1,4 +1,4 @@
-import { Behavior, inspect } from "@bigby/core";
+import { Behavior } from "@bigby/core";
 import * as PIXI from "pixi.js";
 import Renderable2D from "./Renderable2D";
 

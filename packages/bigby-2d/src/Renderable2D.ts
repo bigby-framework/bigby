@@ -1,5 +1,6 @@
 import { Behavior, inspect } from "@bigby/core";
 import * as PIXI from "pixi.js";
+import EntityContainer from "./EntityContainer";
 import { angleToVec2 } from "./vec2";
 
 export interface IRenderable2D {
@@ -72,27 +73,14 @@ export default class Renderable2D extends Behavior<IRenderable2D>
     this.container.alpha = v;
   }
 
-  readonly container = new PIXI.Container();
+  readonly container = new EntityContainer();
 
   awake() {
+    /* Assign this entity to the container */
+    this.container.bigbyEntity = this.entity;
+
     /* All containers should automatically sort their children by zIndex */
     this.container.sortableChildren = true;
-
-    /* Let's set up a click event, but we'll only set the container to interactive in edit mode. */
-
-    /* TODO: we definitely don't want a dependency to @bigby/editor here, so we
-    should probably find a smarter way of doing this. */
-
-    // this.container.on("click", (e: PIXI.interaction.InteractionEvent) => {
-    //   if (e.data.button == 0) {
-    //     const se = this.getNearestBehavior(SelectedEntity);
-
-    //     if (se) {
-    //       se.selectEntityFromGameView(this.entity);
-    //       e.stopPropagation();
-    //     }
-    //   }
-    // });
 
     /* Add our container to the nearest container */
     const r2d = this.parent?.getNearestBehavior(Renderable2D);
