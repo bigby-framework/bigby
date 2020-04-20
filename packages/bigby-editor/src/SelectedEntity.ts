@@ -13,7 +13,7 @@ class SelectedEntity extends Behavior {
   }
 
   set selectedEntity(ent: Entity) {
-    console.log("Selected entity:", ent);
+    console.debug("Selected entity:", ent);
     this._selectedEntity = ent;
   }
 
