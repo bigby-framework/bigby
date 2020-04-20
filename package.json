@@ -3,7 +3,8 @@
   "private": true,
   "workspaces": [
     "packages/*",
-    "examples/*"
+    "examples/*",
+    "projects/*"
   ],
   "version": "0.0.1",
   "repository": "bigby-framework/bigby.git",
