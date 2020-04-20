@@ -4,9 +4,9 @@
   "version": "0.6.0-alpha.0",
   "license": "MIT",
   "scripts": {
-    "dev": "bigby dev --open",
+    "dev": "bigby dev",
     "build": "bigby build",
-    "build:production": "bigby build --production --analyze"
+    "build:production": "bigby build --production"
   },
   "dependencies": {
     "bigby": "^0.6.0-alpha.0",
