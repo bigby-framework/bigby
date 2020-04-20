@@ -52,8 +52,12 @@ class ViewportController2D extends Behavior {
       }
     };
 
-    this.game2d.element.addEventListener("wheel", (event) => {
-      if (this.editor.isEditing) this.wheelDelta += event.deltaY;
+    /* When the game is mounted, attach an event to its containing DOM element
+    to listen for mouse wheel events. */
+    this.game2d.onMounted((domElement) => {
+      domElement.addEventListener("wheel", (event) => {
+        if (this.editor.isEditing) this.wheelDelta += event.deltaY;
+      });
     });
 
     this.r2d.container.on("mousedown", startDragging);
