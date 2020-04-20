@@ -1,4 +1,3 @@
-import { ViewportController2D } from "@bigby/2d-editor";
 import { Entity } from "@bigby/core";
 import React, { FC } from "react";
 import SelectedEntity from "../SelectedEntity";
@@ -52,8 +51,8 @@ const NodeTreeView: FC = (props) => {
   };
 
   const handleDoubleClickEntity = (ent: Entity) => {
-    /* TODO: we don't really want the hard dependency to @bigby/2d-editor here */
-    root.getBehavior(ViewportController2D).focusOnEntity(ent);
+    /* TODO: reimplement this */
+    // root.getBehavior(ViewportController2D).focusOnEntity(ent);
   };
 
   return (
