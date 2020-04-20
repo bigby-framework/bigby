@@ -28,10 +28,7 @@ const GameView: FC = () => {
       /* TODO: we don't really want to have these hard dependencies into the 2d
       and 3d packages here. We should find a smarter way to do this. */
       const game2D = root.getBehavior(Game2D);
-      if (game2D) {
-        console.log("yolo", ref.current);
-        game2D.mount(ref.current);
-      }
+      if (game2D) game2D.mount(ref.current);
 
       const renderer3D = root.getBehavior(Renderer3D);
       if (renderer3D) renderer3D.element = ref.current;
