@@ -89,19 +89,17 @@ const InspectorView: FC = (props) => {
   const [state] = useEditorState();
   const { selectedEntity } = state;
 
-  return (
-    <Area>
-      {!selectedEntity ? (
-        <>No entity selected.</>
-      ) : selectedEntity.behaviors.length === 0 ? (
-        <>The selected entity does not contain any behaviors.</>
-      ) : (
-        selectedEntity.behaviors.map((co) => (
-          <BehaviorInspector behavior={co} key={co.id} />
-        ))
-      )}
-    </Area>
+  const contents = !selectedEntity ? (
+    <>No entity selected.</>
+  ) : selectedEntity.behaviors.length === 0 ? (
+    <>The selected entity does not contain any behaviors.</>
+  ) : (
+    selectedEntity.behaviors.map((co) => (
+      <BehaviorInspector behavior={co} key={co.id} />
+    ))
   );
+
+  return <Area>{contents}</Area>;
 };
 
 export { InspectorView };
