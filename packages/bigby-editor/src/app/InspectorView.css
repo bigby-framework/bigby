@@ -1,23 +1,24 @@
 .behavior-inspector + .behavior-inspector {
-  margin-top: 1.5em;
+  margin-top: 2em;
 }
 
 .behavior-inspector > header {
   font-weight: bold;
-  background-color: var(--much-darker);
-  padding: 0.5em 1em;
+  background-color: var(--darker);
+  border-bottom: 1px solid var(--much-darker);
+  padding: 0.5em 0.5em;
+  margin-left: -0.5em;
+  margin-right: -0.5em;
   cursor: move;
-  border-radius: 5px 5px 0 0;
 }
 
 .behavior-inspector > header span {
   margin-right: 0.75em;
+  text-shadow: var(--much-darker) 1px 1px;
 }
 
 .behavior-inspector > main {
-  padding: 0.5em;
-  background-color: var(--slightly-darker);
-  border-radius: 0 0 5px 5px;
+  margin: 0.5em 0;
 }
 
 .behavior-description {
@@ -27,6 +28,7 @@
 
 :local table {
   margin-top: 1em;
+  border-spacing: 0;
 }
 
 :local th {
