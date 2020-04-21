@@ -59,7 +59,7 @@ export abstract class Behavior<
   enterEditMode() {}
   destroy() {}
 
-  /* Convenience accessors */
+  /** Convenience accessor to get the attached entity's parent. */
   get parent() {
     return this.entity.parent;
   }
