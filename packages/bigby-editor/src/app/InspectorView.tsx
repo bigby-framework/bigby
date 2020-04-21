@@ -91,12 +91,14 @@ const InspectorView: FC = (props) => {
 
   return (
     <Area>
-      {selectedEntity ? (
+      {!selectedEntity ? (
+        <>No entity selected.</>
+      ) : selectedEntity.behaviors.length === 0 ? (
+        <>The selected entity does not contain any behaviors.</>
+      ) : (
         selectedEntity.behaviors.map((co) => (
           <BehaviorInspector behavior={co} key={co.id} />
         ))
-      ) : (
-        <>No entity selected.</>
       )}
     </Area>
   );
