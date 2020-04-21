@@ -57,7 +57,6 @@ export abstract class Behavior<
   editorLateUpdate(dt: number) {}
   enterPlayMode() {}
   enterEditMode() {}
-  propertyUpdate() {}
   destroy() {}
 
   /* Convenience accessors */
