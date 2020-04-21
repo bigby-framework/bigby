@@ -20,9 +20,14 @@ export class Entity implements IFinderFunctions {
     if (name) this.name = name;
   }
 
-  /* Child entities */
+  /** Array containing this entity's child entities. */
   children = new Array<Entity>();
 
+  /**
+   * Add a child to this entity's list of children.
+   *
+   * @param constructor Entity constructor or instance.
+   */
   addChild<T extends Entity>(constructor?: { new (): T } | Entity) {
     /* Create entity instance */
     const entity =
@@ -41,6 +46,11 @@ export class Entity implements IFinderFunctions {
     return entity;
   }
 
+  /**
+   * Remove an entity from this entity's list of children.
+   *
+   * @param entity Entity instance to remove.
+   */
   removeChild(entity: Entity) {
     entity.parent = null;
     this.children = this.children.filter((go) => go !== entity);
@@ -142,6 +152,12 @@ export class Entity implements IFinderFunctions {
     this.parent.removeChild(this);
   }
 
+  /**
+   * Generate an entity -- possibly including behaviors and child entities --
+   * from data.
+   *
+   * @param data The data to generate the entity from.
+   */
   public static from(data: EntityData) {
     const e = new Entity(data.name);
 
