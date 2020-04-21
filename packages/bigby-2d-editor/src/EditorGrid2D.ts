@@ -36,7 +36,13 @@ class EditorGrid2D extends Behavior {
     this.ui2d.container.addChild(this.graphics);
     this.drawGrid();
 
+    /* Redraw the grid when we're zooming */
     this.vc2D.onZoom(() => {
+      this.drawGrid();
+    });
+
+    /* Redraw the grid when the window is being resized */
+    window.addEventListener("resize", () => {
       this.drawGrid();
     });
   }
