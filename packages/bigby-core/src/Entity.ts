@@ -1,25 +1,7 @@
 import * as uuid from "uuid";
-import {
-  Behavior,
-  IBehaviorConstructor,
-  IBehaviorProperties,
-} from "./Behavior";
+import { Behavior, IBehaviorConstructor } from "./Behavior";
 import { IFinderFunctions } from "./IFinderFunctions";
-
-export type BehaviorData =
-  | [IBehaviorConstructor, IBehaviorProperties?]
-  | IBehaviorConstructor;
-
-export type EntityData = {
-  name: string;
-  icon?: string;
-  behaviors?: BehaviorData[];
-  children?: EntityData[];
-};
-
-export type EntityFactory = (...args: any[]) => EntityData;
-
-export type BehaviorFactory = (...args: any[]) => BehaviorData;
+import { EntityData } from "./data";
 
 /**
  * @category Core
