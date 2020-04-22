@@ -1,9 +1,11 @@
 import { Behavior, inspect } from "@bigby/core";
 import * as PIXI from "pixi.js";
 import Renderable2D from "./Renderable2D";
+import { IVec2 } from "./vec2";
 
 export interface ISprite2D {
   uri: string;
+  anchor: IVec2;
 }
 
 export default class Sprite2D<TExtraProps = {}>
@@ -15,7 +17,20 @@ export default class Sprite2D<TExtraProps = {}>
 
   texture: PIXI.Texture;
 
-  @inspect("Texture URI") uri: string;
+  /* Texture URI */
+  @inspect("Texture URI")
+  get uri() {
+    return this._uri;
+  }
+  set uri(uri) {
+    this._uri = uri;
+    if (this.texture) this.reinitialize();
+  }
+  private _uri: string;
+
+  /* Anchor Ratio */
+  @inspect("Anchor", ["x", "y"], { step: 0.05, min: 0, max: 1 })
+  anchor = { x: 0.5, y: 0.5 };
 
   protected sprite: PIXI.Sprite;
   protected r2d: Renderable2D;
@@ -48,7 +63,7 @@ export default class Sprite2D<TExtraProps = {}>
     /* Create a new sprite from the given URI */
     this.texture = PIXI.Texture.from(this.uri);
     this.sprite = this.createSpriteFromTexture();
-    this.sprite.anchor.set(0.5);
+    this.sprite.anchor.set(this.anchor.x, this.anchor.y);
 
     /* Add to r2d */
     this.r2d.container.addChild(this.sprite);
