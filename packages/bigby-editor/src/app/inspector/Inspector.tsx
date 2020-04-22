@@ -100,7 +100,6 @@ const usePropertyInput = <T extends any>(
 
   const onChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setValue(castFromInput(e.target.value));
-    commit(castFromInput(e.target.value));
   };
 
   return { onFocus, onBlur, onChange, onKeyDown, value };
