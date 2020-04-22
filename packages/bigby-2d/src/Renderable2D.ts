@@ -80,6 +80,11 @@ export default class Renderable2D extends Behavior<IRenderable2D>
     else this.container.addChild(what);
   }
 
+  remove(what: Renderable2D | PIXI.DisplayObject) {
+    if (what instanceof Renderable2D) this.remove(what.container);
+    else this.container.removeChild(what);
+  }
+
   awake() {
     /* Assign this entity to the container */
     this.container.bigbyEntity = this.entity;
