@@ -10915,7 +10915,7 @@ nested-error-stacks@^2.0.0, nested-error-stacks@^2.1.0:
   resolved "https://registry.yarnpkg.com/nested-error-stacks/-/nested-error-stacks-2.1.0.tgz#0fbdcf3e13fe4994781280524f8b96b0cdff9c61"
   integrity sha512-AO81vsIO1k1sM4Zrd6Hu7regmJN1NSiAja10gc4bX3F0wd+9rQmcuHQaHVQCYIEC8iFXnE+mavh23GOt7wBgug==
 
-netlify-cli@^2.46.0, netlify-cli@^2.47.0:
+netlify-cli@^2.46.0:
   version "2.47.0"
   resolved "https://registry.yarnpkg.com/netlify-cli/-/netlify-cli-2.47.0.tgz#a4566749366c10c8fae999d6b60f83fe202a2d97"
   integrity sha512-nyrr47vPV3a5yCRLpetvmg6ZLOWW/6H+b0WqN6YcspdDDGlK1TzPu+bUV5gKmI4cmBM1Zfru81sLW5AtlX4DbA==
@@ -14990,11 +14990,6 @@ thenify-all@^1.0.0:
   integrity sha1-5p44obq+lpsBCCB5eLn2K4hgSDk=
   dependencies:
     any-promise "^1.0.0"
-
-three@^0.115.0:
-  version "0.115.0"
-  resolved "https://registry.yarnpkg.com/three/-/three-0.115.0.tgz#540d800c381b9da2334c024f0fbe4d23f84eb05e"
-  integrity sha512-mAV2Ky3RdcbdSbR9capI+tKLvRldWYxd4151PZTT/o7+U2jh9Is3a4KmnYwzyUAhB2ZA3pXSgCd2DOY4Tj5kow==
 
 throat@^5.0.0:
   version "5.0.0"

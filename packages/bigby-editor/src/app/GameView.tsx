@@ -1,5 +1,4 @@
 import { Game2D } from "@bigby/2d";
-import { Renderer3D } from "@bigby/3d";
 import React, { FC, useEffect, useRef } from "react";
 import SelectedEntity from "../SelectedEntity";
 import css from "./GameView.css";
@@ -25,13 +24,10 @@ const GameView: FC = () => {
 
       /* Move the game to our own little DOM element */
 
-      /* TODO: we don't really want to have these hard dependencies into the 2d
-      and 3d packages here. We should find a smarter way to do this. */
+      /* TODO: we don't really want to have thid hard dependency into the 2d
+      package here. We should find a smarter way to do this. */
       const game2D = root.getBehavior(Game2D);
       if (game2D) game2D.mount(ref.current);
-
-      const renderer3D = root.getBehavior(Renderer3D);
-      if (renderer3D) renderer3D.element = ref.current;
     }
   }, [ref]);
 
