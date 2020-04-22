@@ -1,7 +1,7 @@
 {
   "name": "@bigby/2d",
   "description": "A collection of Bigby behaviors for building WebGL-accelerated 2D games.",
-  "version": "0.6.0-alpha.2",
+  "version": "0.6.0-alpha.3",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
