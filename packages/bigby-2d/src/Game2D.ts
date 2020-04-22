@@ -37,7 +37,6 @@ export default class Game2D extends Behavior {
   }
 
   mount(el: HTMLElement) {
-    console.log("Mounting!");
     el.appendChild(this.app.view);
     this.app.resizeTo = el;
 
