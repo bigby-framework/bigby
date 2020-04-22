@@ -1,7 +1,7 @@
 {
   "name": "@bigby/2d-physics",
   "description": "A collection of Bigby behaviors for adding RigidBody physics to your 2D game.",
-  "version": "0.6.0-alpha.1",
+  "version": "0.6.0-alpha.2",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
@@ -34,8 +34,8 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/2d": "^0.6.0-alpha.1",
-    "@bigby/core": "^0.6.0-alpha.1",
+    "@bigby/2d": "^0.6.0-alpha.2",
+    "@bigby/core": "^0.6.0-alpha.2",
     "pixi.js": "^5.2.1",
     "planck-js": "^0.3.12"
   },

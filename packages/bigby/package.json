@@ -1,7 +1,7 @@
 {
   "name": "bigby",
   "description": "Bigby: the Adequately Astonishing HTML5 Game Framework",
-  "version": "0.6.0-alpha.1",
+  "version": "0.6.0-alpha.2",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
@@ -32,13 +32,13 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/2d": "^0.6.0-alpha.1",
-    "@bigby/2d-editor": "^0.6.0-alpha.1",
-    "@bigby/2d-physics": "^0.6.0-alpha.1",
-    "@bigby/behaviors": "^0.6.0-alpha.1",
-    "@bigby/cli": "^0.6.0-alpha.1",
-    "@bigby/core": "^0.6.0-alpha.1",
-    "@bigby/editor": "^0.6.0-alpha.1",
+    "@bigby/2d": "^0.6.0-alpha.2",
+    "@bigby/2d-editor": "^0.6.0-alpha.2",
+    "@bigby/2d-physics": "^0.6.0-alpha.2",
+    "@bigby/behaviors": "^0.6.0-alpha.2",
+    "@bigby/cli": "^0.6.0-alpha.2",
+    "@bigby/core": "^0.6.0-alpha.2",
+    "@bigby/editor": "^0.6.0-alpha.2",
     "@bigby/math": "^0.6.0-alpha.1",
     "@bigby/random": "^0.6.0-alpha.1"
   }

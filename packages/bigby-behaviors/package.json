@@ -1,7 +1,7 @@
 {
   "name": "@bigby/behaviors",
   "description": "A collection of useful Bigby behaviors for your game.",
-  "version": "0.6.0-alpha.1",
+  "version": "0.6.0-alpha.2",
   "author": "Hendrik Mans <hendrik@mans.de>",
   "license": "MIT",
   "homepage": "https://bigby.dev",
@@ -32,7 +32,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/core": "^0.6.0-alpha.1",
+    "@bigby/core": "^0.6.0-alpha.2",
     "hotkeys-js": "^3.7.6"
   }
 }
