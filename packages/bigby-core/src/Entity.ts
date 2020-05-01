@@ -167,13 +167,15 @@ export default class Entity {
 
   /* Finder methods */
 
-  getBehavior<T extends Behavior>(constructor: BehaviorConstructor<T>): T {
+  getBehavior<T extends Behavior>(
+    constructor: BehaviorConstructor<T>
+  ): T | undefined {
     return this.behaviors.find((b) => b instanceof constructor) as T;
   }
 
   getNearestBehavior<T extends Behavior>(
     constructor: BehaviorConstructor<T>
-  ): T {
+  ): T | undefined {
     return (
       this.getBehavior(constructor) ||
       this.parent?.getNearestBehavior(constructor)
