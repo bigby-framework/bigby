@@ -9,6 +9,14 @@ import Renderer from "./Renderer";
 export default class Transform extends Behavior {
   private container = new Container();
 
+  get rotation() {
+    return this.container!.angle;
+  }
+
+  set rotation(v) {
+    this.container!.angle = v;
+  }
+
   awake() {
     /* If there's another Transform higher up, let's add ourselves to it. If
     not, find the Renderer instance and add ourselves to its stage instead. */

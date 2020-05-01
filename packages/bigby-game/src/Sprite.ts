@@ -10,6 +10,7 @@ export default class Sprite extends Behavior {
   awake() {
     if (!this.uri) throw "No URI given.";
     this.sprite = PIXISprite.from(this.uri);
+    this.sprite.anchor.set(0.5);
 
     /* Add the sprite to the next transform. */
     this.getNearestBehavior(Transform)?.add(this.sprite);

@@ -1,6 +1,20 @@
 import "./global.css";
-import { Entity } from "@bigby/core";
+import { Entity, Behavior } from "@bigby/core";
 import { Renderer, Ticker, Transform, Sprite } from "@bigby/game";
+
+class Autorotate extends Behavior {
+  speed = 50;
+
+  private transform?: Transform;
+
+  awake() {
+    this.transform = this.getBehavior(Transform);
+  }
+
+  update(dt: number) {
+    this.transform!.rotation += this.speed * dt;
+  }
+}
 
 const root = new Entity({
   name: "Game Root",
@@ -12,7 +26,11 @@ const root = new Entity({
       children: [
         {
           name: "Player",
-          behaviors: [Transform, [Sprite, { uri: "/assets/lemming.png" }]],
+          behaviors: [
+            Transform,
+            [Sprite, { uri: "/assets/lemming.png" }],
+            Autorotate,
+          ],
         },
       ],
     },
