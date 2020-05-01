@@ -1,2 +1,5 @@
-const message: string = "Insert your TypeScript code here!";
-console.log(message);
+import { Entity } from "@bigby/core";
+
+const root = new Entity();
+
+console.log(root);
