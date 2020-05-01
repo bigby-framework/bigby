@@ -1,11 +1,39 @@
-import Entity from "./Entity";
+import Entity, { EntityDescription } from "./Entity";
 
-export type BehaviorConstructor<T extends Behavior = Behavior> = new () => T;
+export type BehaviorConstructor<T extends Behavior = Behavior> = new (
+  entity: Entity
+) => T;
 
-export type BehaviorProps = { [key: string]: any };
+export type BehaviorDescription<T extends Behavior> =
+  | BehaviorConstructor<T>
+  | [BehaviorConstructor<T>, BehaviorProps<T>?];
+
+export type BehaviorProps<T extends Behavior = Behavior> = Partial<T>;
 
 export default class Behavior {
-  entity: Entity | undefined;
+  protected entity: Entity;
+
+  static make<T extends Behavior = Behavior>(
+    entity: Entity,
+    constructor: BehaviorConstructor<T>,
+    props?: BehaviorProps<T>
+  ) {
+    /* create instance */
+    const instance = new constructor(entity) as T;
+
+    /* Assign props */
+    if (props) instance.set(props);
+
+    /* If the behavior's entity is already awake, also awake the behavior */
+    entity.isAwake() && instance.awake();
+
+    return instance;
+  }
+
+  constructor(entity: Entity) {
+    this.entity = entity;
+    this.entity.behaviors.push(this);
+  }
 
   awake() {}
   update(dt: number) {}

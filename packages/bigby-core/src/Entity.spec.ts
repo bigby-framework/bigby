@@ -72,26 +72,11 @@ describe("Entity", () => {
       entity = new Entity();
     });
 
-    it("accepts a Behavior instance", () => {
-      const behavior = new Button();
-      entity.addBehavior(behavior);
-
-      expect(entity.behaviors).to.deep.equal([behavior]);
-    });
-
     it("accepts a Behavior Description", () => {
       const behavior = entity.addBehavior(Button, { label: "My Label" });
 
       expect(behavior).to.be.instanceOf(Button);
       expect(behavior.label).to.eq("My Label");
-      expect(entity.behaviors).to.deep.equal([behavior]);
-    });
-
-    it("doesn't add the same behavior twice", () => {
-      const behavior = new Button();
-      entity.addBehavior(behavior);
-      expect(entity.behaviors).to.deep.equal([behavior]);
-      entity.addBehavior(behavior);
       expect(entity.behaviors).to.deep.equal([behavior]);
     });
   });
@@ -102,27 +87,14 @@ describe("Entity", () => {
     }
 
     let entity: Entity;
-    let behavior: Button;
 
     beforeEach(() => {
       entity = new Entity();
-      behavior = new Button();
-    });
-
-    context("when passed a behavior instance", () => {
-      it("returns true if it is in the list of this entitys behaviors", () => {
-        entity.addBehavior(behavior);
-        expect(entity.hasBehavior(behavior)).to.be.true;
-      });
-
-      it("returns false if it is not in the list of behaviors", () => {
-        expect(entity.hasBehavior(behavior)).to.be.false;
-      });
     });
 
     context("when passed a behavior constructor", () => {
       it("returns true if the entity has 1 or more behaviors of this type", () => {
-        entity.addBehavior(behavior);
+        entity.addBehavior(Button);
         expect(entity.hasBehavior(Button)).to.be.true;
       });
 

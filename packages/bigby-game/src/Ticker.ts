@@ -17,7 +17,7 @@ export default class Ticker extends Behavior {
       const dt = ticker.deltaMS / 1000;
 
       /* Update all entities starting from our owning entity */
-      this.entity?.update(dt);
+      this.entity.update(dt);
     });
   }
 

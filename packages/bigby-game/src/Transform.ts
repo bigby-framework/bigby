@@ -13,7 +13,7 @@ export default class Transform extends Behavior {
     /* If there's another Transform higher up, let's add ourselves to it. If
     not, find the Renderer instance and add ourselves to its stage instead. */
 
-    this.entity?.parent?.getBehavior(Transform)?.add(this) ||
+    this.entity.parent?.getBehavior(Transform)?.add(this) ||
       this.getNearestBehavior(Renderer)?.app?.stage.addChild(this.container);
   }
 

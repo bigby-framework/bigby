@@ -12,7 +12,7 @@ const root = new Entity({
       children: [
         {
           name: "Player",
-          behaviors: [Transform, [Sprite, { uri: "/assets/lemming.png " }]],
+          behaviors: [Transform, [Sprite, { uri: "/assets/lemming.png" }]],
         },
       ],
     },

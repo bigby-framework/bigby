@@ -1,4 +1,4 @@
-import Behavior, { BehaviorConstructor, BehaviorProps } from "./Behavior";
+import Behavior, { BehaviorConstructor, BehaviorDescription } from "./Behavior";
 
 export type EntityState = "new" | "awake" | "destroyed";
 
@@ -6,13 +6,9 @@ export type EntityConstructor<T extends Entity = Entity> = new (
   ...args: any[]
 ) => T;
 
-export type BehaviorDescription =
-  | BehaviorConstructor
-  | [BehaviorConstructor, BehaviorProps?];
-
 export type EntityDescription = {
   name?: string;
-  behaviors?: (Behavior | BehaviorDescription)[];
+  behaviors?: BehaviorDescription<any>[];
   children?: (Entity | EntityConstructor | EntityDescription)[];
 };
 
@@ -30,11 +26,7 @@ export default class Entity {
 
       /* Behaviors */
       data.behaviors?.forEach((bd) => {
-        bd instanceof Behavior
-          ? this.addBehavior(bd)
-          : Array.isArray(bd)
-          ? this.addBehavior(...bd)
-          : this.addBehavior(bd);
+        Array.isArray(bd) ? this.addBehavior(...bd) : this.addBehavior(bd);
       });
 
       /* Children */
@@ -43,29 +35,11 @@ export default class Entity {
   }
 
   addBehavior<T extends Behavior>(
-    constructor: T | BehaviorConstructor<T>,
+    constructor: BehaviorConstructor<T>,
     props?: Partial<T>
   ): T {
-    /* Get behavior instance */
-    const behavior =
-      constructor instanceof Behavior ? constructor : new constructor();
-
-    /* Don't add it twice */
-    if (this.hasBehavior(behavior)) return behavior;
-
-    /* Set ourselves as the behavior's entity */
-    behavior.entity = this;
-
-    /* Add it to our list of behaviors */
-    this.behaviors.push(behavior);
-
-    /* Set those props */
-    if (props) behavior.set(props);
-
-    /* If we're already awake, also awaken the behavior */
-    this.isAwake() && behavior.awake();
-
-    return behavior;
+    /* Create behavior. It will register itself with our list of behaviors itself. */
+    return Behavior.make<T>(this, constructor, props);
   }
 
   hasBehavior<T extends Behavior>(behavior: Behavior | BehaviorConstructor<T>) {
