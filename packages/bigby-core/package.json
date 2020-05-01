@@ -1,14 +1,23 @@
 {
   "name": "@bigby/core",
   "version": "0.7.0-alpha.2",
-  "main": "dist/index.js",
-  "license": "MIT",
+  "main": "esm/index.js",
+  "license": "Apache-2.0",
+  "homepage": "https://bigby.dev",
+  "repository": "bigby-framework/bigby",
+  "files": [
+    "esm"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "clean": "rimraf ./esm",
     "build": "tsc",
     "dev": "tsc -w",
     "test": "mocha --config .mocharc.json src/**/*.spec.ts",
-    "test:watch": "yarn test -R min -w "
+    "test:watch": "yarn test -R min -w",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@types/chai": "^4.2.11",
