@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@bigby/core": "^0.7.0-alpha.3",
+    "@bigby/game": "^0.7.0-alpha.3",
     "clean-webpack-plugin": "^3.0.0",
     "copy-webpack-plugin": "^5.1.1",
     "css-loader": "^3.4.1",

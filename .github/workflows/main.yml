@@ -16,7 +16,10 @@ jobs:
         run: yarn install
 
       - name: Bootstrap Lerna
-        run: yarn run lerna bootstrap
+        run: yarn lerna bootstrap
 
-      - name: Run CI task
-        run: yarn run ci
+      - name: Build all packages
+        run: yarn build
+
+      - name: Run tests
+        run: yarn test
