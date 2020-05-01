@@ -1,6 +1,12 @@
 {
   "compilerOptions": {
-    "preserveWatchOutput": true
+    "preserveWatchOutput": true,
+    "allowJs": true,
+    "esModuleInterop": true,
+    "module": "commonjs",
+    "sourceMap": true,
+
+    "strict": true
   },
   "exclude": ["**/node_modules/*", "**/*.spec.ts"]
 }
