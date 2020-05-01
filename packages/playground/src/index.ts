@@ -1,8 +1,8 @@
 import "./global.css";
 import { Entity } from "@bigby/core";
-import { Renderer } from "@bigby/game";
+import { Renderer, Ticker } from "@bigby/game";
 
-const root = new Entity({ name: "Game Root", behaviors: [Renderer] });
+const root = new Entity({ name: "Game Root", behaviors: [Renderer, Ticker] });
 root.awake();
 
 console.log(root);

@@ -2,7 +2,7 @@ import { Behavior } from "@bigby/core";
 import { Application } from "pixi.js";
 
 export default class Renderer extends Behavior {
-  app: Application | null = null;
+  app?: Application;
   domElement = document.body;
 
   awake() {

@@ -1,3 +1,4 @@
 import Renderer from "./Renderer";
+import Ticker from "./Ticker";
 
-export { Renderer };
+export { Renderer, Ticker };
