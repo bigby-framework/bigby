@@ -1,16 +1,24 @@
 import { Behavior } from "@bigby/core";
-import { Sprite as PIXISprite } from "pixi.js";
+import { Sprite as PIXISprite, Texture } from "pixi.js";
 import Transform from "./Transform";
 
 export default class Sprite extends Behavior {
   uri?: string;
 
-  private sprite?: PIXISprite;
+  private sprite = new PIXISprite();
+
+  get anchor() {
+    return this.sprite.anchor as { x: number; y: number };
+  }
+
+  set anchor(v: number | { x: number; y: number }) {
+    if (typeof v === "number") this.sprite.anchor.set(v);
+    else this.sprite.anchor.set(v.x, v.y);
+  }
 
   awake() {
     if (!this.uri) throw "No URI given.";
-    this.sprite = PIXISprite.from(this.uri);
-    this.sprite.anchor.set(0.5);
+    this.sprite.texture = Texture.from(this.uri);
 
     /* Add the sprite to the next transform. */
     this.getNearestBehavior(Transform)?.add(this.sprite);

@@ -28,7 +28,7 @@ const root = new Entity({
           name: "Player",
           behaviors: [
             [Transform, { position: { x: 100, y: 100 } }],
-            [Sprite, { uri: "/assets/lemming.png" }],
+            [Sprite, { uri: "/assets/lemming.png", anchor: 0.5 }],
             [Autorotate, { speed: 90 }],
           ],
         },
