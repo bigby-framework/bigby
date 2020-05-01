@@ -28,5 +28,9 @@
     "rimraf": "^3.0.2",
     "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@bigby/core": "^0.7.0-alpha.3",
+    "pixi.js": "^5.2.3"
   }
 }

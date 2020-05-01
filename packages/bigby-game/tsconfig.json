@@ -3,8 +3,8 @@
   "compilerOptions": {
     "target": "es6",
     "declaration": true,
-    "baseUrl": "./src/",
-    "outDir": "./esm/"
+    "outDir": "./esm/",
+    "allowUmdGlobalAccess": true
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
