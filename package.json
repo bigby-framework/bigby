@@ -9,7 +9,8 @@
   "scripts": {
     "test": "lerna run test",
     "clean": "lerna run clean",
-    "build": "lerna run build"
+    "build": "lerna run build",
+    "ci": "yarn clean && yarn build && yarn test"
   },
   "devDependencies": {
     "lerna": "^3.20.2"
