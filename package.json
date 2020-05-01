@@ -10,6 +10,7 @@
     "test": "lerna run test",
     "clean": "lerna run clean",
     "build": "lerna run build",
+    "dev": "lerna run --parallel --stream dev",
     "release": "lerna publish",
     "ci": "yarn clean && yarn build && yarn test"
   },
