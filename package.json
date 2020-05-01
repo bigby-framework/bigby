@@ -1,0 +1,14 @@
+{
+  "name": "bigby-repo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {},
+  "devDependencies": {
+    "lerna": "^3.20.2"
+  }
+}

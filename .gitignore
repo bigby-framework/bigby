@@ -1,0 +1,7 @@
+# Random stuff we don't want to version control
+**/node_modules/
+**/*.log
+
+# Build artifacts
+/packages/*/dist
+/packages/*/esm
