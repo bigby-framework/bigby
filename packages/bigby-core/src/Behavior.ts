@@ -5,7 +5,7 @@ export type BehaviorConstructor<T extends Behavior = Behavior> = new () => T;
 export type BehaviorProps = { [key: string]: any };
 
 export default class Behavior {
-  entity: Entity;
+  entity: Entity | undefined;
 
   awake() {}
   update(dt: number) {}
@@ -16,13 +16,15 @@ export default class Behavior {
     Object.assign(this, props);
   }
 
-  getBehavior<T extends Behavior>(constructor: BehaviorConstructor<T>): T {
-    return this.entity.getBehavior(constructor);
+  getBehavior<T extends Behavior>(
+    constructor: BehaviorConstructor<T>
+  ): T | undefined {
+    return this.entity?.getBehavior(constructor);
   }
 
   getNearestBehavior<T extends Behavior>(
     constructor: BehaviorConstructor<T>
-  ): T {
-    return this.entity.getNearestBehavior(constructor);
+  ): T | undefined {
+    return this.entity?.getNearestBehavior(constructor);
   }
 }

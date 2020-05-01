@@ -20,13 +20,13 @@ export default class Entity {
   name = "Unnamed Entity";
   behaviors = new Array<Behavior>();
   children = new Array<Entity>();
-  parent: Entity = null;
+  parent: Entity | null = null;
   state: EntityState = "new";
 
   constructor(data?: EntityDescription) {
     if (data) {
       /* Name */
-      this.name = data.name;
+      if (data.name) this.name = data.name;
 
       /* Behaviors */
       data.behaviors?.forEach((bd) => {
@@ -60,7 +60,7 @@ export default class Entity {
     this.behaviors.push(behavior);
 
     /* Set those props */
-    behavior.set(props);
+    if (props) behavior.set(props);
 
     /* If we're already awake, also awaken the behavior */
     this.isAwake() && behavior.awake();
@@ -100,6 +100,8 @@ export default class Entity {
       return entity as T;
     } else if (typeof constructor === "object") {
       return this.addChild(new Entity(constructor) as T);
+    } else {
+      throw "Could not add child. Huh!";
     }
   }
 

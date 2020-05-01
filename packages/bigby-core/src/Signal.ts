@@ -1,14 +1,14 @@
 /** @internal */
 type SignalHandler<T> = (payload: T) => void;
 
-const Signal = <T = null>() => {
+const Signal = <T = undefined>() => {
   const handlers: SignalHandler<T>[] = [];
 
   const signal = (handler: SignalHandler<T>) => {
     signal.add(handler);
   };
 
-  signal.emit = (payload: T = null) => {
+  signal.emit = (payload: T) => {
     handlers.forEach((h) => h(payload));
   };
 
