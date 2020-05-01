@@ -4,18 +4,14 @@ import ResourceLoader from "./ResourceLoader";
 
 /**
  * A subclass of the original [[Behavior]] class with some extra convenience
- * functions specific to @bigby/game.
+ * functionality specific to @bigby/game.
  */
 export default class GameBehavior extends Behavior {
-  getTransform() {
+  get transform() {
     return this.getBehavior(Transform);
   }
 
-  getNearestTransform() {
+  get nearestTransform() {
     return this.getNearestBehavior(Transform);
-  }
-
-  getResourceLoader() {
-    return this.getNearestBehavior(ResourceLoader);
   }
 }

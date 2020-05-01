@@ -22,7 +22,7 @@ export default class Sprite extends GameBehavior {
     this.sprite.texture = Texture.from(this.uri);
 
     /* Add the sprite to the next transform. */
-    this.getNearestTransform()?.add(this.sprite);
+    this.nearestTransform?.add(this.sprite);
   }
 
   destroy() {
