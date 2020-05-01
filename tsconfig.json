@@ -1,9 +1,6 @@
 {
   "compilerOptions": {
-    "preserveWatchOutput": true,
-    "paths": {
-      "@bigby/*": ["./packages/bigby-*"]
-    }
+    "preserveWatchOutput": true
   },
   "exclude": ["**/node_modules/*", "**/*.spec.ts"]
 }
