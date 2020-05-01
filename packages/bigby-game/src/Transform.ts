@@ -25,12 +25,27 @@ export default class Transform extends Behavior {
     this.container.angle = v;
   }
 
+  get scale() {
+    return this.container.scale;
+  }
+
+  set scale(v: number | { x: number; y: number }) {
+    typeof v === "number"
+      ? this.container.scale.set(v)
+      : this.container.scale.set(v.x, v.y);
+  }
+
   awake() {
     /* If there's another Transform higher up, let's add ourselves to it. If
     not, find the Renderer instance and add ourselves to its stage instead. */
 
-    this.entity.parent?.getBehavior(Transform)?.add(this) ||
-      this.getNearestBehavior(Renderer)?.app?.stage.addChild(this.container);
+    const transform = this.entity.parent?.getNearestBehavior(Transform);
+    if (transform) {
+      transform.add(this);
+    } else {
+      const renderer = this.getNearestBehavior(Renderer);
+      renderer?.app?.stage.addChild(this.container);
+    }
   }
 
   destroy() {

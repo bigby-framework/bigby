@@ -125,6 +125,8 @@ export default class Entity {
    * @param dt Time (in seconds) passed since last frame.
    */
   update(dt: number) {
+    if (!this.isAwake()) return;
+
     this.behaviors.forEach((b) => b.update(dt));
     this.children.forEach((e) => e.update(dt));
     this.behaviors.forEach((b) => b.lateUpdate(dt));
@@ -135,6 +137,8 @@ export default class Entity {
    * function on all of its behaviors.
    */
   destroy() {
+    if (!this.isAwake()) return;
+
     this.children.forEach((e) => e.destroy());
     this.behaviors.forEach((b) => b.destroy());
   }
