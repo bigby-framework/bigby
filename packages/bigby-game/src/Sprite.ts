@@ -1,8 +1,9 @@
 import { Behavior } from "@bigby/core";
 import { Sprite as PIXISprite, Texture } from "pixi.js";
 import Transform from "./Transform";
+import GameBehavior from "./GameBehavior";
 
-export default class Sprite extends Behavior {
+export default class Sprite extends GameBehavior {
   uri?: string;
 
   private sprite = new PIXISprite();
@@ -21,7 +22,7 @@ export default class Sprite extends Behavior {
     this.sprite.texture = Texture.from(this.uri);
 
     /* Add the sprite to the next transform. */
-    this.getNearestBehavior(Transform)?.add(this.sprite);
+    this.getNearestTransform()?.add(this.sprite);
   }
 
   destroy() {
