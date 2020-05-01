@@ -9,12 +9,20 @@ import Renderer from "./Renderer";
 export default class Transform extends Behavior {
   private container = new Container();
 
+  get position() {
+    return this.container.position;
+  }
+
+  set position({ x, y }) {
+    this.container.position.set(x, y);
+  }
+
   get rotation() {
-    return this.container!.angle;
+    return this.container.angle;
   }
 
   set rotation(v) {
-    this.container!.angle = v;
+    this.container.angle = v;
   }
 
   awake() {
