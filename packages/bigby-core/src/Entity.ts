@@ -134,6 +134,10 @@ export default class Entity {
     return this.state === "destroyed";
   }
 
+  /**
+   * Awakes this entity and all of its children. Will invoke the `awake`
+   * function on all of its behaviors.
+   */
   awake() {
     if (!this.isNew()) return;
     this.state = "awake";
@@ -142,12 +146,20 @@ export default class Entity {
     this.children.forEach((e) => e.awake());
   }
 
+  /**
+   * Updates this entity, all of its behaviors, and all of its children.
+   * @param dt Time (in seconds) passed since last frame.
+   */
   update(dt: number) {
     this.behaviors.forEach((b) => b.update(dt));
     this.children.forEach((e) => e.update(dt));
     this.behaviors.forEach((b) => b.lateUpdate(dt));
   }
 
+  /**
+   * Destroys this entity and all of its children. Will invoke the `destroy`
+   * function on all of its behaviors.
+   */
   destroy() {
     this.children.forEach((e) => e.destroy());
     this.behaviors.forEach((b) => b.destroy());
