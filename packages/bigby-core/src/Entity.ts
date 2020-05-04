@@ -96,18 +96,38 @@ export default class Entity {
     this.children = this.children.filter((e) => e !== entity);
   }
 
+  /**
+   * Returns `true` if the entity is currently in the `new` state.
+   */
   isNew() {
     return this.state === "new";
   }
 
+  /**
+   * Returns `true` if the entity is currently in the `awake` state.
+   */
   isAwake() {
     return this.state === "awake";
   }
 
+  /**
+   * Returns `true` if the entity is currently in the `destroyed` state.
+   */
   isDestroyed() {
     return this.state === "destroyed";
   }
 
+  /**
+   * Before awaking an entity, it may want to perform certain activities like
+   * preloading assets. The `preload()` function will call the function of the
+   * same name on all of the entity's behaviors, and then do the same for all of
+   * its children.
+   *
+   * @bigby/core doesn't implement any actual preloading functionality itself,
+   * as it is typically specific to the environment Bigby is used in. If you're
+   * building games with eg. @bigby/game, that package will come with the
+   * preloading functionality needed.
+   */
   preload() {
     if (!this.isNew()) throw "Only entities in 'new' state can be preloaded";
 
@@ -152,12 +172,33 @@ export default class Entity {
 
   /* Finder methods */
 
+  /**
+   * Given a behavior class, returns the first instance of this behavior found
+   * within this entity's behaviors. If no behaviors of the given type are
+   * found, this function returns `undefined`.
+   *
+   * @example
+   *
+   * # Return the first instance of the Transform behavior
+   * entity.getBehavior(Transform)
+   *
+   * @param constructor Behavior class to retrieve.
+   */
+
   getBehavior<T extends Behavior>(
     constructor: BehaviorConstructor<T>
   ): T | undefined {
     return this.behaviors.find((b) => b instanceof constructor) as T;
   }
 
+  /**
+   * Similar to `getBehavior`, this will look for a behavior of the given class.
+   * Unlike `getBehavior`, if the entity doesn't have a behavior of the given
+   * type, this function will then keep looking up the entity tree until it
+   * finds an entity that has the requested behavior.
+   *
+   * @param constructor Behavior class to retrieve.
+   */
   getNearestBehavior<T extends Behavior>(
     constructor: BehaviorConstructor<T>
   ): T | undefined {
