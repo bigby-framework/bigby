@@ -14,4 +14,8 @@ export default class GameBehavior extends Behavior {
   get nearestTransform() {
     return this.getNearestBehavior(Transform);
   }
+
+  get loader() {
+    return this.getNearestBehavior(ResourceLoader)!.loader;
+  }
 }
