@@ -34,6 +34,7 @@
   },
   "dependencies": {
     "@bigby/core": "^0.7.0-alpha.3",
+    "hotkeys-js": "^3.7.6",
     "pixi.js": "^5.2.3"
   }
 }
