@@ -7,7 +7,7 @@ import Renderer from "./Renderer";
  * screen. It provides position, rotation, scaling, sorting and more.
  */
 export default class Transform extends Behavior {
-  private container = new Container();
+  container = new Container();
 
   get position() {
     return this.container.position;

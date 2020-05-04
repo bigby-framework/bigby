@@ -5,7 +5,19 @@ import { Entity } from "@bigby/core";
 
 describe("Transform", () => {
   it("automatically adds its container to the nearest transform", () => {
+    /* Create a root entity with a Transform */
     const root = new Entity({ behaviors: [Transform] });
+    root.awake();
+
+    /* Add another entity with a Transform */
     const other = root.addChild({ behaviors: [Transform] });
+
+    /* Check if everything connected as expected */
+    const rootTransform = root.getBehavior(Transform)!;
+    const otherTransform = other.getBehavior(Transform)!;
+
+    expect(rootTransform.container.children).to.include(
+      otherTransform.container
+    );
   });
 });
