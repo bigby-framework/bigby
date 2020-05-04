@@ -1,27 +1,25 @@
 import { Behavior } from "@bigby/core";
-import Renderer from "./Renderer";
+import * as PIXI from "pixi.js";
 
 export default class Ticker extends Behavior {
-  private renderer?: Renderer;
+  private tickerFn?: (dt: number) => void;
+
+  get ticker() {
+    return PIXI.Ticker.shared;
+  }
 
   awake() {
-    this.renderer = this.getNearestBehavior(Renderer);
-
-    if (!this.renderer)
-      throw "Ticker needs a Renderer behavior to function and could not find one.";
-
-    /* Set up ticking */
-    const ticker = this.renderer.app!.ticker;
-    ticker.add(() => {
-      /* Determine deltatime */
-      const dt = ticker.deltaMS / 1000;
-
+    this.tickerFn = () => {
       /* Update all entities starting from our owning entity */
-      this.entity.update(dt);
-    });
+      this.entity.update(this.ticker.deltaMS / 1000);
+    };
+
+    this.ticker.add(this.tickerFn);
   }
 
   destroy() {
-    this.renderer?.app?.ticker.destroy();
+    if (this.tickerFn) {
+      this.ticker.remove(this.tickerFn);
+    }
   }
 }
