@@ -4,11 +4,16 @@ export type BehaviorConstructor<T extends Behavior = Behavior> = new (
   entity: Entity
 ) => T;
 
+export type BehaviorProps<T extends Behavior> = Partial<T>;
+
+export type BehaviorConstructorAndProps<T extends Behavior> = [
+  BehaviorConstructor<T>,
+  BehaviorProps<T>?
+];
+
 export type BehaviorDescription<T extends Behavior> =
   | BehaviorConstructor<T>
-  | [BehaviorConstructor<T>, BehaviorProps<T>?];
-
-export type BehaviorProps<T extends Behavior = Behavior> = Partial<T>;
+  | BehaviorConstructorAndProps<T>;
 
 export default class Behavior {
   protected entity: Entity;
@@ -41,7 +46,7 @@ export default class Behavior {
   lateUpdate(dt: number) {}
   destroy() {}
 
-  set(props: BehaviorProps) {
+  set(props: BehaviorProps<this>) {
     Object.assign(this, props);
   }
 
