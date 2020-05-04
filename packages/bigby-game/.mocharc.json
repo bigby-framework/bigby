@@ -1,4 +1,4 @@
 {
-  "require": "ts-node/register",
+  "require": ["ts-node/register", "global-jsdom/lib/register"],
   "watch-files": ["./src/**/*.ts"]
 }
