@@ -108,6 +108,13 @@ export default class Entity {
     return this.state === "destroyed";
   }
 
+  preload() {
+    if (!this.isNew()) throw "Only entities in 'new' state can be preloaded";
+
+    this.behaviors.forEach((b) => b.preload());
+    this.children.forEach((e) => e.preload());
+  }
+
   /**
    * Awakes this entity and all of its children. Will invoke the `awake`
    * function on all of its behaviors.

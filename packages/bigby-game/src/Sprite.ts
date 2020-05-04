@@ -1,6 +1,4 @@
-import { Behavior } from "@bigby/core";
 import { Sprite as PIXISprite, Texture } from "pixi.js";
-import Transform from "./Transform";
 import GameBehavior from "./GameBehavior";
 
 export default class Sprite extends GameBehavior {
@@ -15,6 +13,10 @@ export default class Sprite extends GameBehavior {
   set anchor(v: number | { x: number; y: number }) {
     if (typeof v === "number") this.sprite.anchor.set(v);
     else this.sprite.anchor.set(v.x, v.y);
+  }
+
+  preload() {
+    this.loader.add(this.uri);
   }
 
   awake() {

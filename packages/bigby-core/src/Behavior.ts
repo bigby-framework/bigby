@@ -1,4 +1,4 @@
-import Entity, { EntityDescription } from "./Entity";
+import Entity from "./Entity";
 
 export type BehaviorConstructor<T extends Behavior = Behavior> = new (
   entity: Entity
@@ -35,6 +35,7 @@ export default class Behavior {
     this.entity.behaviors.push(this);
   }
 
+  preload() {}
   awake() {}
   update(dt: number) {}
   lateUpdate(dt: number) {}
