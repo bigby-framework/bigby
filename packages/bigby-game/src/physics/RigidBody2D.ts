@@ -5,6 +5,11 @@ import GameBehavior from "../GameBehavior";
 export default class RigidBody2D extends GameBehavior {
   body?: planck.Body;
 
+  angularDamping = 0;
+  linearDamping = 0;
+  allowSleep = true;
+  type: "dynamic" | "static" = "dynamic";
+
   private pw2d?: PhysicsWorld2D;
 
   awake() {
@@ -13,12 +18,18 @@ export default class RigidBody2D extends GameBehavior {
     if (!this.transform) throw "RigidBody2D needs a Transform to operate";
 
     this.body = this.pw2d.world.createBody({
-      type: "dynamic",
       position: new planck.Vec2(
         this.transform.position.x / this.pw2d.ppu,
         this.transform.position.y / this.pw2d.ppu
       ),
-      allowSleep: true,
+      type: this.type,
+      allowSleep: this.allowSleep,
+      angularDamping: this.angularDamping,
+      linearDamping: this.linearDamping,
+    });
+
+    this.body.createFixture({
+      shape: planck.Circle(6),
     });
   }
 
