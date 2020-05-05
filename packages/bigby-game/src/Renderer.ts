@@ -2,11 +2,14 @@ import { Behavior } from "@bigby/core";
 import { Application } from "pixi.js";
 
 export default class Renderer extends Behavior {
+  width = 1280;
+  height = 720;
+
   app?: Application;
   domElement = document.body;
 
   awake() {
-    this.app = new Application({ resizeTo: this.domElement });
+    this.app = new Application({ width: this.width, height: this.height });
     this.domElement.appendChild(this.app.view);
   }
 
