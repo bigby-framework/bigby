@@ -18,6 +18,7 @@ export default class RigidBody2D extends GameBehavior {
         this.transform.position.x / this.pw2d.ppu,
         this.transform.position.y / this.pw2d.ppu
       ),
+      allowSleep: true,
     });
   }
 
