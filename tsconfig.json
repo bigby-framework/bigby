@@ -2,6 +2,7 @@
   "compilerOptions": {
     "preserveWatchOutput": true,
     "allowJs": true,
+    "skipLibCheck": true,
     "esModuleInterop": true,
     "module": "commonjs",
     "sourceMap": true,
