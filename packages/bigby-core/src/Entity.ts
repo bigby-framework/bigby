@@ -207,4 +207,14 @@ export default class Entity {
       this.parent?.getNearestBehavior(constructor)
     );
   }
+
+  /* TODO: better name? */
+  getChildBehavior<T extends Behavior>(
+    constructor: BehaviorConstructor<T>
+  ): T | undefined {
+    for (const child of this.children) {
+      const behavior = child.getBehavior(constructor);
+      if (behavior) return behavior as T;
+    }
+  }
 }
