@@ -11,6 +11,7 @@ export default class GameBehavior extends Behavior {
   /* TODO: find a nicer, less noisy way to memoize these. */
 
   private __transform?: Transform;
+  /** Provides a convenient (and memoized) accessor to the current entity's Transform behavior. */
   get transform() {
     return (this.__transform = this.__transform || this.getBehavior(Transform));
   }
