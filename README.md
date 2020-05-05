@@ -27,19 +27,26 @@ follow development, please follow [@hmans](https://twitter.com/hmans) and/or
 - 🐙 Code: [bigby-framework/bigby](https://github.com/bigby-framework/bigby)
 - 🐦 Twitter: [@BigbyFramework](https://twitter.com/bigbyframework)
 
-## Features
+## Features / Progress
 
-- Written in TypeScript, use it with any flavor of JavaScript
-- Use it to build 2D (via [PIXI.js](https://www.pixijs.com/)) or 3D (via [Babylon.js](https://www.babylonjs.com/)) games
-- Out of the box support for audio, game controllers, VR/AR and more
-- Clean Entity and Behavior based design
+- [x] Written in TypeScript, use it with any flavor of JavaScript.
+- [x] Build super-high-performance 2D games (powered by Pixi.js)
+- [x] Simple resource loading
+- [x] Spritesheet support
+- [ ] 2D physics
+- [ ] Spatial audio
+- [ ] Game controller support
+
+## Planned for the future:
+
+- [ ] 3D support
 
 ## Contributing
 
 Bigby is split into various small-ish packages, all of which are developed in sync within a Lerna-powered monorepo. To get started, clone the repository, and run the following commands:
 
 ```
-yarn install    # installs all dependencies
-yarn build:all  # performs an initial build of all packages
-yarn dev        # fires up dev/watch mode for everything
+yarn install  # installs all dependencies
+yarn build    # performs an initial build of all packages
+yarn dev      # fires up dev/watch mode for everything
 ```
