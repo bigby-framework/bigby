@@ -35,6 +35,7 @@
   "dependencies": {
     "@bigby/core": "^0.7.0-alpha.4",
     "hotkeys-js": "^3.7.6",
-    "pixi.js": "^5.2.3"
+    "pixi.js": "^5.2.3",
+    "planck-js": "^0.3.12"
   }
 }
