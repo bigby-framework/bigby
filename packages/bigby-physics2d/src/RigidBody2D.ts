@@ -60,6 +60,8 @@ export default class RigidBody2D extends GameBehavior {
         this.transform.position.y / this.pw2d.ppu
       ),
       type: this.type,
+      bullet: this._bullet,
+      fixedRotation: this._fixedRotation,
       allowSleep: this.allowSleep,
       angularDamping: this.angularDamping,
       linearDamping: this.linearDamping,
