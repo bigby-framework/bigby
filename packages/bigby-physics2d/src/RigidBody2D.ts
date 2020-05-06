@@ -11,6 +11,25 @@ export default class RigidBody2D extends GameBehavior {
   allowSleep = true;
   type: "dynamic" | "static" = "dynamic";
 
+  /**
+   * Set bullet to `true` if you want this RigidBody2D to enable continuous
+   * collision detection aka bullet physics. This will incur a performance
+   * penalty, but will make sure that the body will not pass through thin walls.
+   *
+   * @memberof RigidBody2D
+   */
+  get bullet() {
+    return this._bullet;
+  }
+  set bullet(v) {
+    this._bullet = v;
+    this.body?.setBullet(v);
+  }
+  private _bullet = false;
+
+  /**
+   * The PhysicsWorld2D instance that is holding our physics world.
+   */
   private pw2d?: PhysicsWorld2D;
 
   awake() {
