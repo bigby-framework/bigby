@@ -28,6 +28,23 @@ export default class RigidBody2D extends GameBehavior {
   private _bullet = false;
 
   /**
+   * Set fixedRotation to `true` if you want to stop the body from rotation (as
+   * part of the physics simulation). You can still set the body's rotation
+   * directly. This flag is useful for things like bullets that don't need to
+   * rotate individually.
+   *
+   * @memberof RigidBody2D
+   */
+  get fixedRotation() {
+    return this._fixedRotation;
+  }
+  set fixedRotation(v) {
+    this._fixedRotation = v;
+    this.body?.setFixedRotation(v);
+  }
+  private _fixedRotation = false;
+
+  /**
    * The PhysicsWorld2D instance that is holding our physics world.
    */
   private pw2d?: PhysicsWorld2D;
