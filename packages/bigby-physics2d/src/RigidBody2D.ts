@@ -1,6 +1,6 @@
 import PhysicsWorld2D from "./PhysicsWorld2D";
 import * as planck from "planck-js";
-import GameBehavior from "../GameBehavior";
+import { GameBehavior } from "@bigby/game";
 
 export default class RigidBody2D extends GameBehavior {
   body?: planck.Body;

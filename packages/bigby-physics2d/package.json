@@ -1,6 +1,6 @@
 {
-  "name": "@bigby/game",
-  "description": "Behaviors and utilities for building games with the Bigby Framework.",
+  "name": "@bigby/physics2d",
+  "description": "2D physics for Bigby games.",
   "version": "0.7.0-alpha.5",
   "main": "esm/index.js",
   "license": "Apache-2.0",
@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@bigby/core": "^0.7.0-alpha.5",
-    "hotkeys-js": "^3.7.6",
-    "pixi.js": "^5.2.3"
+    "@bigby/game": "^0.7.0-alpha.5",
+    "planck-js": "^0.3.12"
   }
 }
