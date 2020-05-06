@@ -30,6 +30,8 @@ export default class RigidBody2D extends GameBehavior {
 
     this.body.createFixture({
       shape: planck.Circle(6),
+      friction: 0,
+      density: 1,
     });
   }
 
@@ -37,6 +39,10 @@ export default class RigidBody2D extends GameBehavior {
     const position = this.body!.getPosition();
     const { ppu } = this.pw2d!;
 
+    /* Apply position */
     this.transform!.position.set(position.x * ppu, position.y * ppu);
+
+    /* Apply rotation */
+    this.transform!.rotation = this.body!.getAngle();
   }
 }
