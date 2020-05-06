@@ -6,6 +6,8 @@ import Sprite from "./Sprite";
 import Ticker from "./Ticker";
 import Transform from "./Transform";
 
+export * as vec2 from "./vec2";
+
 export {
   GameBehavior,
   Renderer,
