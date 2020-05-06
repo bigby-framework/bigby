@@ -33,6 +33,6 @@ export const fromAngle = (angle: number): IVec2 => ({
 export const toAngle = (vec2: IVec2) => Math.atan2(vec2.y, vec2.x);
 
 export const subtract = (a: IVec2, b: IVec2) =>
-  <IVec2>{ x: b.x - a.x, y: b.y - a.y };
+  <IVec2>{ x: a.x - b.x, y: a.y - b.y };
 
-export const distance = (a: IVec2, b: IVec2) => subtract(a, b);
+export const distance = (a: IVec2, b: IVec2) => subtract(b, a);
