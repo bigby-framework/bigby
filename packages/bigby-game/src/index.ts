@@ -5,6 +5,7 @@ import ResourceLoader from "./ResourceLoader";
 import Sprite from "./Sprite";
 import StatsPanel from "./StatsPanel";
 import Ticker from "./Ticker";
+import TilingSprite from "./TilingSprite";
 import Transform from "./Transform";
 
 export * as vec2 from "./vec2";
@@ -14,6 +15,7 @@ export {
   Ticker,
   Transform,
   Sprite,
+  TilingSprite,
   ResourceLoader,
   Keyboard,
   StatsPanel,
