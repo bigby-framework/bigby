@@ -15,6 +15,8 @@ export interface IVec2 {
 
 export type Vec2 = IVec2;
 
+export const make = (x = 0, y = 0): Vec2 => ({ x, y });
+
 /**
  * Returns a normalized 2D vector representing the specified angle.
  *
