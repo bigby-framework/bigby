@@ -1,8 +1,11 @@
-import { Behavior } from "@bigby/core";
+import { Behavior, Signal } from "@bigby/core";
 import * as PIXI from "pixi.js";
 
 export default class Ticker extends Behavior {
   private tickerFn?: (dt: number) => void;
+
+  beforeTick = Signal<number>();
+  afterTick = Signal<number>();
 
   get ticker() {
     return PIXI.Ticker.shared;
@@ -10,8 +13,10 @@ export default class Ticker extends Behavior {
 
   awake() {
     this.tickerFn = () => {
-      /* Update all entities starting from our owning entity */
-      this.entity.update(this.ticker.deltaMS / 1000);
+      const dt = this.ticker.deltaMS / 1000;
+      this.beforeTick.emit(dt);
+      this.entity.update(dt);
+      this.afterTick.emit(dt);
     };
 
     this.ticker.add(this.tickerFn);
