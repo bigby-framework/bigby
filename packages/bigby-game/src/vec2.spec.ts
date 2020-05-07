@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { it, test } from "mocha";
+import { it } from "mocha";
 import * as vec2 from "./vec2";
 
 describe("vec2", () => {
