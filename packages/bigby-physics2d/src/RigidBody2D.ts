@@ -88,13 +88,10 @@ export default class RigidBody2D extends GameBehavior {
     if (this.p2d && this.body) this.p2d.world.destroyBody(this.body);
   }
 
-  accelerate(direction: vec2.IVec2, force: number) {
+  accelerate(vector: vec2.IVec2) {
     if (!this.body) return;
 
-    const vec2 = planck.Vec2(direction);
-    vec2.normalize();
-
-    this.body.applyForceToCenter(vec2.mul(force), true);
+    this.body.applyForceToCenter(planck.Vec2(vector), true);
   }
 
   getUpVector() {
