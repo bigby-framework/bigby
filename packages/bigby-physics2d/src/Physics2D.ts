@@ -1,7 +1,7 @@
 import { Behavior } from "@bigby/core";
 import * as planck from "planck-js";
 
-export default class PhysicsWorld2D extends Behavior {
+export default class Physics2D extends Behavior {
   readonly world = new planck.World();
 
   /**
@@ -12,7 +12,7 @@ export default class PhysicsWorld2D extends Behavior {
   /**
    * The physics world's gravity vector.
    *
-   * @memberof PhysicsWorld2D
+   * @memberof Physics2D
    */
   get gravity() {
     return this.world.getGravity();

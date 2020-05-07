@@ -1,4 +1,4 @@
-import PhysicsWorld2D from "./PhysicsWorld2D";
+import Physics2D from "./Physics2D";
 import * as planck from "planck-js";
 import { GameBehavior, vec2 } from "@bigby/game";
 
@@ -44,19 +44,19 @@ export default class RigidBody2D extends GameBehavior {
   private _fixedRotation = false;
 
   /**
-   * The PhysicsWorld2D instance that is holding our physics world.
+   * The Physics2D instance that is holding our physics world.
    */
-  private pw2d?: PhysicsWorld2D;
+  private p2d?: Physics2D;
 
   awake() {
-    this.pw2d = this.getNearestBehavior(PhysicsWorld2D);
-    if (!this.pw2d) throw "RigidBody2D needs a PhysicsWorld2D to operate";
+    this.p2d = this.getNearestBehavior(Physics2D);
+    if (!this.p2d) throw "RigidBody2D needs a Physics2D to operate";
     if (!this.transform) throw "RigidBody2D needs a Transform to operate";
 
-    this.body = this.pw2d.world.createBody({
+    this.body = this.p2d.world.createBody({
       position: new planck.Vec2(
-        this.transform.position.x / this.pw2d.ppu,
-        this.transform.position.y / this.pw2d.ppu
+        this.transform.position.x / this.p2d.ppu,
+        this.transform.position.y / this.p2d.ppu
       ),
       type: this.type,
       bullet: this._bullet,
@@ -75,7 +75,7 @@ export default class RigidBody2D extends GameBehavior {
 
   update() {
     const position = this.body!.getPosition();
-    const { ppu } = this.pw2d!;
+    const { ppu } = this.p2d!;
 
     /* Apply position */
     this.transform!.position.set(position.x * ppu, position.y * ppu);
@@ -85,7 +85,7 @@ export default class RigidBody2D extends GameBehavior {
   }
 
   destroy() {
-    if (this.pw2d && this.body) this.pw2d.world.destroyBody(this.body);
+    if (this.p2d && this.body) this.p2d.world.destroyBody(this.body);
   }
 
   accelerate(direction: vec2.IVec2, force: number) {
