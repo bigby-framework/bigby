@@ -177,6 +177,11 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@bigby/random@^0.6.0-alpha.1":
+  version "0.6.0-alpha.1"
+  resolved "https://registry.yarnpkg.com/@bigby/random/-/random-0.6.0-alpha.1.tgz#a615a70e2ce983ef23e520f207658657622d6d73"
+  integrity sha512-wnhzsFQoNAQI94+DeD0GaslhPglpS4P+/BSgPh2HSpkdPlXaJuI604Xc3QQlVyDXdkLREf7iOUsdrjLLfBL8jw==
+
 "@evocateur/libnpmaccess@^3.1.2":
   version "3.1.2"
   resolved "https://registry.yarnpkg.com/@evocateur/libnpmaccess/-/libnpmaccess-3.1.2.tgz#ecf7f6ce6b004e9f942b098d92200be4a4b1c845"
