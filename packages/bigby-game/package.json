@@ -1,7 +1,7 @@
 {
   "name": "@bigby/game",
   "description": "Behaviors and utilities for building games with the Bigby Framework.",
-  "version": "0.7.0-alpha.6",
+  "version": "0.7.0-alpha.7",
   "main": "esm/index.js",
   "license": "Apache-2.0",
   "homepage": "https://bigby.dev",
@@ -34,7 +34,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/core": "^0.7.0-alpha.5",
+    "@bigby/core": "^0.7.0-alpha.7",
     "hotkeys-js": "^3.7.6",
     "pixi.js": "^5.2.3",
     "stats.js": "^0.17.0"

@@ -1,7 +1,7 @@
 {
   "name": "@bigby/random",
   "description": "Utilities for generating random numbers, vectors and more.",
-  "version": "0.7.0-alpha.6",
+  "version": "0.7.0-alpha.7",
   "main": "esm/index.js",
   "license": "Apache-2.0",
   "homepage": "https://bigby.dev",
@@ -28,6 +28,5 @@
     "rimraf": "^3.0.2",
     "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
-  },
-  "dependencies": {}
+  }
 }
