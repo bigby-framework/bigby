@@ -2,6 +2,10 @@
 **/node_modules/
 **/*.log
 
+# Istanbul Code Coverage
+/packages/*/.nyc_output/
+/packages/*/coverage/
+
 # Build artifacts
 /packages/*/dist
 /packages/*/esm

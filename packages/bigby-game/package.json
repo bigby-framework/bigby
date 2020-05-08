@@ -16,7 +16,7 @@
     "clean": "rimraf ./esm",
     "build": "tsc",
     "dev": "tsc -w",
-    "test": "mocha --config .mocharc.json src/**/*.spec.ts",
+    "test": "nyc --reporter=html mocha --config .mocharc.json src/**/*.spec.ts",
     "test:watch": "yarn test -R min -w",
     "prepublishOnly": "yarn build"
   },
