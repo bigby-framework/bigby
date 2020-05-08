@@ -3,12 +3,12 @@ import Behavior, { BehaviorConstructor, BehaviorDescription } from "./Behavior";
 export type EntityState = "new" | "awake" | "destroyed";
 
 export type EntityConstructor<T extends Entity = Entity> = new (
-  ...args: any[]
+  data?: EntityDescription
 ) => T;
 
 export type EntityDescription = {
   name?: string;
-  behaviors?: BehaviorDescription<any>[];
+  behaviors?: BehaviorDescription[];
   children?: (Entity | EntityConstructor | EntityDescription)[];
 };
 

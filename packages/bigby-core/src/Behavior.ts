@@ -12,7 +12,8 @@ export type BehaviorConstructorAndProps<T extends Behavior> = [
   BehaviorProps<T>?
 ];
 
-export type BehaviorDescription<T extends Behavior> =
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export type BehaviorDescription<T extends Behavior = any> =
   | BehaviorConstructor<T>
   | BehaviorConstructorAndProps<T>;
 
