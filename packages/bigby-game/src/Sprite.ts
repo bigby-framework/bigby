@@ -1,11 +1,14 @@
-import { Sprite as PIXISprite, Texture } from "pixi.js";
+import * as PIXI from "pixi.js";
 import GameBehavior from "./GameBehavior";
 
 export default class Sprite extends GameBehavior {
-  private sprite?: PIXISprite;
+  private sprite?: PIXI.Sprite;
 
   /**
-   *
+   * URI of texture to use in this sprite. Unlike [[resource]], setting `uri`
+   * will cause the texture to be preloaded in the `preload()` step. If your
+   * texture has already been preloaded by some other means (eg. as part of a
+   * texture atlas), use [[resource]] instead.
    *
    * @memberof Sprite
    */
@@ -14,12 +17,15 @@ export default class Sprite extends GameBehavior {
   }
   set uri(uri) {
     this._uri = uri;
-    if (this.sprite) this.sprite.texture = Texture.from(uri);
+    this.applyNewTexture(uri);
   }
   private _uri?: string;
 
   /**
-   *
+   * Texture resource to use for this sprite. The Sprite behavior will assume
+   * that this resource has already been preloaded. If you haven't done this,
+   * use the [[uri]] property instead, as it will cause the specified texture to
+   * be preloaded in the `preload` step.
    *
    * @memberof Sprite
    */
@@ -28,7 +34,7 @@ export default class Sprite extends GameBehavior {
   }
   set resource(resource) {
     this._resource = resource;
-    if (this.sprite) this.sprite.texture = Texture.from(resource);
+    this.applyNewTexture(resource);
   }
   private _resource = "";
 
@@ -55,11 +61,12 @@ export default class Sprite extends GameBehavior {
   }
 
   awake() {
+    /* Sanity check */
     const source = this.resource || this.uri;
     if (!source) throw "Sprite needs either resource or uri to be set";
 
     /* Create sprite */
-    this.sprite = new PIXISprite(Texture.from(source));
+    this.sprite = PIXI.Sprite.from(source);
     this.anchor = this._anchor; /* apply previously stored anchor... don't sue me */
 
     /* Add the sprite to the next transform. */
@@ -68,5 +75,9 @@ export default class Sprite extends GameBehavior {
 
   destroy() {
     this.sprite?.destroy();
+  }
+
+  private applyNewTexture(uri?: string) {
+    if (this.sprite && uri) this.sprite.texture = PIXI.Texture.from(uri);
   }
 }
