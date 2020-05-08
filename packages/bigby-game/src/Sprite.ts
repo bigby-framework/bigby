@@ -70,7 +70,7 @@ export default class Sprite extends GameBehavior {
     this.anchor = this._anchor; /* apply previously stored anchor... don't sue me */
 
     /* Add the sprite to the next transform. */
-    this.nearestTransform?.add(this.sprite);
+    this.nearestTransform?.add(this.sprite!);
   }
 
   destroy() {
