@@ -1,7 +1,7 @@
 {
   "name": "bigby",
   "description": "The Bigby Framework",
-  "version": "0.7.0-alpha.7",
+  "version": "0.7.0-alpha.8",
   "main": "esm/index.js",
   "license": "Apache-2.0",
   "homepage": "https://bigby.dev",
@@ -30,9 +30,9 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/core": "^0.7.0-alpha.7",
-    "@bigby/game": "^0.7.0-alpha.7",
-    "@bigby/physics2d": "^0.7.0-alpha.7",
-    "@bigby/random": "^0.7.0-alpha.7"
+    "@bigby/core": "^0.7.0-alpha.8",
+    "@bigby/game": "^0.7.0-alpha.8",
+    "@bigby/physics2d": "^0.7.0-alpha.8",
+    "@bigby/random": "^0.7.0-alpha.8"
   }
 }
