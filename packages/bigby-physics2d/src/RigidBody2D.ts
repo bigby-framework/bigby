@@ -94,22 +94,20 @@ export default class RigidBody2D extends GameBehavior {
     this.body.applyForceToCenter(planck.Vec2(vector), true);
   }
 
-  /* TODO: these should return a normal IVec2, not a full planck.Vec2, no? */
-
   getUpVector() {
-    return planck.Vec2(vec2.fromAngle(this.body!.getAngle() - Math.PI / 2));
+    return vec2.fromAngle(this.body!.getAngle() - Math.PI / 2);
   }
 
   getDownVector() {
-    return planck.Vec2(vec2.fromAngle(this.body!.getAngle() + Math.PI / 2));
+    return vec2.fromAngle(this.body!.getAngle() + Math.PI / 2);
   }
 
   getRightVector() {
-    return planck.Vec2(vec2.fromAngle(this.body!.getAngle()));
+    return vec2.fromAngle(this.body!.getAngle());
   }
 
   getLeftVector() {
-    return planck.Vec2(vec2.fromAngle(this.body!.getAngle() - Math.PI));
+    return vec2.fromAngle(this.body!.getAngle() - Math.PI);
   }
 
   /* TODO: absolutely not happy with the "offset" thing we're doing here. Is
