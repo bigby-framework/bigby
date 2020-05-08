@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 import GameBehavior from "./GameBehavior";
 
 export default class Sprite extends GameBehavior {
-  private sprite?: PIXI.Sprite;
+  protected sprite?: PIXI.Sprite;
 
   /**
    * URI of texture to use in this sprite. Unlike [[resource]], setting `uri`
@@ -66,7 +66,7 @@ export default class Sprite extends GameBehavior {
     if (!source) throw "Sprite needs either resource or uri to be set";
 
     /* Create sprite */
-    this.sprite = PIXI.Sprite.from(source);
+    this.createSprite(PIXI.Texture.from(source));
     this.anchor = this._anchor; /* apply previously stored anchor... don't sue me */
 
     /* Add the sprite to the next transform. */
@@ -79,5 +79,9 @@ export default class Sprite extends GameBehavior {
 
   private applyNewTexture(uri?: string) {
     if (this.sprite && uri) this.sprite.texture = PIXI.Texture.from(uri);
+  }
+
+  protected createSprite(texture: PIXI.Texture) {
+    this.sprite = new PIXI.Sprite(texture);
   }
 }
