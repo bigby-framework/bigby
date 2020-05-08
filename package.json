@@ -14,7 +14,7 @@
     "build": "lerna run build",
     "dev": "lerna run --parallel --stream dev",
     "release": "lerna publish",
-    "ci": "yarn clean && yarn build && yarn test"
+    "ci": "yarn lint && yarn clean && yarn build && yarn test"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^2.31.0",

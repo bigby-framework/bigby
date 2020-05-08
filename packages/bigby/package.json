@@ -1,5 +1,6 @@
 {
-  "name": "@bigby/core",
+  "name": "bigby",
+  "description": "The Bigby Framework",
   "version": "0.7.0-alpha.7",
   "main": "esm/index.js",
   "license": "Apache-2.0",
@@ -27,5 +28,11 @@
     "rimraf": "^3.0.2",
     "ts-node": "^8.9.1",
     "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "@bigby/core": "^0.7.0-alpha.7",
+    "@bigby/game": "^0.7.0-alpha.7",
+    "@bigby/physics2d": "^0.7.0-alpha.7",
+    "@bigby/random": "^0.6.0-alpha.1"
   }
 }
