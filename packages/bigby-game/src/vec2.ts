@@ -34,12 +34,16 @@ export const fromAngle = (angle: number): IVec2 => ({
  */
 export const toAngle = (vec2: IVec2) => Math.atan2(vec2.y, vec2.x);
 
-export const subtract = (a: IVec2, b: IVec2) =>
-  <IVec2>{ x: a.x - b.x, y: a.y - b.y };
+export const subtract = (a: IVec2, b: IVec2): IVec2 => ({
+  x: a.x - b.x,
+  y: a.y - b.y,
+});
 
 export const distance = (a: IVec2, b: IVec2) => subtract(b, a);
 
-export const multiply = (a: IVec2, n: number) =>
-  <IVec2>{ x: a.x * n, y: a.y * n };
+export const multiply = (a: IVec2, n: number): IVec2 => ({
+  x: a.x * n,
+  y: a.y * n,
+});
 
 export const length = (a: IVec2): number => Math.sqrt(a.x * a.x + a.y * a.y);

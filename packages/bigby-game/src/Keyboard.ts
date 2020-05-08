@@ -3,6 +3,7 @@ import hotkeys from "hotkeys-js";
 
 /* We need to set up a single hotkeys event because otherwise, hotkeys-js won't
 register its keyboard listeners. */
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 hotkeys(" ", () => {});
 
 /**

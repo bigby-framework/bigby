@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "lint": "eslint 'packages/bigby-core/src/**/*.ts'",
+    "lint": "eslint 'packages/*/src/**/*.ts'",
     "test": "lerna run --stream test",
     "clean": "lerna run clean",
     "build": "lerna run build",
