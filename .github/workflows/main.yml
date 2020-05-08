@@ -18,6 +18,9 @@ jobs:
       - name: Bootstrap Lerna
         run: yarn lerna bootstrap
 
+      - name: Run linter
+        run: yarn lint
+
       - name: Build all packages
         run: yarn build
 

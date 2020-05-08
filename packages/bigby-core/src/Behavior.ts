@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import Entity from "./Entity";
 
 export type BehaviorConstructor<T extends Behavior = Behavior> = new (
