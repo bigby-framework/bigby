@@ -41,3 +41,5 @@ export const distance = (a: IVec2, b: IVec2) => subtract(b, a);
 
 export const multiply = (a: IVec2, n: number) =>
   <IVec2>{ x: a.x * n, y: a.y * n };
+
+export const length = (a: IVec2): number => Math.sqrt(a.x * a.x + a.y * a.y);
