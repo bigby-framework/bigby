@@ -8,7 +8,7 @@
   "license": "Apache-2.0",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "test": "lerna run test",
+    "test": "lerna run --stream test",
     "clean": "lerna run clean",
     "build": "lerna run build",
     "dev": "lerna run --parallel --stream dev",
