@@ -10,6 +10,11 @@ export default class Physics2D extends Behavior {
   ppu = 10;
 
   /**
+   * How many physics calculations to perform per second. (Default: 60)
+   */
+  stepsPerSecond = 60;
+
+  /**
    * The physics world's gravity vector.
    *
    * @memberof Physics2D
@@ -21,8 +26,16 @@ export default class Physics2D extends Behavior {
     this.world.setGravity(v);
   }
 
+  /** Time accumulator used for performing fixed physics steps. */
+  private accuTime = 0;
+
   update(dt: number) {
-    /* FIXME: this is not how we want to update physics */
-    this.world.step(dt);
+    const stepTime = 1 / this.stepsPerSecond;
+    this.accuTime += dt;
+
+    while (this.accuTime > stepTime) {
+      this.world.step(stepTime);
+      this.accuTime -= stepTime;
+    }
   }
 }
