@@ -34,16 +34,33 @@ follow development, please follow [@hmans](https://twitter.com/hmans) and/or
 - [x] Simple resource loading
 - [x] Spritesheet support
 - [ ] 2D physics
+  - [x] Basic physics support
+  - [ ] Collision management
+  - [ ] Circle colliders
+  - [ ] Box colliders
+  - [ ] Polygon colliders
+  - [ ] PhysicsEditor import
 - [ ] Spatial audio
 - [ ] Game controller support
 
 ## Planned for the future:
 
+- [ ] Networking Layer (use Bigby on the server)
 - [ ] 3D support
+
+## Structure of this repository
+
+Bigby is split into a collection of packages that are all developed in sync as part of this monorepo:
+
+- **@bigby/core**: just the core classes, no game-specific functionality.
+- **@bigby/game**: the core game engine (2D rendering, sprites, shaders, ...)
+- **@bigby/physics2d**: 2D physics
 
 ## Contributing
 
-Bigby is split into various small-ish packages, all of which are developed in sync within a Lerna-powered monorepo. To get started, clone the repository, and run the following commands:
+**🚧 Reminder: Bigby is currently under heavy construction.** If you want to contribute, please get in touch first before you start work on your PR. Bigby is moving very fast at the moment, and chances for getting unannounced PRs merged are relatively low.
+
+To get started, clone the repository, and run the following commands:
 
 ```
 yarn install  # installs all dependencies
