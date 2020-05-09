@@ -58,6 +58,7 @@ export default class RigidBody2D extends GameBehavior {
         this.transform.position.x / this.p2d.ppu,
         this.transform.position.y / this.p2d.ppu
       ),
+      angle: this.transform.rotation,
       type: this.type,
       bullet: this._bullet,
       fixedRotation: this._fixedRotation,
