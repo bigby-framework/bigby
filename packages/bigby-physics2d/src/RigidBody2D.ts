@@ -44,6 +44,18 @@ export default class RigidBody2D extends GameBehavior {
   private _fixedRotation = false;
 
   /**
+   * The current (linear) velocity of the body.
+   *
+   * @memberof RigidBody2D
+   */
+  get linearVelocity() {
+    return this.body!.getLinearVelocity();
+  }
+  set linearVelocity(v: vec2.IVec2) {
+    this.body!.setLinearVelocity(planck.Vec2(v));
+  }
+
+  /**
    * The Physics2D instance that is holding our physics world.
    */
   private p2d?: Physics2D;
