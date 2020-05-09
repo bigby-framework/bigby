@@ -18,10 +18,18 @@ export default class Transform extends Behavior {
   }
 
   get rotation() {
-    return this.container.angle;
+    return this.container.rotation;
   }
 
   set rotation(v) {
+    this.container.rotation = v;
+  }
+
+  get angle() {
+    return this.container.angle;
+  }
+
+  set angle(v) {
     this.container.angle = v;
   }
 
