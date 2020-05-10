@@ -2,18 +2,18 @@
   "name": "bigby",
   "description": "The Bigby Framework",
   "version": "0.7.0-alpha.8",
-  "main": "esm/index.js",
+  "main": "dist/index.js",
   "license": "Apache-2.0",
   "homepage": "https://bigby.dev",
   "repository": "bigby-framework/bigby",
   "files": [
-    "esm"
+    "dist"
   ],
   "publishConfig": {
     "access": "public"
   },
   "scripts": {
-    "clean": "rimraf ./esm",
+    "clean": "rimraf ./dist",
     "build": "tsc",
     "dev": "tsc -w",
     "test": "nyc --reporter=html mocha --config .mocharc.json src/**/*.spec.ts",

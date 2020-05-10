@@ -3,7 +3,7 @@
   "compilerOptions": {
     "target": "es6",
     "declaration": true,
-    "outDir": "./esm/"
+    "outDir": "./dist/"
   },
   "include": ["./src/**/*.ts"],
   "exclude": ["node_modules", "**/*.spec.ts"]
