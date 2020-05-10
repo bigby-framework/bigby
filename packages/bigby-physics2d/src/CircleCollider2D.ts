@@ -7,6 +7,8 @@ export default class CircleCollider2D extends Behavior {
   friction = 0;
   density = 1;
 
+  private fixture?: planck.Fixture;
+
   awake() {
     const rb2d = this.$(RigidBody2D);
 
@@ -20,10 +22,16 @@ export default class CircleCollider2D extends Behavior {
       return;
     }
 
-    rb2d.body.createFixture({
+    this.fixture = rb2d.body.createFixture({
       shape: planck.Circle(this.radius),
       friction: this.friction,
       density: this.density,
     });
+  }
+
+  destroy() {
+    if (this.fixture) {
+      this.$(RigidBody2D)?.body?.destroyFixture(this.fixture);
+    }
   }
 }
