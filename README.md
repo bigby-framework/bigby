@@ -70,3 +70,12 @@ yarn install  # installs all dependencies
 yarn build    # performs an initial build of all packages
 yarn dev      # fires up dev/watch mode for everything
 ```
+
+## "Style Guide"
+
+Not meant as a complete style guide, but we're trying to follow these rules within the repository:
+
+- Functionality is split into small/micro packages where it makes sense. Specifically, it is assumed that someone building a game with Bigby generally has a very specific idea of the feature set they want to use, and we don't want to force dependencies/imports on them that they won't need.
+- `@bigby/*` packages are written in TypeScript and compile to ES6 ES modules _only_. For the time being (!), it is assumed that users operate in an environment that is ready to consume these. ES modules are placed in each package's `esm/` subdirectory and not bundled further.
+- Each class lives in its own file of the same name (e.g. `Behavior.ts` for `Behavior`.) The class is always the module's **default export**.
+- Each package's `index.ts` offers named exports of all classes contained in the package.
