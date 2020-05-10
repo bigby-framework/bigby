@@ -166,8 +166,18 @@ export default class Entity {
   destroy() {
     if (!this.isAwake()) return;
 
+    /* Switch state */
+    this.state = "destroyed";
+
+    /* First, destroy all our children */
     this.children.forEach((e) => e.destroy());
+
+    /* Now, destroy all our behaviors */
     this.behaviors.forEach((b) => b.destroy());
+
+    /* Remove ourselves from parent's children list */
+    if (this.parent)
+      this.parent.children = this.parent.children.filter((e) => e !== this);
   }
 
   /* Finder methods */
