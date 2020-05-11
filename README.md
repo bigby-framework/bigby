@@ -36,7 +36,7 @@ follow development, please follow [@hmans](https://twitter.com/hmans) and/or
 - [ ] 2D physics
   - [x] Basic physics support
   - [ ] Collision management
-  - [ ] Circle colliders
+  - [x] Circle colliders
   - [ ] Box colliders
   - [ ] Polygon colliders
   - [ ] PhysicsEditor import
