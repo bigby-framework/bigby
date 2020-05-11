@@ -1,4 +1,5 @@
 import { Behavior } from "@bigby/core";
+import { Logger } from "@bigby/logger";
 import { RigidBody2D } from ".";
 import * as planck from "planck-js";
 
@@ -11,14 +12,15 @@ export default class CircleCollider2D extends Behavior {
 
   awake() {
     const rb2d = this.getBehavior(RigidBody2D);
+    const logger = this.getNearestBehavior(Logger);
 
     if (!rb2d) {
-      console.error("CircleCollider2D needs a RigidBody2D to operate.");
+      logger?.error("CircleCollider2D needs a RigidBody2D to operate.");
       return;
     }
 
     if (!rb2d.body) {
-      console.error("The entity's RigidBody2D needs to be awake.");
+      logger?.error("The entity's RigidBody2D needs to be awake.");
       return;
     }
 
