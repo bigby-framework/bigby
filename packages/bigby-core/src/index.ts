@@ -1,6 +1,6 @@
 import Behavior from "./Behavior";
 import Entity from "./Entity";
+import Finder, { $, $up } from "./Finder";
 import Signal from "./Signal";
 
-export * from "./finders";
-export { Entity, Behavior, Signal };
+export { Entity, Behavior, Signal, Finder, $, $up };
