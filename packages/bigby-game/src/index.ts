@@ -6,6 +6,7 @@ import Sprite from "./Sprite";
 import StatsPanel from "./StatsPanel";
 import Ticker from "./Ticker";
 import TilingSprite from "./TilingSprite";
+import Timer from "./Timer";
 import Transform from "./Transform";
 
 export * as vec2 from "./vec2";
@@ -19,4 +20,5 @@ export {
   ResourceLoader,
   Keyboard,
   StatsPanel,
+  Timer,
 };
