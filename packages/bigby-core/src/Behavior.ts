@@ -24,6 +24,7 @@ type LateUpdateFunction = UpdateFunction;
 type DestroyFunction = () => void;
 
 export interface IBehavior {
+  entity: Entity;
   set: Function;
   preload?: PreloadFunction;
   awake?: AwakeFunction;
@@ -33,7 +34,7 @@ export interface IBehavior {
 }
 
 export default class Behavior implements IBehavior {
-  protected entity: Entity;
+  entity: Entity;
 
   static make<T extends IBehavior = IBehavior>(
     entity: Entity,
@@ -59,17 +60,5 @@ export default class Behavior implements IBehavior {
 
   set(props: BehaviorProps<this>) {
     Object.assign(this, props);
-  }
-
-  getBehavior<T extends IBehavior>(
-    constructor: BehaviorConstructor<T>
-  ): T | undefined {
-    return this.entity?.getBehavior(constructor);
-  }
-
-  getNearestBehavior<T extends IBehavior>(
-    constructor: BehaviorConstructor<T>
-  ): T | undefined {
-    return this.entity?.getNearestBehavior(constructor);
   }
 }

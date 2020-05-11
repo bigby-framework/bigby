@@ -1,6 +1,7 @@
 import Physics2D from "./Physics2D";
 import * as planck from "planck-js";
 import { GameBehavior, vec2 } from "@bigby/game";
+import { $up } from "@bigby/core";
 
 export default class RigidBody2D extends GameBehavior {
   body?: planck.Body;
@@ -61,7 +62,7 @@ export default class RigidBody2D extends GameBehavior {
   private p2d?: Physics2D;
 
   awake() {
-    this.p2d = this.getNearestBehavior(Physics2D);
+    this.p2d = $up(this, Physics2D);
     if (!this.p2d) throw "RigidBody2D needs a Physics2D to operate";
     if (!this.transform) throw "RigidBody2D needs a Transform to operate";
 

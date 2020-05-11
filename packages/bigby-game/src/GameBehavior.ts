@@ -1,4 +1,4 @@
-import { Behavior } from "@bigby/core";
+import { Behavior, $, $up } from "@bigby/core";
 import Transform from "./Transform";
 import ResourceLoader from "./ResourceLoader";
 import * as PIXI from "pixi.js";
@@ -13,18 +13,17 @@ export default class GameBehavior extends Behavior {
   private __transform?: Transform;
   /** Provides a convenient (and memoized) accessor to the current entity's Transform behavior. */
   get transform() {
-    return (this.__transform = this.__transform || this.getBehavior(Transform));
+    return (this.__transform = this.__transform || $(this, Transform));
   }
 
   private __nearestTransform?: Transform;
   get nearestTransform() {
     return (this.__nearestTransform =
-      this.__nearestTransform || this.getNearestBehavior(Transform));
+      this.__nearestTransform || $up(this, Transform));
   }
 
   private __loader?: PIXI.Loader;
   get loader() {
-    return (this.__loader =
-      this.__loader || this.getNearestBehavior(ResourceLoader)!.loader);
+    return (this.__loader = this.__loader || $up(this, ResourceLoader)!.loader);
   }
 }

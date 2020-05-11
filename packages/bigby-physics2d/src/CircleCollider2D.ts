@@ -1,4 +1,4 @@
-import { Behavior } from "@bigby/core";
+import { Behavior, $, $up } from "@bigby/core";
 import { Logger } from "@bigby/logger";
 import { RigidBody2D } from ".";
 import * as planck from "planck-js";
@@ -11,8 +11,8 @@ export default class CircleCollider2D extends Behavior {
   private fixture?: planck.Fixture;
 
   awake() {
-    const rb2d = this.getBehavior(RigidBody2D);
-    const logger = this.getNearestBehavior(Logger);
+    const rb2d = $(this, RigidBody2D);
+    const logger = $up(this, Logger);
 
     if (!rb2d) {
       logger?.error("CircleCollider2D needs a RigidBody2D to operate.");
@@ -33,7 +33,7 @@ export default class CircleCollider2D extends Behavior {
 
   destroy() {
     if (this.fixture) {
-      this.getBehavior(RigidBody2D)?.body?.destroyFixture(this.fixture);
+      $(this, RigidBody2D)?.body?.destroyFixture(this.fixture);
     }
   }
 }

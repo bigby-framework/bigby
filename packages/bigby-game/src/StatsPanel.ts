@@ -1,4 +1,4 @@
-import { Behavior } from "@bigby/core";
+import { Behavior, $up } from "@bigby/core";
 import Stats from "stats.js";
 import Ticker from "./Ticker";
 
@@ -15,7 +15,7 @@ export default class StatsPanel extends Behavior {
     this.stats.showPanel(1);
 
     /* Look for a nearby Ticker instance and hook into it. */
-    const ticker = this.getNearestBehavior(Ticker);
+    const ticker = $up(this, Ticker);
     if (ticker) {
       ticker.beforeTick(() => this.stats.begin());
       ticker.afterTick(() => this.stats.end());

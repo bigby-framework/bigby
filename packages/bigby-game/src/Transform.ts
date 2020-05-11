@@ -1,4 +1,4 @@
-import { Behavior } from "@bigby/core";
+import { Behavior, $up } from "@bigby/core";
 import { Container, DisplayObject } from "pixi.js";
 import Renderer from "./Renderer";
 
@@ -47,11 +47,11 @@ export default class Transform extends Behavior {
     /* If there's another Transform higher up, let's add ourselves to it. If
     not, find the Renderer instance and add ourselves to its stage instead. */
 
-    const transform = this.entity.parent?.getNearestBehavior(Transform);
+    const transform = this.entity.parent && $up(this.entity.parent, Transform);
     if (transform) {
       transform.add(this);
     } else {
-      const renderer = this.getNearestBehavior(Renderer);
+      const renderer = $up(this, Renderer);
       renderer?.app?.stage.addChild(this.container);
     }
   }

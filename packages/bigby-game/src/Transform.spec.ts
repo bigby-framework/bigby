@@ -1,7 +1,7 @@
 import { expect } from "chai";
 import { it } from "mocha";
 import Transform from "./Transform";
-import { Entity } from "@bigby/core";
+import { Entity, $ } from "@bigby/core";
 
 describe("Transform", () => {
   it("automatically adds its container to the nearest transform", () => {
@@ -13,8 +13,8 @@ describe("Transform", () => {
     const other = root.addChild({ behaviors: [Transform] });
 
     /* Check if everything connected as expected */
-    const rootTransform = root.getBehavior(Transform)!;
-    const otherTransform = other.getBehavior(Transform)!;
+    const rootTransform = $(root, Transform)!;
+    const otherTransform = $(other, Transform)!;
 
     expect(rootTransform.container.children).to.include(
       otherTransform.container
