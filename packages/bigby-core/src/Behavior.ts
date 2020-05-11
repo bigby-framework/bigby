@@ -1,26 +1,41 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
 import Entity from "./Entity";
 
-export type BehaviorConstructor<T extends Behavior = Behavior> = new (
+export type BehaviorConstructor<T extends IBehavior = IBehavior> = new (
   entity: Entity
 ) => T;
 
-export type BehaviorProps<T extends Behavior> = Partial<T>;
+export type BehaviorProps<T extends IBehavior> = Partial<T>;
 
-export type BehaviorConstructorAndProps<T extends Behavior> = [
+export type BehaviorConstructorAndProps<T extends IBehavior> = [
   BehaviorConstructor<T>,
   BehaviorProps<T>?
 ];
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-export type BehaviorDescription<T extends Behavior = any> =
+export type BehaviorDescription<T extends IBehavior = any> =
   | BehaviorConstructor<T>
   | BehaviorConstructorAndProps<T>;
 
-export default class Behavior {
+type PreloadFunction = () => void;
+type AwakeFunction = () => void;
+type UpdateFunction = (dt: number) => void;
+type LateUpdateFunction = UpdateFunction;
+type DestroyFunction = () => void;
+
+export interface IBehavior {
+  set: Function;
+  preload?: PreloadFunction;
+  awake?: AwakeFunction;
+  update?: UpdateFunction;
+  lateUpdate?: LateUpdateFunction;
+  destroy?: DestroyFunction;
+}
+
+export default class Behavior implements IBehavior {
   protected entity: Entity;
 
-  static make<T extends Behavior = Behavior>(
+  static make<T extends IBehavior = IBehavior>(
     entity: Entity,
     constructor: BehaviorConstructor<T>,
     props?: BehaviorProps<T>
@@ -32,7 +47,7 @@ export default class Behavior {
     if (props) instance.set(props);
 
     /* If the behavior's entity is already awake, also awake the behavior */
-    entity.isAwake() && instance.awake();
+    if (entity.isAwake() && instance.awake) instance.awake();
 
     return instance;
   }
@@ -41,12 +56,6 @@ export default class Behavior {
     this.entity = entity;
     this.entity.behaviors.push(this);
   }
-
-  preload() {}
-  awake() {}
-  update(dt: number) {}
-  lateUpdate(dt: number) {}
-  destroy() {}
 
   set(props: BehaviorProps<this>) {
     Object.assign(this, props);

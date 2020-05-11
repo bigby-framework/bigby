@@ -1,4 +1,8 @@
-import Behavior, { BehaviorConstructor, BehaviorDescription } from "./Behavior";
+import Behavior, {
+  BehaviorConstructor,
+  BehaviorDescription,
+  IBehavior,
+} from "./Behavior";
 
 export type EntityState = "new" | "awake" | "destroyed";
 
@@ -14,7 +18,7 @@ export type EntityDescription = {
 
 export default class Entity {
   name = "Unnamed Entity";
-  behaviors = new Array<Behavior>();
+  behaviors = new Array<IBehavior>();
   children = new Array<Entity>();
   parent: Entity | null = null;
   state: EntityState = "new";
@@ -131,7 +135,7 @@ export default class Entity {
   preload() {
     if (!this.isNew()) throw "Only entities in 'new' state can be preloaded";
 
-    this.behaviors.forEach((b) => b.preload());
+    this.behaviors.forEach((b) => b.preload && b.preload());
     this.children.forEach((e) => e.preload());
   }
 
@@ -143,7 +147,7 @@ export default class Entity {
     if (!this.isNew()) return;
     this.state = "awake";
 
-    this.behaviors.forEach((b) => b.awake());
+    this.behaviors.forEach((b) => b.awake && b.awake());
     this.children.forEach((e) => e.awake());
   }
 
@@ -154,9 +158,9 @@ export default class Entity {
   update(dt: number) {
     if (!this.isAwake()) return;
 
-    this.behaviors.forEach((b) => b.update(dt));
+    this.behaviors.forEach((b) => b.update && b.update(dt));
     this.children.forEach((e) => e.update(dt));
-    this.behaviors.forEach((b) => b.lateUpdate(dt));
+    this.behaviors.forEach((b) => b.lateUpdate && b.lateUpdate(dt));
   }
 
   /**
@@ -173,7 +177,7 @@ export default class Entity {
     this.children.forEach((e) => e.destroy());
 
     /* Now, destroy all our behaviors */
-    this.behaviors.forEach((b) => b.destroy());
+    this.behaviors.forEach((b) => b.destroy && b.destroy());
 
     /* Remove ourselves from parent's children list */
     if (this.parent)
