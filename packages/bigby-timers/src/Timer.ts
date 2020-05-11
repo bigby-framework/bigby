@@ -24,7 +24,7 @@ export default class Timer extends Behavior {
    */
   onTimeout = Signal();
 
-  private remaining = 0;
+  protected remaining = 0;
 
   awake() {
     this.reset();
