@@ -38,8 +38,8 @@ follow development, please follow [@hmans](https://twitter.com/hmans) and/or
   - [ ] Collision management
   - [x] Circle colliders
   - [ ] Box colliders
-  - [ ] Polygon colliders
-  - [ ] PhysicsEditor import
+  - [x] Polygon colliders
+  - [x] PhysicsEditor import
 - [ ] Spatial audio
 - [ ] Game controller support
 
