@@ -1,14 +1,13 @@
-import { Behavior, $, $up } from "@bigby/core";
+import { $, $up, Behavior } from "@bigby/core";
 import { Logger } from "@bigby/logger";
-import { RigidBody2D } from ".";
 import * as planck from "planck-js";
+import { RigidBody2D } from ".";
 
 export default abstract class AbstractCollider2D extends Behavior {
   friction = 0;
   density = 1;
 
   protected fixture?: planck.Fixture;
-
   protected rb2d?: RigidBody2D;
   protected logger?: Logger;
 
@@ -30,9 +29,7 @@ export default abstract class AbstractCollider2D extends Behavior {
   }
 
   destroy() {
-    if (this.fixture) {
-      this.rb2d!.body?.destroyFixture(this.fixture);
-    }
+    if (this.fixture) this.rb2d!.body!.destroyFixture(this.fixture);
   }
 
   protected abstract createFixture(): void;

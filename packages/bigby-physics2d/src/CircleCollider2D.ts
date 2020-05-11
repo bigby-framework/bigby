@@ -1,5 +1,5 @@
-import AbstractCollider2D from "./AbstractCollider2D";
 import * as planck from "planck-js";
+import AbstractCollider2D from "./AbstractCollider2D";
 
 export default class CircleCollider2D extends AbstractCollider2D {
   radius = 1;
