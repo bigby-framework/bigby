@@ -6,6 +6,8 @@ import { $up } from "@bigby/core";
 export default class RigidBody2D extends GameBehavior {
   body?: planck.Body;
 
+  /* TODO: the following should be getters/setters, directly interacting with the body */
+
   angularDamping = 0;
   linearDamping = 0;
   allowSleep = true;
