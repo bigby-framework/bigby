@@ -35,6 +35,7 @@
   "dependencies": {
     "@bigby/core": "^0.7.0-alpha.9",
     "@bigby/game": "^0.7.0-alpha.9",
+    "@bigby/logger": "^0.7.0-alpha.9",
     "planck-js": "^0.3.12"
   }
 }
