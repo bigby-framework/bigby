@@ -15,7 +15,7 @@ export default abstract class AbstractCollider2D extends Behavior {
   protected logger?: Logger;
 
   awake() {
-    this.p2d = $(this, Physics2D);
+    this.p2d = $up(this, Physics2D);
     this.rb2d = $(this, RigidBody2D);
     this.logger = $up(this, Logger);
 
