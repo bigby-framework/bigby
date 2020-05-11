@@ -1,3 +1,4 @@
+import AutoDestroy from "./AutoDestroy";
 import GameBehavior from "./GameBehavior";
 import Keyboard from "./Keyboard";
 import Renderer from "./Renderer";
@@ -11,6 +12,7 @@ import Transform from "./Transform";
 
 export * as vec2 from "./vec2";
 export {
+  AutoDestroy,
   GameBehavior,
   Renderer,
   Ticker,
