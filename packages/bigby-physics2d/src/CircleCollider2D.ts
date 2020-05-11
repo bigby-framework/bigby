@@ -10,7 +10,7 @@ export default class CircleCollider2D extends Behavior {
   private fixture?: planck.Fixture;
 
   awake() {
-    const rb2d = this.$(RigidBody2D);
+    const rb2d = this.getBehavior(RigidBody2D);
 
     if (!rb2d) {
       console.error("CircleCollider2D needs a RigidBody2D to operate.");
@@ -31,7 +31,7 @@ export default class CircleCollider2D extends Behavior {
 
   destroy() {
     if (this.fixture) {
-      this.$(RigidBody2D)?.body?.destroyFixture(this.fixture);
+      this.getBehavior(RigidBody2D)?.body?.destroyFixture(this.fixture);
     }
   }
 }

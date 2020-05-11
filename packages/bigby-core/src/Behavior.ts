@@ -58,10 +58,6 @@ export default class Behavior {
     return this.entity?.getBehavior(constructor);
   }
 
-  $ = this.getBehavior;
-
-  $up = this.getNearestBehavior;
-
   getNearestBehavior<T extends Behavior>(
     constructor: BehaviorConstructor<T>
   ): T | undefined {
