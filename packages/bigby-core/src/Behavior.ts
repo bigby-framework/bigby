@@ -61,13 +61,13 @@ export default class Behavior implements IBehavior {
     Object.assign(this, props);
   }
 
-  getBehavior<T extends Behavior>(
+  getBehavior<T extends IBehavior>(
     constructor: BehaviorConstructor<T>
   ): T | undefined {
     return this.entity?.getBehavior(constructor);
   }
 
-  getNearestBehavior<T extends Behavior>(
+  getNearestBehavior<T extends IBehavior>(
     constructor: BehaviorConstructor<T>
   ): T | undefined {
     return this.entity?.getNearestBehavior(constructor);

@@ -199,7 +199,7 @@ export default class Entity {
    * @param constructor Behavior class to retrieve.
    */
 
-  getBehavior<T extends Behavior>(
+  getBehavior<T extends IBehavior>(
     constructor: BehaviorConstructor<T>
   ): T | undefined {
     return this.behaviors.find((b) => b instanceof constructor) as T;
@@ -213,7 +213,7 @@ export default class Entity {
    *
    * @param constructor Behavior class to retrieve.
    */
-  getNearestBehavior<T extends Behavior>(
+  getNearestBehavior<T extends IBehavior>(
     constructor: BehaviorConstructor<T>
   ): T | undefined {
     return (
@@ -223,7 +223,7 @@ export default class Entity {
   }
 
   /* TODO: better name? */
-  getChildBehavior<T extends Behavior>(
+  getChildBehavior<T extends IBehavior>(
     constructor: BehaviorConstructor<T>
   ): T | undefined {
     for (const child of this.children) {
