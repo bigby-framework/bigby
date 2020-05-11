@@ -1,7 +1,7 @@
 {
   "name": "@bigby/logger",
   "description": "A utility behavior for Bigby that improves logging.",
-  "version": "0.7.0-alpha.8",
+  "version": "0.7.0-alpha.9",
   "main": "dist/index.js",
   "license": "Apache-2.0",
   "homepage": "https://bigby.dev",
@@ -29,6 +29,6 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "@bigby/core": "^0.7.0-alpha.8"
+    "@bigby/core": "^0.7.0-alpha.9"
   }
 }

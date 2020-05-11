@@ -1,6 +1,6 @@
 {
   "name": "@bigby/core",
-  "version": "0.7.0-alpha.8",
+  "version": "0.7.0-alpha.9",
   "main": "dist/index.js",
   "license": "Apache-2.0",
   "homepage": "https://bigby.dev",
