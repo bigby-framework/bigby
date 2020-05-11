@@ -56,6 +56,8 @@ Bigby is split into a collection of packages that are all developed in sync as p
 - **@bigby/game**: the core game engine (2D rendering, sprites, shaders, ...)
 - **@bigby/physics2d**: 2D physics
 - **@bigby/random**: A collection of utility functions for generating various kinds of random values.
+- **@bigby/timers**: Timer-related utility behaviors (eg. Timer, AutoDestroy, Cooldown)
+- **@bigby/logger**: A `Logger` behavior that provides an interface to the current environment's logging capabilities.
 
 It is all tied together by the **bigby** master package, which merely serves as a convenient entrypoint to the framework.
 
