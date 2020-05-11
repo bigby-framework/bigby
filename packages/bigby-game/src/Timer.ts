@@ -1,5 +1,14 @@
 import { Behavior, Signal } from "@bigby/core";
 
+/**
+ * A utility behavior that implements a timer. After waking up, the timer will
+ * count down the number of seconds defined in its `duration` property, and then
+ * emit its `onTimeout` signal.
+ *
+ * @export
+ * @class Timer
+ * @extends {Behavior}
+ */
 export default class Timer extends Behavior {
   /**
    * The duration after which onTimeout is emitted.
