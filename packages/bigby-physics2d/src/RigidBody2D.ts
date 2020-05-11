@@ -58,6 +58,13 @@ export default class RigidBody2D extends GameBehavior {
     this.body!.setLinearVelocity(planck.Vec2(v));
   }
 
+  get rotation() {
+    return this.body!.getAngle();
+  }
+  set rotation(v) {
+    this.body!.setAngle(v);
+  }
+
   /**
    * The Physics2D instance that is holding our physics world.
    */
