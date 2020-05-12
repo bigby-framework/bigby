@@ -35,7 +35,7 @@ follow development, please follow [@hmans](https://twitter.com/hmans) and/or
 - [x] Spritesheet support
 - [ ] 2D physics
   - [x] Basic physics support
-  - [ ] Collision management
+  - [x] Collision management
   - [x] Circle colliders
   - [ ] Box colliders
   - [x] Polygon colliders

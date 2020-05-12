@@ -1,10 +1,36 @@
-import Physics2D from "./Physics2D";
-import * as planck from "planck-js";
+import { $up, Signal } from "@bigby/core";
 import { GameBehavior, vec2 } from "@bigby/game";
-import { $up } from "@bigby/core";
+import * as planck from "planck-js";
+import Physics2D from "./Physics2D";
+
+export interface IPhysicsBodyUserData {
+  rigidBody2D: RigidBody2D;
+}
+
+export interface IContactData {
+  contact: planck.Contact;
+  body: RigidBody2D;
+}
 
 export default class RigidBody2D extends GameBehavior {
+  /** The physics body this behavior uses internally. */
   body?: planck.Body;
+
+  /* Collision Signals */
+
+  /**
+   * Emitted when this RigidBody2D starts colliding with another body.
+   *
+   * @memberof RigidBody2D
+   */
+  onContactBegin = Signal<IContactData>();
+
+  /**
+   * Emitted when this RigidBody2D stops colliding with another body.
+   *
+   * @memberof RigidBody2D
+   */
+  onContactEnd = Signal<IContactData>();
 
   /* TODO: the following should be getters/setters, directly interacting with the body */
 
@@ -87,6 +113,9 @@ export default class RigidBody2D extends GameBehavior {
       allowSleep: this.allowSleep,
       angularDamping: this.angularDamping,
       linearDamping: this.linearDamping,
+
+      /* User data -- we'll need this for collision handling later */
+      userData: { rigidBody2D: this },
     });
   }
 
