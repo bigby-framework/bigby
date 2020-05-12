@@ -37,9 +37,5 @@ export default abstract class AbstractCollider2D extends Behavior {
     });
   }
 
-  destroy() {
-    if (this.fixture) this.rb2d!.body!.destroyFixture(this.fixture);
-  }
-
   protected abstract fixtureShape(): planck.Shape;
 }
