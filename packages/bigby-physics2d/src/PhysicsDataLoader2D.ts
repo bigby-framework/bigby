@@ -1,8 +1,8 @@
-import { GameBehavior, vec2 } from "@bigby/game";
-import { IVec2 } from "@bigby/game/dist/vec2";
 import { $ } from "@bigby/core";
-import RigidBody2D from "./RigidBody2D";
+import { GameBehavior } from "@bigby/game";
+import { IVec2 } from "@bigby/game/dist/vec2";
 import PolygonCollider2D from "./PolygonCollider2D";
+import RigidBody2D from "./RigidBody2D";
 
 export type Filter = {
   categoryBits: number;
