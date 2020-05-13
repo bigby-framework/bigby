@@ -141,26 +141,26 @@ export default class RigidBody2D extends GameBehavior {
   }
 
   getUpVector() {
-    return vec2.fromAngle(this.body!.getAngle() - Math.PI / 2);
+    return vec2.fromRadians(this.body!.getAngle() - Math.PI / 2);
   }
 
   getDownVector() {
-    return vec2.fromAngle(this.body!.getAngle() + Math.PI / 2);
+    return vec2.fromRadians(this.body!.getAngle() + Math.PI / 2);
   }
 
   getRightVector() {
-    return vec2.fromAngle(this.body!.getAngle());
+    return vec2.fromRadians(this.body!.getAngle());
   }
 
   getLeftVector() {
-    return vec2.fromAngle(this.body!.getAngle() - Math.PI);
+    return vec2.fromRadians(this.body!.getAngle() - Math.PI);
   }
 
   /* TODO: absolutely not happy with the "offset" thing we're doing here. Is
   there a way to maybe incooperate the getLeftVector etc. methods above? */
 
   rotateTowardsVector(v: vec2.IVec2, force: number, offset = 0) {
-    this.rotateTowardsAngle(vec2.toAngle(v), force, offset);
+    this.rotateTowardsAngle(vec2.toRadians(v), force, offset);
   }
 
   rotateTowardsAngle(angle: number, force: number, offset = 0) {

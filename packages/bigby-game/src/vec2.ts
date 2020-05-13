@@ -20,11 +20,11 @@ export const make = (x = 0, y = 0): Vec2 => ({ x, y });
 /**
  * Returns a normalized 2D vector representing the specified angle.
  *
- * @param angle Angle (in radians)
+ * @param radians Angle (in radians)
  */
-export const fromAngle = (angle: number): IVec2 => ({
-  x: Math.cos(angle),
-  y: Math.sin(angle),
+export const fromRadians = (radians: number): IVec2 => ({
+  x: Math.cos(radians),
+  y: Math.sin(radians),
 });
 
 /**
@@ -32,7 +32,7 @@ export const fromAngle = (angle: number): IVec2 => ({
  *
  * @param vec2 A 2D vector
  */
-export const toAngle = (vec2: IVec2) => Math.atan2(vec2.y, vec2.x);
+export const toRadians = (vec2: IVec2) => Math.atan2(vec2.y, vec2.x);
 
 export const add = (a: IVec2, b: IVec2): IVec2 => ({
   x: a.x + b.x,
