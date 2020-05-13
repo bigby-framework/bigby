@@ -1,14 +1,14 @@
-import { $, $up } from "@bigby/core";
-import { GameBehavior } from "@bigby/game";
+import { $, $up, Behavior } from "@bigby/core";
 import { Logger } from "@bigby/logger";
 import * as planck from "planck-js";
 import { RigidBody2D } from ".";
 import Physics2D from "./Physics2D";
+import { Transform } from "@bigby/game";
 
 export type ColliderCategoryBits = number;
 export type ColliderMaskBits = number;
 
-export default abstract class AbstractCollider2D extends GameBehavior {
+export default abstract class AbstractCollider2D extends Behavior {
   friction = 0;
   density = 1;
   restitution = 0;
@@ -20,11 +20,13 @@ export default abstract class AbstractCollider2D extends GameBehavior {
   protected p2d?: Physics2D;
   protected rb2d?: RigidBody2D;
   protected logger?: Logger;
+  protected transform?: Transform;
 
   awake() {
     this.p2d = $up(this, Physics2D);
     this.rb2d = $(this, RigidBody2D);
     this.logger = $up(this, Logger);
+    this.transform = $(this, Transform);
 
     if (!this.rb2d) {
       this.logger?.error("CircleCollider2D needs a RigidBody2D to operate.");

@@ -37,10 +37,8 @@ export default class Transform extends Behavior {
     return this.container.scale;
   }
 
-  set scale(v: number | { x: number; y: number }) {
-    typeof v === "number"
-      ? this.container.scale.set(v)
-      : this.container.scale.set(v.x, v.y);
+  set scale(v) {
+    this.container.scale.set(v.x, v.y);
   }
 
   awake() {
