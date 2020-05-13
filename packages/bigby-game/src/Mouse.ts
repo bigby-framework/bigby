@@ -9,6 +9,10 @@ export default class Mouse extends Behavior {
   private renderer?: Renderer;
   private interaction?: PIXI.interaction.InteractionManager;
 
+  static LeftButton: MouseButton = 1;
+  static RightButton: MouseButton = 2;
+  static MouseWheel: MouseButton = 4;
+
   awake() {
     this.renderer = $(this, Renderer);
     this.interaction = this.renderer!.app!.renderer.plugins.interaction;
@@ -24,17 +28,5 @@ export default class Mouse extends Behavior {
 
   isButtonPressed(button: MouseButton) {
     return (this.getButtons() & button) == button;
-  }
-
-  isLeftButtonPressed() {
-    return this.isButtonPressed(1);
-  }
-
-  isRightButtonPressed() {
-    return this.isButtonPressed(2);
-  }
-
-  isMouseWheelPressed() {
-    return this.isButtonPressed(4);
   }
 }
