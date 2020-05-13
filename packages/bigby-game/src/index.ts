@@ -9,7 +9,9 @@ import Ticker from "./Ticker";
 import TilingSprite from "./TilingSprite";
 import Transform from "./Transform";
 
+export * as math from "./math";
 export * as vec2 from "./vec2";
+
 export {
   GameBehavior,
   Renderer,
