@@ -1,5 +1,6 @@
 import GameBehavior from "./GameBehavior";
 import Keyboard from "./Keyboard";
+import Mouse from "./Mouse";
 import Renderer from "./Renderer";
 import ResourceLoader from "./ResourceLoader";
 import Sprite from "./Sprite";
@@ -18,5 +19,6 @@ export {
   TilingSprite,
   ResourceLoader,
   Keyboard,
+  Mouse,
   StatsPanel,
 };
