@@ -1,4 +1,5 @@
-import { $, $up, Behavior } from "@bigby/core";
+import { $, $up } from "@bigby/core";
+import { GameBehavior } from "@bigby/game";
 import { Logger } from "@bigby/logger";
 import * as planck from "planck-js";
 import { RigidBody2D } from ".";
@@ -7,7 +8,7 @@ import Physics2D from "./Physics2D";
 export type ColliderCategoryBits = number;
 export type ColliderMaskBits = number;
 
-export default abstract class AbstractCollider2D extends Behavior {
+export default abstract class AbstractCollider2D extends GameBehavior {
   friction = 0;
   density = 1;
   restitution = 0;

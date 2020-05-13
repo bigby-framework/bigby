@@ -5,6 +5,6 @@ export default class CircleCollider2D extends AbstractCollider2D {
   radius = 1;
 
   protected fixtureShape() {
-    return planck.Circle(this.radius);
+    return planck.Circle(this.radius * this.transform.scale.x);
   }
 }

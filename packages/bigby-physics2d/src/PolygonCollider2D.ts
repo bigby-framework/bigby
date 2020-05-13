@@ -6,9 +6,14 @@ export default class PolygonCollider2D extends AbstractCollider2D {
   points: vec2.IVec2[] = [];
 
   protected fixtureShape() {
+    const scale = this.transform.scale;
+
     return planck.Polygon(
       this.points.map((point) =>
-        planck.Vec2(point.x / this.p2d!.ppu, point.y / this.p2d!.ppu)
+        planck.Vec2(
+          (point.x / this.p2d!.ppu) * scale.x,
+          (point.y / this.p2d!.ppu) * scale.y
+        )
       )
     );
   }
