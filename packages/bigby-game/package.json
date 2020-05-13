@@ -1,7 +1,7 @@
 {
   "name": "@bigby/game",
   "description": "Behaviors and utilities for building games with the Bigby Framework.",
-  "version": "0.7.0-alpha.10",
+  "version": "0.7.0-alpha.11",
   "main": "dist/index.js",
   "license": "Apache-2.0",
   "homepage": "https://bigby.dev",
