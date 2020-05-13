@@ -33,6 +33,8 @@ export default class PhysicsDataLoader2D extends GameBehavior {
         friction: fixture.friction,
         restitution: fixture.bounce,
         points: fixture.points,
+        categories: fixture.filter.categoryBits,
+        mask: fixture.filter.maskBits,
       });
     });
   }
