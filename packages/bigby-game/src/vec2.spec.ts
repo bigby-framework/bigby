@@ -3,21 +3,21 @@ import { it } from "mocha";
 import * as vec2 from "./vec2";
 
 describe("vec2", () => {
-  describe("fromAngle", () => {
+  describe("fromRadians", () => {
     it("returns a vector representing a given angle", () => {
-      expect(vec2.fromAngle(0)).to.eql({ x: 1, y: 0 });
+      expect(vec2.fromRadians(0)).to.eql({ x: 1, y: 0 });
 
-      expect(vec2.fromAngle(Math.PI)).to.eql({
+      expect(vec2.fromRadians(Math.PI)).to.eql({
         x: Math.cos(Math.PI),
         y: Math.sin(Math.PI),
       });
     });
   });
 
-  describe("toAngle", () => {
+  describe("toRadians", () => {
     it("returns the angle (in radians) of a vector", () => {
-      expect(vec2.toAngle({ x: 1, y: 0 })).to.eq(0);
-      expect(vec2.toAngle({ x: -1, y: 0 })).to.eq(Math.PI);
+      expect(vec2.toRadians({ x: 1, y: 0 })).to.eq(0);
+      expect(vec2.toRadians({ x: -1, y: 0 })).to.eq(Math.PI);
     });
   });
 
