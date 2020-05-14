@@ -45,11 +45,11 @@ export default class Transform extends Behavior {
     /* If there's another Transform higher up, let's add ourselves to it. If
     not, find the Renderer instance and add ourselves to its stage instead. */
 
-    const transform = this.entity.parent && $up(this.entity.parent, Transform);
+    const transform = this.entity.parent?.$(Transform, true);
     if (transform) {
       transform.add(this);
     } else {
-      const renderer = $up(this, Renderer);
+      const renderer = this.$(Renderer, true);
       renderer?.app?.stage.addChild(this.container);
     }
   }

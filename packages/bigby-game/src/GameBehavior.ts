@@ -13,17 +13,18 @@ export default class GameBehavior extends Behavior {
   private __transform?: Transform;
   /** Provides a convenient (and memoized) accessor to the current entity's Transform behavior. */
   get transform() {
-    return (this.__transform = this.__transform || $(this, Transform));
+    return (this.__transform = this.__transform || this.$(Transform));
   }
 
   private __nearestTransform?: Transform;
   get nearestTransform() {
     return (this.__nearestTransform =
-      this.__nearestTransform || $up(this, Transform));
+      this.__nearestTransform || this.$(Transform, true));
   }
 
   private __loader?: PIXI.Loader;
   get loader() {
-    return (this.__loader = this.__loader || $up(this, ResourceLoader)!.loader);
+    return (this.__loader =
+      this.__loader || this.$(ResourceLoader, true)!.loader);
   }
 }

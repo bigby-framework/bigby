@@ -61,4 +61,13 @@ export default class Behavior implements IBehavior {
   set(props: BehaviorProps<this>) {
     Object.assign(this, props);
   }
+
+  getBehavior<T extends Behavior>(
+    constructor: BehaviorConstructor<T>,
+    searchUp = false
+  ): T | undefined {
+    return this.entity.getBehavior(constructor, searchUp);
+  }
+
+  $ = this.getBehavior;
 }

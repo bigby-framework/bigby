@@ -15,7 +15,7 @@ export default class StatsPanel extends Behavior {
     this.stats.showPanel(1);
 
     /* Look for a nearby Ticker instance and hook into it. */
-    const ticker = $up(this, Ticker);
+    const ticker = this.$(Ticker, true);
     if (ticker) {
       ticker.beforeTick(() => this.stats.begin());
       ticker.afterTick(() => this.stats.end());

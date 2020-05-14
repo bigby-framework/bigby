@@ -23,10 +23,10 @@ export default abstract class AbstractCollider2D extends Behavior {
   protected transform?: Transform;
 
   awake() {
-    this.p2d = $up(this, Physics2D);
-    this.rb2d = $(this, RigidBody2D);
-    this.logger = $up(this, Logger);
-    this.transform = $(this, Transform);
+    this.p2d = this.$(Physics2D, true);
+    this.rb2d = this.$(RigidBody2D);
+    this.logger = this.$(Logger, true);
+    this.transform = this.$(Transform);
 
     if (!this.rb2d) {
       this.logger?.error("CircleCollider2D needs a RigidBody2D to operate.");

@@ -13,8 +13,8 @@ describe("Transform", () => {
     const other = root.addChild({ behaviors: [Transform] });
 
     /* Check if everything connected as expected */
-    const rootTransform = $(root, Transform)!;
-    const otherTransform = $(other, Transform)!;
+    const rootTransform = root.$(Transform)!;
+    const otherTransform = other.$(Transform)!;
 
     expect(rootTransform.container.children).to.include(
       otherTransform.container

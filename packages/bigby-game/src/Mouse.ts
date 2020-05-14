@@ -14,7 +14,7 @@ export default class Mouse extends Behavior {
   static MouseWheel: MouseButton = 4;
 
   awake() {
-    this.renderer = $(this, Renderer);
+    this.renderer = this.$(Renderer);
     this.interaction = this.renderer!.app!.renderer.plugins.interaction;
   }
 

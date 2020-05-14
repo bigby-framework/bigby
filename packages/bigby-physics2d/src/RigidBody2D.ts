@@ -97,7 +97,7 @@ export default class RigidBody2D extends GameBehavior {
   private p2d?: Physics2D;
 
   awake() {
-    this.p2d = $up(this, Physics2D);
+    this.p2d = this.$(Physics2D, true);
     if (!this.p2d) throw "RigidBody2D needs a Physics2D to operate";
     if (!this.transform) throw "RigidBody2D needs a Transform to operate";
 

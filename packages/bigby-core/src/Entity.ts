@@ -183,4 +183,16 @@ export default class Entity {
     if (this.parent)
       this.parent.children = this.parent.children.filter((e) => e !== this);
   }
+
+  getBehavior<T extends Behavior>(
+    constructor: BehaviorConstructor<T>,
+    searchUp = false
+  ): T | undefined {
+    return (
+      (this.behaviors.find((b) => b instanceof constructor) as T) ||
+      (searchUp && this.parent?.getBehavior(constructor, searchUp))
+    );
+  }
+
+  $ = this.getBehavior;
 }
