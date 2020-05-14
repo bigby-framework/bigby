@@ -5498,9 +5498,9 @@ pkg-dir@^4.1.0:
     find-up "^4.0.0"
 
 planck-js@^0.3.12:
-  version "0.3.12"
-  resolved "https://registry.yarnpkg.com/planck-js/-/planck-js-0.3.12.tgz#b8dd9aad3801d2744b10dc649d65a9b15075cd5c"
-  integrity sha512-hAqfVS9iqYjhF9+Fn0gVTtPBeGys6zdO36pRuG3CcAsY4rE2nK5l7qmsJrg+62DK8F5IRWRFmDOH8sWC8bOiqA==
+  version "0.3.13"
+  resolved "https://registry.yarnpkg.com/planck-js/-/planck-js-0.3.13.tgz#60de56ff1167f248fd40926305f63a1717859738"
+  integrity sha512-RyzwTynANukcfgFt3BeF6rmcjmwfoRSxj2tDl8cC9lpeRWwOWdL9piH4fYbQjwflJb86P2k0mWkfVLzWaDkyEw==
   dependencies:
     mocha "^6.2.2"
 
