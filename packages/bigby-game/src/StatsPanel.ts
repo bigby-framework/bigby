@@ -1,4 +1,4 @@
-import { Behavior, $up } from "@bigby/core";
+import { Behavior } from "@bigby/core";
 import Stats from "stats.js";
 import Ticker from "./Ticker";
 

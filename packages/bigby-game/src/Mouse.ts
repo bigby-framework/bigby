@@ -1,4 +1,4 @@
-import { $, Behavior } from "@bigby/core";
+import { Behavior } from "@bigby/core";
 import * as PIXI from "pixi.js";
 import Renderer from "./Renderer";
 import Transform from "./Transform";

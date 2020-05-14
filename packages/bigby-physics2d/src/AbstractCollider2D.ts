@@ -1,9 +1,9 @@
-import { $, $up, Behavior } from "@bigby/core";
+import { Behavior } from "@bigby/core";
+import { Transform } from "@bigby/game";
 import { Logger } from "@bigby/logger";
 import * as planck from "planck-js";
 import { RigidBody2D } from ".";
 import Physics2D from "./Physics2D";
-import { Transform } from "@bigby/game";
 
 export type ColliderCategoryBits = number;
 export type ColliderMaskBits = number;

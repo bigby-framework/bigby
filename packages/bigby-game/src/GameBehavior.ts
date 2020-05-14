@@ -1,7 +1,7 @@
-import { Behavior, $, $up } from "@bigby/core";
-import Transform from "./Transform";
-import ResourceLoader from "./ResourceLoader";
+import { Behavior } from "@bigby/core";
 import * as PIXI from "pixi.js";
+import ResourceLoader from "./ResourceLoader";
+import Transform from "./Transform";
 
 /**
  * A subclass of the original [[Behavior]] class with some extra convenience

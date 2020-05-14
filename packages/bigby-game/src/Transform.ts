@@ -1,4 +1,4 @@
-import { Behavior, $up } from "@bigby/core";
+import { Behavior } from "@bigby/core";
 import { Container, DisplayObject } from "pixi.js";
 import Renderer from "./Renderer";
 

@@ -1,4 +1,3 @@
-import { $ } from "@bigby/core";
 import { GameBehavior } from "@bigby/game";
 import { IVec2 } from "@bigby/game/dist/vec2";
 import PolygonCollider2D from "./PolygonCollider2D";
@@ -24,7 +23,7 @@ export default class PhysicsDataLoader2D extends GameBehavior {
 
   awake() {
     /* Create a RigidBody2D behavior if it's not already there */
-    if (!$(this, RigidBody2D)) this.entity.addBehavior(RigidBody2D);
+    if (!this.$(RigidBody2D)) this.entity.addBehavior(RigidBody2D);
 
     /* Create colliders for each fixture */
     this.data?.forEach((fixture) => {

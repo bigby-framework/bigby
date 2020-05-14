@@ -1,4 +1,4 @@
-import { $up, Signal } from "@bigby/core";
+import { Signal } from "@bigby/core";
 import { GameBehavior, vec2 } from "@bigby/game";
 import * as planck from "planck-js";
 import Physics2D from "./Physics2D";
